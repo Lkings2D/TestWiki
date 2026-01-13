@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        /* Header Style */
+        header {
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+        
+        header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        header nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: normal;
+        }
+
+        header nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+        }
+        h1, h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+        a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .toc ul {
+            padding-left: 20px;
+        }
+        .toc li {
+            list-style-type: none;
+        }
+        
+        /* Flexbox for 3 boxes per row */
+        .box-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; /* Space between boxes */
+            justify-content: space-between;
+        }
+        
+        .box {
+            border: 1px solid #ddd; /* Light border around the section */
+            padding: 20px; /* Padding inside the box */
+            background-color: #ffffff; /* White background inside the box */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional shadow for a 3D effect */
+            width: calc(33.33% - 20px); /* 3 boxes per row */
+            box-sizing: border-box; /* Ensures padding and border are included in the width */
+        }
+
+        footer {
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        Wiki Page
+    </div>
+    <nav>
+        <a href="#box1">Box 1</a>
+        <a href="#box2">Box 2</a>
+        <a href="#box3">Box 3</a>
+        <a href="#box4">Box 4</a>
+        <a href="#box5">Box 5</a>
+        <a href="#box6">Box 6</a>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="toc">
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#box1">Box 1</a></li>
+            <li><a href="#box2">Box 2</a></li>
+            <li><a href="#box3">Box 3</a></li>
+            <li><a href="#box4">Box 4</a></li>
+            <li><a href="#box5">Box 5</a></li>
+            <li><a href="#box6">Box 6</a></li>
+        </ul>
+    </div>
+
+    <div class="box-container">
+        <!-- Box 1 -->
+        <section id="box1" class="box">
+            <h2>Box 1</h2>
+            <p>Content for Box 1.</p>
+        </section>
+
+        <!-- Box 2 -->
+        <section id="box2" class="box">
+            <h2>Box 2</h2>
+            <p>Content for Box 2.</p>
+        </section>
+
+        <!-- Box 3 -->
+        <section id="box3" class="box">
+            <h2>Box 3</h2>
+            <p>Content for Box 3.</p>
+        </section>
+
+        <!-- Box 4 -->
+        <section id="box4" class="box">
+            <h2>Box 4</h2>
+            <p>Content for Box 4.</p>
+        </section>
+
+        <!-- Box 5 -->
+        <section id="box5" class="box">
+            <h2>Box 5</h2>
+            <p>Content for Box 5.</p>
+        </section>
+
+        <!-- Box 6 -->
+        <section id="box6" class="box">
+            <h2>Box 6</h2>
+            <p>Content for Box 6.</p>
+        </section>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Wiki Page</p>
+</footer>
+
+upload
+</body>
+</html>
