@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +22,7 @@
             align-items: center;
             padding: 10px 20px;
         }
-        
+
         header .logo {
             font-size: 24px;
             font-weight: bold;
@@ -49,39 +50,52 @@
             padding: 20px;
             background-color: white;
         }
-        h1, h2 {
+
+        h1,
+        h2 {
             color: #333;
             margin-bottom: 10px;
         }
+
         a {
             color: #0066cc;
             text-decoration: none;
         }
+
         a:hover {
             text-decoration: underline;
         }
+
         .toc ul {
             padding-left: 20px;
         }
+
         .toc li {
             list-style-type: none;
         }
-        
+
         /* Flexbox for 3 boxes per row */
         .box-container {
             display: flex;
             flex-wrap: wrap;
-            gap: 20px; /* Space between boxes */
+            gap: 20px;
+            /* Space between boxes */
             justify-content: space-between;
         }
-        
+
         .box {
-            border: 1px solid #ddd; /* Light border around the section */
-            padding: 20px; /* Padding inside the box */
-            background-color: #ffffff; /* White background inside the box */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional shadow for a 3D effect */
-            width: calc(33.33% - 20px); /* 3 boxes per row */
-            box-sizing: border-box; /* Ensures padding and border are included in the width */
+            border: 1px solid #ddd;
+            /* Light border around the section */
+            padding: 20px;
+            /* Padding inside the box */
+            background-color: #ffffff;
+            /* White background inside the box */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /* Optional shadow for a 3D effect */
+            width: calc(33.33% - 20px);
+            /* 3 boxes per row */
+            box-sizing: border-box;
+            /* Ensures padding and border are included in the width */
         }
 
         footer {
@@ -92,77 +106,85 @@
         }
     </style>
 </head>
+
 <body>
 
-<header>
-    <div class="logo">
-        Wiki Page
+    <header>
+        <div class="logo">
+            Wiki Page
+        </div>
+        <nav>
+            <a href="#box1">Box 1</a>
+            <a href="#box2">Box 2</a>
+            <a href="#box3">Box 3</a>
+            <a href="#box4">Box 4</a>
+            <a href="#box5">Box 5</a>
+            <a href="#box6">Box 6</a>
+        </nav>
+    </header>
+
+
+    <div class="container" style="margin-top: 50px;">
+        <div class="box-container">
+            <!-- Box 1 -->
+            <section id="box1" class="box" style="text-align: center; background-image: url('/Photos/BoxBG.jpg'); background-size: cover; background-position: center;">
+                <h2>Box 1</h2>
+                <img src="/Photos/pic1.jpeg" alt="Box 1" style="max-width: 40%; height: auto;">
+                <p><a href="#" class="learn-more" style="display: inline-block; padding: 10px 20px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px;">Learn more</a></p>
+            </section>
+
+            <!-- Box 2 -->
+            <section id="box2" class="box" style="text-align: center; background-image: url('/Photos/BoxBG.jpg'); background-size: cover; background-position: center;">
+                <h2>Box 2</h2>
+                <img src="/Photos/pic1.jpeg" alt="Box 2" style="max-width: 40%; height: auto;">
+                <p><a href="#" class="learn-more" style="display: inline-block; padding: 10px 20px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px;">Learn more</a></p>
+            </section>
+
+            <!-- Box 3 -->
+            <section id="box3" class="box" style="text-align: center; background-image: url('/Photos/BoxBG.jpg'); background-size: cover; background-position: center;">
+                <h2>Box 3</h2>
+                <img src="/Photos/pic1.jpeg" alt="Box 3" style="max-width: 40%; height: auto;">
+                <p><a href="#" class="learn-more" style="display: inline-block; padding: 10px 20px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px;">Learn more</a></p>
+            </section>
+
+            <!-- Box 4 -->
+            <section id="box4" class="box" style="text-align: center; background-image: url('/Photos/BoxBG.jpg'); background-size: cover; background-position: center;">
+                <h2>Box 4</h2>
+                <img src="/Photos/pic1.jpeg" alt="Box 4" style="max-width: 40%; height: auto;">
+                <p><a href="#" class="learn-more" style="display: inline-block; padding: 10px 20px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px;">Learn more</a></p>
+            </section>
+
+            <!-- Box 5 -->
+            <section id="box5" class="box" style="text-align: center; background-image: url('/Photos/BoxBG.jpg'); background-size: cover; background-position: center;">
+                <h2>Box 5</h2>
+                <img src="/Photos/pic1.jpeg" alt="Box 5" style="max-width: 40%; height: auto;">
+                <p><a href="#" class="learn-more" style="display: inline-block; padding: 10px 20px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px;">Learn more</a></p>
+            </section>
+
+            <!-- Box 6 -->
+            <section id="box6" class="box" style="text-align: center; background-image: url('/Photos/BoxBG.jpg'); background-size: cover; background-position: center;">
+                <h2>Box 6</h2>
+                <img src="/Photos/pic1.jpeg" alt="Box 6" style="max-width: 40%; height: auto;">
+                <p><a href="#" class="learn-more" style="display: inline-block; padding: 10px 20px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px;">Learn more</a></p>
+            </section>
+
+            <style>
+                .learn-more {
+                    transition: transform 0.3s;
+                }
+
+                .learn-more:hover {
+                    transform: scale(1.1);
+                }
+            </style>
+        </div>
     </div>
-    <nav>
-        <a href="#box1">Box 1</a>
-        <a href="#box2">Box 2</a>
-        <a href="#box3">Box 3</a>
-        <a href="#box4">Box 4</a>
-        <a href="#box5">Box 5</a>
-        <a href="#box6">Box 6</a>
-    </nav>
-</header>
 
-<div class="container">
-    <div class="toc">
-        <h2>Table of Contents</h2>
-        <ul>
-            <li><a href="#box1">Box 1</a></li>
-            <li><a href="#box2">Box 2</a></li>
-            <li><a href="#box3">Box 3</a></li>
-            <li><a href="#box4">Box 4</a></li>
-            <li><a href="#box5">Box 5</a></li>
-            <li><a href="#box6">Box 6</a></li>
-        </ul>
-    </div>
 
-    <div class="box-container">
-        <!-- Box 1 -->
-        <section id="box1" class="box">
-            <h2>Box 1</h2>
-            <p>Content for Box 1.</p>
-        </section>
-
-        <!-- Box 2 -->
-        <section id="box2" class="box">
-            <h2>Box 2</h2>
-            <p>Content for Box 2.</p>
-        </section>
-
-        <!-- Box 3 -->
-        <section id="box3" class="box">
-            <h2>Box 3</h2>
-            <p>Content for Box 3.</p>
-        </section>
-
-        <!-- Box 4 -->
-        <section id="box4" class="box">
-            <h2>Box 4</h2>
-            <p>Content for Box 4.</p>
-        </section>
-
-        <!-- Box 5 -->
-        <section id="box5" class="box">
-            <h2>Box 5</h2>
-            <p>Content for Box 5.</p>
-        </section>
-
-        <!-- Box 6 -->
-        <section id="box6" class="box">
-            <h2>Box 6</h2>
-            <p>Content for Box 6.</p>
-        </section>
-    </div>
-</div>
-
-<footer>
-    <p>&copy; 2025 Wiki Page</p>
-</footer>
+    <footer>
+        <p>&copy; 2026 Wiki Page</p>
+    </footer>
 
 </body>
+
 </html>
