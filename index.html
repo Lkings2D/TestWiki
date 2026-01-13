@@ -11,6 +11,11 @@
             margin: 0;
             padding: 0;
             background-color: #f9f9f9;
+            transition: background-color 0.3s;
+        }
+
+        body.dark-mode {
+            background-color: #1a1a1a;
         }
 
         /* Header Style */
@@ -32,6 +37,7 @@
         header nav {
             display: flex;
             gap: 20px;
+            align-items: center;
         }
 
         header nav a {
@@ -45,17 +51,43 @@
             text-decoration: underline;
         }
 
+        #dark-mode-btn {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        #dark-mode-btn:hover {
+            background-color: #777;
+        }
+
         .container {
             max-width: 1200px;
             margin: 20px auto;
             padding: 20px;
             background-color: white;
+            transition: background-color 0.3s;
+        }
+
+        body.dark-mode .container {
+            background-color: #2a2a2a;
+            color: #e0e0e0;
         }
 
         h1,
         h2 {
             color: #333;
             margin-bottom: 10px;
+        }
+
+        body.dark-mode h1,
+        body.dark-mode h2 {
+            color: #e0e0e0;
         }
 
         a {
@@ -90,6 +122,16 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: calc(33.33% - 20px);
             box-sizing: border-box;
+            transition: background-color 0.3s, border-color 0.3s, background-image 0.3s;
+            background-image: url('/Photos/LightBoxBG.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        body.dark-mode .box {
+            background-color: #333;
+            border-color: #555;
+            background-image: url('/Photos/DarkBoxBG.jpeg');
         }
 
         footer {
@@ -97,6 +139,11 @@
             font-size: 12px;
             color: #888;
             margin-top: 20px;
+            transition: color 0.3s;
+        }
+
+        body.dark-mode footer {
+            color: #999;
         }
 
         .blue-box {
@@ -167,53 +214,50 @@
         <div class="logo">
             Wiki Page
         </div>
+        <nav>
+            <button id="dark-mode-btn">🌙 Dark Mode</button>
+        </nav>
     </header>
 
     <div class="container" style="margin-top: 50px;">
         <div class="box-container">
             <!-- Box 1 -->
-            <section id="box1" class="box"
-                style="text-align: center; background-image: url('/Photos/BoxBG.jpg'); background-size: cover; background-position: center;">
+            <section id="box1" class="box" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
                 <img src="/Photos/pic1.jpeg" alt="Box 1" style="max-width: 40%; height: auto;">
                 <p><a href="#" class="blue-box"
                         style="display: inline-block; padding: 10px 20px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px;">Items</a></p>
             </section>
 
             <!-- Box 2 -->
-            <section id="box2" class="box"
-                style="text-align: center; background-image: url('/Photos/BoxBG.jpg'); background-size: cover; background-position: center;">
+            <section id="box2" class="box" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
                 <img src="/Photos/pic1.jpeg" alt="Box 2" style="max-width: 40%; height: auto;">
                 <p><a href="#" class="blue-box"
                         style="display: inline-block; padding: 10px 20px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px;">Mobs</a></p>
             </section>
 
             <!-- Box 3 -->
-            <section id="box3" class="box"
-                style="text-align: center; background-image: url('/Photos/BoxBG.jpg'); background-size: cover; background-position: center;">
+            <section id="box3" class="box" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
                 <img src="/Photos/pic1.jpeg" alt="Box 3" style="max-width: 40%; height: auto;">
                 <p><a href="#" class="blue-box"
                         style="display: inline-block; padding: 10px 20px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px;">Enchants</a></p>
             </section>
 
             <!-- Box 4 -->
-            <section id="box4" class="box"
-                style="text-align: center; background-image: url('/Photos/BoxBG.jpg'); background-size: cover; background-position: center;">
-                <img src="/Photos/LkLogo.png" alt="Box 4" style="max-width: 48%; height: auto;">
+            <section id="box4" class="box" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <img src="/Photos/LkLogo.png" alt="Box 4" style="max-width: 45%; height: auto;">
                 <p><a href="https://youtube.com/channel/UCbT7lMYjI2OH878HRWpREpQ?sub_confirmation=1" target="_blank" class="blue-box"
                         style="display: inline-block; padding: 10px 20px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px;">Video Guides</a></p>
             </section>
 
             <!-- Box 5 -->
-            <section id="box5" class="box"
-                style="text-align: center; background-image: url('/Photos/BoxBG.jpg'); background-size: cover; background-position: center;">
-                <img src="/Photos/disc.png" alt="Box 5" style="max-width: 50%; height: auto; display: block; margin: 75px auto 10px;">
-                <p><a href="#" class="blue-box"
+            <section id="box5" class="box" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <img src="/Photos/disc.png" alt="Box 5" style="max-width: 40%; height: auto; margin-bottom: -30px;margin-top: 74px;">
+                <p style="margin-top: 60px;"><a href="#" class="blue-box"
                         style="display: inline-block; padding: 10px 20px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px;">Discord</a></p>
             </section>
 
             <!-- Box 6 -->
-            <section id="box6" class="box"
-                style="text-align: center; background-image: url('/Photos/BoxBG.jpg'); background-size: cover; background-position: center;">
+            <section id="box6" class="box" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
                 <img src="/Photos/pic1.jpeg" alt="Box 6" style="max-width: 40%; height: auto;">
                 <p><a href="#" class="blue-box"
                         style="display: inline-block; padding: 10px 20px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px;">Learn
@@ -225,6 +269,29 @@
     <footer>
         <p>Made by @Lkings</p>
     </footer>
+
+    <script>
+        const darkModeBtn = document.getElementById('dark-mode-btn');
+        const body = document.body;
+
+        // Check localStorage for dark mode preference
+        if (localStorage.getItem('dark-mode') === 'enabled') {
+            body.classList.add('dark-mode');
+            darkModeBtn.textContent = '☀️ Light Mode';
+        }
+
+        darkModeBtn.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('dark-mode', 'enabled');
+                darkModeBtn.textContent = '☀️ Light Mode';
+            } else {
+                localStorage.setItem('dark-mode', 'disabled');
+                darkModeBtn.textContent = '🌙 Dark Mode';
+            }
+        });
+    </script>
 
 </body>
 
