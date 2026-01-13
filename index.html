@@ -21,6 +21,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
+            flex-wrap: wrap;
         }
 
         header .logo {
@@ -74,28 +75,21 @@
             list-style-type: none;
         }
 
-        /* Flexbox for 3 boxes per row */
+        /* Flexbox for responsive boxes */
         .box-container {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-            /* Space between boxes */
             justify-content: space-between;
         }
 
         .box {
             border: 1px solid #ddd;
-            /* Light border around the section */
             padding: 20px;
-            /* Padding inside the box */
             background-color: #ffffff;
-            /* White background inside the box */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            /* Optional shadow for a 3D effect */
             width: calc(33.33% - 20px);
-            /* 3 boxes per row */
             box-sizing: border-box;
-            /* Ensures padding and border are included in the width */
         }
 
         footer {
@@ -111,6 +105,58 @@
 
         .blue-box:hover {
             transform: scale(1.1);
+        }
+
+        /* Tablet: 2 boxes per row */
+        @media (max-width: 1024px) {
+            .box {
+                width: calc(50% - 20px);
+            }
+        }
+
+        /* Mobile: 1 box per row */
+        @media (max-width: 768px) {
+            .box {
+                width: 100%;
+            }
+
+            header {
+                padding: 10px 15px;
+            }
+
+            header .logo {
+                font-size: 20px;
+            }
+
+            header nav {
+                gap: 10px;
+                font-size: 14px;
+            }
+
+            .container {
+                padding: 15px;
+                margin: 20px 10px;
+            }
+        }
+
+        /* Small mobile devices */
+        @media (max-width: 480px) {
+            header .logo {
+                font-size: 18px;
+            }
+
+            header nav {
+                gap: 8px;
+                font-size: 12px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            .box {
+                padding: 15px;
+            }
         }
     </style>
 </head>
@@ -175,7 +221,6 @@
             </section>
         </div>
     </div>
-
 
     <footer>
         <p>Made by @Lkings</p>
