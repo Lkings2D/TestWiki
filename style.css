@@ -1,0 +1,269 @@
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        transition: background-color 0.3s;
+    }
+
+    body.dark-mode {
+        background-color: #1a1a1a;
+    }
+
+    /* Header Style */
+    header {
+        background-color: #333;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        flex-wrap: wrap;
+    }
+
+    header .logo {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    header nav {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+
+    header nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: normal;
+    }
+
+    header nav a:hover {
+        text-decoration: underline;
+    }
+
+    #dark-mode-btn {
+        background-color: #555;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background-color 0.3s;
+    }
+
+    #dark-mode-btn:hover {
+        background-color: #777;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: white;
+        transition: background-color 0.3s;
+    }
+
+    body.dark-mode .container {
+        background-color: #2a2a2a;
+        color: #e0e0e0;
+    }
+
+    /* Content Box */
+    .content-box {
+        background-color: #f5f5f5;
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 8px;
+        margin-bottom: 30px;
+        min-height: 200px;
+        transition: background-color 0.3s, border-color 0.3s;
+    }
+
+    body.dark-mode .content-box {
+        background-color: #333;
+        border-color: #555;
+    }
+
+    .content-box h2 {
+        margin-top: 0;
+    }
+
+    h1,
+    h2 {
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    body.dark-mode h1,
+    body.dark-mode h2 {
+        color: #e0e0e0;
+    }
+
+    a {
+        color: #0066cc;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .toc ul {
+        padding-left: 20px;
+    }
+
+    .toc li {
+        list-style-type: none;
+    }
+
+    /* Flexbox for responsive boxes */
+    .box-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
+    }
+
+    .box {
+        border: 1px solid #ddd;
+        padding: 15px;
+        background-color: #ffffff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: calc(25% - 20px);
+        box-sizing: border-box;
+        transition: background-color 0.3s, border-color 0.3s, background-image 0.3s;
+        background-image: url('/Photos/LightBoxBG.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    body.dark-mode .box {
+        background-color: #333;
+        border-color: #555;
+        background-image: url('/Photos/DarkBoxBG.jpeg');
+    }
+
+    .box img {
+        max-width: 60%;
+        height: auto;
+    }
+
+    .box p {
+        margin: 10px 0 0 0;
+    }
+
+    footer {
+        text-align: center;
+        font-size: 12px;
+        color: #888;
+        margin-top: 20px;
+        transition: color 0.3s;
+    }
+
+    body.dark-mode footer {
+        color: #999;
+    }
+
+    .blue-box {
+        transition: transform 0.3s;
+    }
+
+    .blue-box:hover {
+        transform: scale(1.1);
+    }
+
+    /* Tablet: 2 boxes per row */
+    @media (max-width: 1024px) {
+        .box {
+            width: calc(50% - 20px);
+        }
+    }
+
+    /* Mobile: 1 box per row */
+    @media (max-width: 768px) {
+        .box {
+            width: 100%;
+        }
+
+        header {
+            padding: 10px 15px;
+        }
+
+        header .logo {
+            font-size: 20px;
+        }
+
+        header nav {
+            gap: 10px;
+            font-size: 14px;
+        }
+
+        .container {
+            padding: 15px;
+            margin: 20px 10px;
+        }
+    }
+
+    /* Small mobile devices */
+    @media (max-width: 480px) {
+        header .logo {
+            font-size: 18px;
+        }
+
+        header nav {
+            gap: 8px;
+            font-size: 12px;
+        }
+
+        .container {
+            padding: 10px;
+        }
+
+        .box {
+            padding: 15px;
+        }
+    }
+
+    /* Wiki text colors (light mode default) */
+    .wiki-content h1 {
+        color: #2563eb;
+    }
+
+    .wiki-content p,
+    .wiki-content ul,
+    .wiki-content li {
+        color: #4b5563;
+        font-size: 1.05rem;
+    }
+
+    .wiki-content .muted {
+        color: #6b7280;
+        font-weight: bold;
+    }
+
+    .wiki-content .accent {
+        color: #0d9488;
+        font-weight: bold;
+    }
+
+    /* Dark mode overrides */
+    body.dark-mode .wiki-content h1 {
+        color: #60a5fa;
+    }
+
+    body.dark-mode .wiki-content p,
+    body.dark-mode .wiki-content ul,
+    body.dark-mode .wiki-content li {
+        color: #d1d5db;
+    }
+
+    body.dark-mode .wiki-content .muted {
+        color: #9ca3af;
+    }
+
+    body.dark-mode .wiki-content .accent {
+        color: #5eead4;
+    }
