@@ -5,242 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wiki Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9;
-            transition: background-color 0.3s;
-        }
-
-        body.dark-mode {
-            background-color: #1a1a1a;
-        }
-
-        /* Header Style */
-        header {
-            background-color: #333;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            flex-wrap: wrap;
-        }
-
-        header .logo {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        header nav {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-
-        header nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: normal;
-        }
-
-        header nav a:hover {
-            text-decoration: underline;
-        }
-
-        #dark-mode-btn {
-            background-color: #555;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
-            transition: background-color 0.3s;
-        }
-
-        #dark-mode-btn:hover {
-            background-color: #777;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            transition: background-color 0.3s;
-        }
-
-        body.dark-mode .container {
-            background-color: #2a2a2a;
-            color: #e0e0e0;
-        }
-
-        /* Content Box */
-        .content-box {
-            background-color: #f5f5f5;
-            border: 1px solid #ddd;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            min-height: 200px;
-            transition: background-color 0.3s, border-color 0.3s;
-        }
-
-        body.dark-mode .content-box {
-            background-color: #333;
-            border-color: #555;
-        }
-
-        .content-box h2 {
-            margin-top: 0;
-        }
-
-        h1,
-        h2 {
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        body.dark-mode h1,
-        body.dark-mode h2 {
-            color: #e0e0e0;
-        }
-
-        a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .toc ul {
-            padding-left: 20px;
-        }
-
-        .toc li {
-            list-style-type: none;
-        }
-
-        /* Flexbox for responsive boxes */
-        .box-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: space-between;
-        }
-
-        .box {
-            border: 1px solid #ddd;
-            padding: 15px;
-            background-color: #ffffff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: calc(25% - 20px);
-            box-sizing: border-box;
-            transition: background-color 0.3s, border-color 0.3s, background-image 0.3s;
-            background-image: url('/Photos/LightBoxBG.jpg');
-            background-size: cover;
-            background-position: center;
-        }
-
-        body.dark-mode .box {
-            background-color: #333;
-            border-color: #555;
-            background-image: url('/Photos/DarkBoxBG.jpeg');
-        }
-
-        .box img {
-            max-width: 60%;
-            height: auto;
-        }
-
-        .box p {
-            margin: 10px 0 0 0;
-        }
-
-        footer {
-            text-align: center;
-            font-size: 12px;
-            color: #888;
-            margin-top: 20px;
-            transition: color 0.3s;
-        }
-
-        body.dark-mode footer {
-            color: #999;
-        }
-
-        .blue-box {
-            transition: transform 0.3s;
-        }
-
-        .blue-box:hover {
-            transform: scale(1.1);
-        }
-
-        /* Tablet: 2 boxes per row */
-        @media (max-width: 1024px) {
-            .box {
-                width: calc(50% - 20px);
-            }
-        }
-
-        /* Mobile: 1 box per row */
-        @media (max-width: 768px) {
-            .box {
-                width: 100%;
-            }
-
-            header {
-                padding: 10px 15px;
-            }
-
-            header .logo {
-                font-size: 20px;
-            }
-
-            header nav {
-                gap: 10px;
-                font-size: 14px;
-            }
-
-            .container {
-                padding: 15px;
-                margin: 20px 10px;
-            }
-        }
-
-        /* Small mobile devices */
-        @media (max-width: 480px) {
-            header .logo {
-                font-size: 18px;
-            }
-
-            header nav {
-                gap: 8px;
-                font-size: 12px;
-            }
-
-            .container {
-                padding: 10px;
-            }
-
-            .box {
-                padding: 15px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <header>
-        <a href="/index.html" class="logo" style="color: white; text-decoration: none;" onclick="event.preventDefault(); loadContent('/index.html');">
+        <a href="/index.html" class="logo" style="color: white; text-decoration: none;"
+            onclick="event.preventDefault(); loadContent('/index.html');">
             Wiki Page
         </a>
         <nav>
@@ -251,17 +23,43 @@
     <div class="container" style="margin-top: 50px;">
         <!-- Content Box -->
         <div class="content-box">
-            <h2>Welcome</h2>
-            <p>Add your content here. This box is perfect for introductions, descriptions, or any text content you want
-                to display.
-            </p>
 
+            <div class="content-box">
+                <div class="wiki-content" style="text-align: center; max-width: 800px; margin: auto;">
+
+                    <h1><b>Welcome to the Official Wiki</b></h1>
+
+                    <p>
+                        This wiki is the <span class="muted">central knowledge base</span> for accurate
+                        information, documentation, and updates.
+                    </p>
+
+                    <p>
+                        It is designed to be clear, accessible, and easy to navigate for all users.
+                    </p>
+
+                    <p>Here you will find:</p>
+
+                    <ul style="list-style-position: inside; padding: 0;">
+                        <li><span class="muted">Guides</span> to help you get started</li>
+                        <li><span class="muted">Detailed explanations</span> of features and systems</li>
+                        <li><span class="muted">Up-to-date information</span> as the project evolves</li>
+                    </ul>
+
+                    <p class="accent">
+                        Whether you are new or experienced, this wiki aims to be a
+                        reliable reference for everyone.
+                    </p>
+
+                </div>
+            </div>
 
             <div class="box-container">
                 <!-- Box 1 -->
                 <section id="box1" class="box"
                     style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                    <img src="/Photos/MobFavicon.png" alt="Box 1" style="max-width: 80%; height: auto; margin-top: 75px;">
+                    <img src="/Photos/MobFavicon.png" alt="Box 1"
+                        style="max-width: 80%; height: auto; margin-top: 75px;">
                     <p><a href="#" class="blue-box"
                             style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Items</a>
                     </p>
@@ -270,8 +68,10 @@
                 <!-- Box 2 -->
                 <section id="box2" class="box"
                     style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                    <img src="/Photos/MobFavicon.png" alt="Box 2" style="max-width: 80%; height: auto; margin-top: 75px;">
-                        <p style="margin-top: 15px;"><a href="/Mobs/index.html" class="blue-box" onclick="event.preventDefault(); loadContent('/Mobs/index.html');"
+                    <img src="/Photos/MobFavicon.png" alt="Box 2"
+                        style="max-width: 80%; height: auto; margin-top: 75px;">
+                    <p style="margin-top: 15px;"><a href="/Mobs/index.html" class="blue-box"
+                            onclick="event.preventDefault(); loadContent('/Mobs/index.html');"
                             style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Mobs</a>
                     </p>
                 </section>
@@ -279,7 +79,8 @@
                 <!-- Box 3 -->
                 <section id="box3" class="box"
                     style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                    <img src="/Photos/MobFavicon.png" alt="Box 3" style="max-width: 80%; height: auto; margin-top: 75px;">
+                    <img src="/Photos/MobFavicon.png" alt="Box 3"
+                        style="max-width: 80%; height: auto; margin-top: 75px;">
                     <p><a href="#" class="blue-box"
                             style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Enchants</a>
                     </p>
@@ -307,7 +108,8 @@
                 <!-- Box 6 -->
                 <section id="box6" class="box"
                     style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                    <img src="/Photos/MobFavicon.png" alt="Box 6" style="max-width: 70%; height: auto; margin-top: 10px;">
+                    <img src="/Photos/MobFavicon.png" alt="Box 6"
+                        style="max-width: 70%; height: auto; margin-top: 10px;">
                     <p><a href="#" class="blue-box"
                             style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Learn
                             more</a></p>
@@ -315,7 +117,8 @@
                 <!-- Box 7 -->
                 <section id="box7" class="box"
                     style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                    <img src="/Photos/MobFavicon.png" alt="Box 7" style="max-width: 70%; height: auto; margin-top: 10px;">
+                    <img src="/Photos/MobFavicon.png" alt="Box 7"
+                        style="max-width: 70%; height: auto; margin-top: 10px;">
                     <p><a href="#" class="blue-box"
                             style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Learn
                             more</a></p>
@@ -323,7 +126,8 @@
                 <!-- Box 8 -->
                 <section id="box8" class="box"
                     style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                    <img src="/Photos/MobFavicon.png" alt="Box 8" style="max-width: 70%; height: auto; margin-top: 10px;">
+                    <img src="/Photos/MobFavicon.png" alt="Box 8"
+                        style="max-width: 70%; height: auto; margin-top: 10px;">
                     <p><a href="#" class="blue-box"
                             style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Learn
                             more</a></p>
