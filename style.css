@@ -464,3 +464,34 @@ body.dark-mode .vertical-sidebar a:hover {
         display: block;
     }
 }
+
+.ad-demo {
+    background: #f0f0f0;
+    border: 2px dashed #999;
+    color: #555;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-ad-demo {
+    width: 100%;
+    max-width: 970px;
+    height: 120px;
+    margin: 15px auto;
+}
+
+.side-ad-demo {
+    width: 160px;
+    height: 600px;
+    position: sticky;
+    top: 15px;
+}
+
+@media (max-width: 900px){
+    .side-ad-demo{
+        display:none;
+    }
+}
