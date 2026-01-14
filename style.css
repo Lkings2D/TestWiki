@@ -2,7 +2,7 @@
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #f9f9f9;
+        background-color: #ececec;
         transition: background-color 0.3s;
     }
 
@@ -62,7 +62,7 @@
         max-width: 1200px;
         margin: 20px auto;
         padding: 20px;
-        background-color: white;
+        background-color: #ececec;
         transition: background-color 0.3s;
     }
 
@@ -81,6 +81,94 @@
         min-height: 200px;
         transition: background-color 0.3s, border-color 0.3s;
     }
+
+    /* Base content box styles (common to both modes) */
+    .content-box {
+        position: relative;
+        padding: 32px;
+        border-radius: 16px;
+    }
+
+    .content-box::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 3px;
+        /* thickness of the border */
+        background: linear-gradient(135deg,
+                #6ae3ff,
+                #9b6bff,
+                #ff6ad5);
+        -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor;
+        mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+        mask-composite: exclude;
+
+
+        /* Animate hue rotation (RGB cycling) */
+        animation: hueShift 15s linear infinite;
+        pointer-events: none;
+        /* allow clicks to pass through */
+
+    }
+
+    /* Keyframes for hue rotation */
+    @keyframes hueShift {
+        0% {
+            filter: hue-rotate(0deg);
+        }
+
+        100% {
+            filter: hue-rotate(360deg);
+        }
+    }
+
+    /* Light mode gradient override with RGB rotation */
+    body:not(.dark-mode) .content-box::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+
+        /* Thicker, pastel gradient for light mode */
+        background: linear-gradient(135deg,
+                rgba(102, 204, 255, 0.5),
+                /* soft cyan */
+                rgba(179, 129, 255, 0.5),
+                /* pastel purple */
+                rgba(255, 160, 196, 0.5)
+                /* pastel pink */
+            );
+        padding: 5px;
+        /* slightly thicker border for light mode */
+
+        -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor;
+        mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+        mask-composite: exclude;
+
+
+        /* Animate hue rotation for RGB cycling */
+        animation: hueShift 25s linear infinite;
+        pointer-events: none;
+
+    }
+
+    /* Keyframes (reuse the same as dark mode) */
+    @keyframes hueShift {
+        0% {
+            filter: hue-rotate(0deg);
+        }
+
+        100% {
+            filter: hue-rotate(360deg);
+        }
+    }
+
+
+
+
 
     body.dark-mode .content-box {
         background-color: #333;
