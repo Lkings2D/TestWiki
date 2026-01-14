@@ -445,20 +445,27 @@ body.dark-mode .vertical-sidebar a:hover {
 
 @media (max-width: 768px) {
     .sidecontentbox {
-        display: none; /* hide sidebar content box */
+        display: none;
+        /* hide sidebar content box */
     }
 
     .sidebar-column {
-        flex: 0 0 auto;           /* shrink to fit content */
-        width: 100%;              /* full width */
+        flex: 0 0 auto;
+        /* shrink to fit content */
+        width: 100%;
+        /* full width */
         display: flex;
-        justify-content: center;  /* center horizontally */
-        align-items: center;      /* center vertically if needed */
-        margin: 0 auto;           /* ensure proper horizontal centering */
+        justify-content: center;
+        /* center horizontally */
+        align-items: center;
+        /* center vertically if needed */
+        margin: 0 auto;
+        /* ensure proper horizontal centering */
     }
 
     .sidebar-top-image {
-        max-width: 120px;          /* constrain image so it doesn’t stretch on large screens */
+        max-width: 120px;
+        /* constrain image so it doesn’t stretch on large screens */
         height: auto;
         margin: 20px 0;
         display: block;
@@ -476,6 +483,14 @@ body.dark-mode .vertical-sidebar a:hover {
     justify-content: center;
 }
 
+/* Dark mode version */
+body.dark-mode .ad-demo,
+body.dark .ad-demo {
+    background: #1e1e1e;
+    border-color: #666;
+    color: #ddd;
+}
+
 .top-ad-demo {
     width: 100%;
     max-width: 970px;
@@ -490,8 +505,8 @@ body.dark-mode .vertical-sidebar a:hover {
     top: 15px;
 }
 
-@media (max-width: 900px){
-    .side-ad-demo{
-        display:none;
+@media (max-width: 900px) {
+    .side-ad-demo {
+        display: none;
     }
 }
