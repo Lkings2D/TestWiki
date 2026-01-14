@@ -20,117 +20,151 @@
         </nav>
     </header>
 
-    <div class="container" style="margin-top: 50px;">
-        <!-- Content Box -->
-        <div class="content-box">
+    <div class="page-wrapper" style="margin-top: 50px; display: flex; gap: 20px; align-items: flex-start;">
 
-            <div class="content-box">
-                <div class="wiki-content" style="text-align: center; max-width: 800px; margin: auto;">
+        <!-- Sidebar column (image + sidebar stacked vertically) -->
+        <div class="sidebar-column" style="display: flex; flex-direction: column; gap: 10px; flex: 0 0 200px;">
 
-                    <h1><b>Welcome to the Official Wiki</b></h1>
+            <!-- Image above the sidebar -->
+            <img src="/Photos/LkLogo.png" alt="Top Image" class="sidebar-top-image">
 
-                    <p>
-                        This wiki is the <span class="muted">central knowledge base</span> for accurate
-                        information, documentation, and updates.
-                    </p>
-
-                    <p>
-                        It is designed to be clear, accessible, and easy to navigate for all users.
-                    </p>
-
-                    <p>Here you will find:</p>
-
-                    <ul style="list-style-position: inside; padding: 0;">
-                        <li><span class="muted">Guides</span> to help you get started</li>
-                        <li><span class="muted">Detailed explanations</span> of features and systems</li>
-                        <li><span class="muted">Up-to-date information</span> as the project evolves</li>
+            <!-- Sidebar -->
+            <div class="content-box" style="padding: 20px; margin-bottom: 0px;">
+                <div class="vertical-sidebar">
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">Guides</a></li>
+                        <li><a href="#">Resources</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Forums</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Downloads</a></li>
+                        <li><a href="#">Events</a></li>
+                        <li><a href="#">Partners</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Feedback</a></li>
                     </ul>
-
-                    <p class="accent">
-                        Whether you are new or experienced, this wiki aims to be a
-                        reliable reference for everyone.
-                    </p>
-
                 </div>
             </div>
-            <div class="box-container">
-                <!-- Box 1 -->
-                <section id="box1" class="box"
-                    style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;">
-                    <img src="/Photos/MobFavicon.png" alt="Box 1" style="max-width: 70%; height: auto;">
-                    <p><a href="#" class="blue-box"
-                            style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Items</a>
-                    </p>
-                </section>
+        </div>
 
-                <!-- Box 2 -->
-                <section id="box2" class="box"
-                    style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;">
-                    <img src="/Photos/MobFavicon.png" alt="Box 2" style="max-width: 70%; height: auto;">
-                    <p><a href="/Mobs/index.html" class="blue-box"
-                            onclick="event.preventDefault(); loadContent('/Mobs/index.html');"
-                            style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Mobs</a>
-                    </p>
-                </section>
+        <div class="container" style="margin-top: 0px; padding: 0px; margin-left: 0px;">
+            <!-- Content Box -->
+            <div class="content-box" style="margin-bottom: 0px;">
 
-                <!-- Box 3 -->
-                <section id="box3" class="box"
-                    style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;">
-                    <img src="/Photos/MobFavicon.png" alt="Box 3" style="max-width: 70%; height: auto;">
-                    <p><a href="#" class="blue-box"
-                            style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Enchants</a>
-                    </p>
-                </section>
+                <div class="content-box">
+                    <div class="wiki-content" style="text-align: center; max-width: 800px; margin: auto;">
 
-                <!-- Box 4 -->
-                <section id="box4" class="box"
-                    style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;">
-                    <img src="/Photos/LkLogo.png" alt="Box 4" style="max-width: 35%; height: auto;">
-                    <p><a href="https://youtube.com/channel/UCbT7lMYjI2OH878HRWpREpQ?sub_confirmation=1" target="_blank"
-                            class="blue-box"
-                            style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Video
-                            Guides</a></p>
-                </section>
+                        <h1><b>Welcome to the Official Wiki</b></h1>
 
-                <!-- Box 5 -->
-                <section id="box5" class="box"
-                    style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;">
-                    <img src="/Photos/disc.png" alt="Box 5" style="max-width: 52%; height: auto;">
-                    <p><a href="#" class="blue-box"
-                            style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Discord</a>
-                    </p>
-                </section>
+                        <p>
+                            This wiki is the <span class="muted">central knowledge base</span> for accurate
+                            information, documentation, and updates.
+                        </p>
 
-                <!-- Box 6 -->
-                <section id="box6" class="box"
-                    style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;">
-                    <img src="/Photos/MobFavicon.png" alt="Box 6"
-                        style="max-width: 70%; height: auto;">
-                    <p><a href="#" class="blue-box"
-                            style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Learn
-                            more</a></p>
-                </section>
-                <!-- Box 7 -->
-                <section id="box7" class="box"
-                    style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;">
-                    <img src="/Photos/MobFavicon.png" alt="Box 7"
-                        style="max-width: 70%; height: auto;">
-                    <p><a href="#" class="blue-box"
-                            style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Learn
-                            more</a></p>
-                </section>
-                <!-- Box 8 -->
-                <section id="box8" class="box"
-                    style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;">
-                    <img src="/Photos/MobFavicon.png" alt="Box 8"
-                        style="max-width: 70%; height: auto;">
-                    <p><a href="#" class="blue-box"
-                            style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Learn
-                            more</a></p>
-                </section>
+                        <p>
+                            It is designed to be clear, accessible, and easy to navigate for all users.
+                        </p>
+
+                        <p>Here you will find:</p>
+
+                        <ul style="list-style-position: inside; padding: 0;">
+                            <li><span class="muted">Guides</span> to help you get started</li>
+                            <li><span class="muted">Detailed explanations</span> of features and systems</li>
+                            <li><span class="muted">Up-to-date information</span> as the project evolves</li>
+                        </ul>
+
+                        <p class="accent">
+                            Whether you are new or experienced, this wiki aims to be a
+                            reliable reference for everyone.
+                        </p>
+
+                    </div>
+                </div>
+                <div class="box-container">
+
+                    <!-- Box 1 -->
+                    <section id="box1" class="box"
+                        style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;">
+                        <img src="/Photos/MobFavicon.png" alt="Box 1" style="max-width: 70%; height: auto;">
+                        <p><a href="#" class="blue-box"
+                                style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Items</a>
+                        </p>
+                    </section>
+
+                    <!-- Box 2 -->
+                    <section id="box2" class="box"
+                        style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;">
+                        <img src="/Photos/MobFavicon.png" alt="Box 2" style="max-width: 70%; height: auto;">
+                        <p><a href="/Mobs/index.html" class="blue-box"
+                                onclick="event.preventDefault(); loadContent('/Mobs/index.html');"
+                                style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Mobs</a>
+                        </p>
+                    </section>
+
+                    <!-- Box 3 -->
+                    <section id="box3" class="box"
+                        style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;">
+                        <img src="/Photos/MobFavicon.png" alt="Box 3" style="max-width: 70%; height: auto;">
+                        <p><a href="#" class="blue-box"
+                                style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Enchants</a>
+                        </p>
+                    </section>
+
+                    <!-- Box 4 -->
+                    <section id="box4" class="box"
+                        style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;">
+                        <img src="/Photos/LkLogo.png" alt="Box 4" style="max-width: 35%; height: auto;">
+                        <p><a href="https://youtube.com/channel/UCbT7lMYjI2OH878HRWpREpQ?sub_confirmation=1"
+                                target="_blank" class="blue-box"
+                                style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Video
+                                Guides</a></p>
+                    </section>
+
+                    <!-- Box 5 -->
+                    <section id="box5" class="box"
+                        style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;">
+                        <img src="/Photos/disc.png" alt="Box 5" style="max-width: 52%; height: auto;">
+                        <p><a href="#" class="blue-box"
+                                style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Discord</a>
+                        </p>
+                    </section>
+
+                    <!-- Box 6 -->
+                    <section id="box6" class="box"
+                        style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;">
+                        <img src="/Photos/MobFavicon.png" alt="Box 6" style="max-width: 70%; height: auto;">
+                        <p><a href="#" class="blue-box"
+                                style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Learn
+                                more</a></p>
+                    </section>
+                    <!-- Box 7 -->
+                    <section id="box7" class="box"
+                        style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;">
+                        <img src="/Photos/MobFavicon.png" alt="Box 7" style="max-width: 70%; height: auto;">
+                        <p><a href="#" class="blue-box"
+                                style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Learn
+                                more</a></p>
+                    </section>
+                    <!-- Box 8 -->
+                    <section id="box8" class="box"
+                        style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;">
+                        <img src="/Photos/MobFavicon.png" alt="Box 8" style="max-width: 70%; height: auto;">
+                        <p><a href="#" class="blue-box"
+                                style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Learn
+                                more</a></p>
+                    </section>
+                </div>
             </div>
         </div>
     </div>
+
 
     <footer>
         <p>Made by @Lkings</p>
