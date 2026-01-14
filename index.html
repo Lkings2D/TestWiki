@@ -11,10 +11,7 @@
 <body>
 
     <header>
-        <a href="/index.html" class="logo" style="color: white; text-decoration: none;"
-            onclick="event.preventDefault(); loadContent('/index.html');">
-            Lkings Wiki
-        </a>
+        <h1 style="text-align: center; margin-top: 10px;">Lkings Wiki</h1>
         <nav>
             <button id="dark-mode-btn">🌙 Dark Mode</button>
         </nav>
@@ -25,11 +22,12 @@
         <!-- Sidebar column (image + sidebar stacked vertically) -->
         <div class="sidebar-column" style="display: flex; flex-direction: column; gap: 10px; flex: 0 0 200px;">
 
-            <!-- Image above the sidebar -->
-            <img src="/Photos/LkLogo.png" alt="Top Image" class="sidebar-top-image">
+            <!-- Image above the sidebar, now clickable -->
+            <img src="/Photos/LkLogo.png" alt="Top Image" class="sidebar-top-image" style="cursor: pointer;"
+                onclick="loadContent('/index.html');">
 
             <!-- Sidebar -->
-            <div class="content-box" style="padding: 20px; margin-bottom: 0px;">
+            <div class="content-box sidecontentbox" style="padding: 20px; margin-bottom: 0px;">
                 <div class="vertical-sidebar">
                     <h2>Quick Links</h2>
                     <ul>
@@ -58,8 +56,10 @@
             <!-- Content Box -->
             <div class="content-box" style="margin-bottom: 0px;">
 
-                <div class="content-box">
-                    <div class="wiki-content" style="text-align: center; max-width: 800px; margin: auto;">
+                <div class="content-box" style="margin-bottom: 0px;">
+
+                    <div class="wiki-content" style="text-align: center; max-width: 800px; margin: auto;"
+                        id="main-content">
 
                         <h1><b>Welcome to the Official Wiki</b></h1>
 
