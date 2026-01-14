@@ -71,22 +71,22 @@
         color: #e0e0e0;
     }
 
-    /* Content Box */
-    .content-box {
-        background-color: #f5f5f5;
-        border: 1px solid #ddd;
-        padding: 20px;
-        border-radius: 8px;
-        margin-bottom: 30px;
-        min-height: 200px;
-        transition: background-color 0.3s, border-color 0.3s;
-    }
-
-    /* Base content box styles (common to both modes) */
     .content-box {
         position: relative;
+        /* needed if you want pseudo-elements for borders */
+        background-color: #f5f5f5;
+        /* inner background */
+        border: 1px solid #ddd;
+        /* solid border */
         padding: 32px;
+        /* space inside the border */
         border-radius: 16px;
+        /* rounded corners */
+        margin-bottom: 30px;
+        min-height: 200px;
+        box-sizing: border-box;
+        /* ensures padding stays inside the border */
+        transition: background-color 0.3s, border-color 0.3s;
     }
 
     .content-box::before {
@@ -166,13 +166,12 @@
         }
     }
 
-
-
-
-
     body.dark-mode .content-box {
         background-color: #333;
         border-color: #555;
+        padding: 32px;
+        border-radius: 16px;
+        box-sizing: border-box;
     }
 
     .content-box h2 {
@@ -354,4 +353,191 @@
 
     body.dark-mode .wiki-content .accent {
         color: #5eead4;
+    }
+
+    /* ----------------- Vertical Sidebar ----------------- */
+    .vertical-sidebar {
+        flex: 0 0 200px;
+        /* Fixed width sidebar */
+        display: flex;
+        flex-direction: column;
+        /* Stack boxes vertically */
+        gap: 15px;
+        padding: 10px;
+        background-color: #e0e0e0;
+        /* Light gray background */
+        border-radius: 10px;
+    }
+
+    /* Boxes inside the vertical sidebar */
+    .vertical-sidebar .box {
+        text-align: center;
+        padding: 15px;
+        background-color: #0066cc;
+        /* Default box color */
+        color: white;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .vertical-sidebar .box img {
+        max-width: 70%;
+        height: auto;
+    }
+
+    .vertical-sidebar .box a {
+        display: inline-block;
+        padding: 8px 15px;
+        background-color: #004aad;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        font-size: 14px;
+        transition: transform 0.3s;
+    }
+
+    .vertical-sidebar .box a:hover {
+        transform: scale(1.1);
+    }
+
+    /* Dark mode for sidebar */
+    body.dark-mode .vertical-sidebar {
+        background-color: #2a2a2a;
+    }
+
+    body.dark-mode .vertical-sidebar .box {
+        background-color: #333;
+    }
+
+    body.dark-mode .vertical-sidebar .box a {
+        background-color: #1a73e8;
+    }
+
+    .vertical-sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Parent wrapper to hold sidebar + main content */
+    .page-wrapper {
+        display: flex;
+        gap: 20px;
+        /* Space between sidebar and content */
+        align-items: flex-start;
+    }
+
+    /* Sidebar content box */
+    .vertical-sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Sidebar heading */
+    .vertical-sidebar h2 {
+        margin-bottom: 10px;
+        color: #2563eb;
+        /* Matches your wiki headings */
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    /* Sidebar list */
+    .vertical-sidebar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Sidebar items */
+    .vertical-sidebar li {
+        margin-bottom: 8px;
+    }
+
+    /* Sidebar links */
+    .vertical-sidebar a {
+        text-decoration: none;
+        color: #0066cc;
+        font-weight: bold;
+        display: block;
+        padding: 5px 8px;
+        border-radius: 5px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Hover effect for links */
+    .vertical-sidebar a:hover {
+        background-color: #0066cc;
+        color: white;
+    }
+
+    /* Dark mode for sidebar */
+    body.dark-mode .vertical-sidebar {
+        background-color: #2a2a2a;
+    }
+
+    body.dark-mode .vertical-sidebar a {
+        color: #60a5fa;
+    }
+
+    body.dark-mode .vertical-sidebar a:hover {
+        background-color: #60a5fa;
+        color: #1a1a1a;
+    }
+
+    .vertical-sidebar h2 {
+        margin-left: 5px;
+        /* move it slightly left */
+        text-align: left;
+        /* ensure text aligns to left */
+        color: #2563eb;
+        font-size: 1.0rem;
+        margin-bottom: 10px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .page-wrapper {
+            flex-direction: column;
+            /* Stack sidebar and content on small screens */
+        }
+
+        .vertical-sidebar {
+            flex: 1;
+            margin-bottom: 20px;
+        }
+    }
+
+    .sidebar-top-image {
+        width: 100px;
+        /* set desired width */
+        border-radius: 8px;
+        align-self: center;
+        /* centers image in flex column */
+    }
+
+    .wiki-content {
+        background-color: rgb(224, 224, 224);
+        /* light gray */
+        padding: 20px;
+        /* spacing inside the box */
+        border-radius: 8px;
+        /* smooth corners */
+        max-width: 800px;
+        margin: auto;
+        text-align: center;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Dark mode override */
+    body.dark-mode .wiki-content {
+        background-color: rgb(42, 42, 42);
+        /* darker gray for dark mode */
+        color: #e0e0e0;
+        /* text color adjustment for readability */
     }
