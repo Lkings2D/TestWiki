@@ -79,6 +79,26 @@
             color: #e0e0e0;
         }
 
+        /* Content Box */
+        .content-box {
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            min-height: 200px;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+
+        body.dark-mode .content-box {
+            background-color: #333;
+            border-color: #555;
+        }
+
+        .content-box h2 {
+            margin-top: 0;
+        }
+
         h1,
         h2 {
             color: #333;
@@ -117,10 +137,10 @@
 
         .box {
             border: 1px solid #ddd;
-            padding: 20px;
+            padding: 15px;
             background-color: #ffffff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: calc(33.33% - 20px);
+            width: calc(25% - 20px);
             box-sizing: border-box;
             transition: background-color 0.3s, border-color 0.3s, background-image 0.3s;
             background-image: url('/Photos/LightBoxBG.jpg');
@@ -132,6 +152,15 @@
             background-color: #333;
             border-color: #555;
             background-image: url('/Photos/DarkBoxBG.jpeg');
+        }
+
+        .box img {
+            max-width: 60%;
+            height: auto;
+        }
+
+        .box p {
+            margin: 10px 0 0 0;
         }
 
         footer {
@@ -211,71 +240,95 @@
 <body>
 
     <header>
-        <div class="logo">
+        <a href="/index.html" class="logo" style="color: white; text-decoration: none;" onclick="event.preventDefault(); loadContent('/index.html');">
             Wiki Page
-        </div>
+        </a>
         <nav>
             <button id="dark-mode-btn">🌙 Dark Mode</button>
         </nav>
     </header>
 
     <div class="container" style="margin-top: 50px;">
-        <div class="box-container">
-            <!-- Box 1 -->
-            <section id="box1" class="box"
-                style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                <img src="/Photos/pic1.jpeg" alt="Box 1" style="max-width: 40%; height: auto;">
-                <p><a href="#" class="blue-box"
-                        style="display: inline-block; padding: 10px 20px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px;">Items</a>
-                </p>
-            </section>
+        <!-- Content Box -->
+        <div class="content-box">
+            <h2>Welcome</h2>
+            <p>Add your content here. This box is perfect for introductions, descriptions, or any text content you want
+                to display.
+            </p>
 
-            <!-- Box 2 -->
-            <section id="box2" class="box"
-                style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                <img src="/Photos/pic1.jpeg" alt="Box 2" style="max-width: 40%; height: auto;">
-                <p><a href="#" class="blue-box"
-                        style="display: inline-block; padding: 10px 20px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px;">Mobs</a>
-                </p>
-            </section>
 
-            <!-- Box 3 -->
-            <section id="box3" class="box"
-                style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                <img src="/Photos/pic1.jpeg" alt="Box 3" style="max-width: 40%; height: auto;">
-                <p><a href="#" class="blue-box"
-                        style="display: inline-block; padding: 10px 20px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px;">Enchants</a>
-                </p>
-            </section>
+            <div class="box-container">
+                <!-- Box 1 -->
+                <section id="box1" class="box"
+                    style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <img src="/Photos/MobFavicon.png" alt="Box 1" style="max-width: 80%; height: auto; margin-top: 75px;">
+                    <p><a href="#" class="blue-box"
+                            style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Items</a>
+                    </p>
+                </section>
 
-            <!-- Box 4 -->
-            <section id="box4" class="box"
-                style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                <img src="/Photos/LkLogo.png" alt="Box 4" style="max-width: 45%; height: auto;">
-                <p><a href="https://youtube.com/channel/UCbT7lMYjI2OH878HRWpREpQ?sub_confirmation=1" target="_blank"
-                        class="blue-box"
-                        style="display: inline-block; padding: 10px 20px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px;">Video
-                        Guides</a></p>
-            </section>
+                <!-- Box 2 -->
+                <section id="box2" class="box"
+                    style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <img src="/Photos/MobFavicon.png" alt="Box 2" style="max-width: 80%; height: auto; margin-top: 75px;">
+                        <p style="margin-top: 15px;"><a href="/Mobs/index.html" class="blue-box" onclick="event.preventDefault(); loadContent('/Mobs/index.html');"
+                            style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Mobs</a>
+                    </p>
+                </section>
 
-            <!-- Box 5 -->
-            <section id="box5" class="box"
-                style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                <img src="/Photos/disc.png" alt="Box 5"
-                    style="max-width: 40%; height: auto; margin-bottom: -30px;margin-top: 74px;">
-                <p style="margin-top: 60px;"><a href="#" class="blue-box"
-                        style="display: inline-block; padding: 10px 20px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px;">Discord</a>
-                </p>
-            </section>
+                <!-- Box 3 -->
+                <section id="box3" class="box"
+                    style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <img src="/Photos/MobFavicon.png" alt="Box 3" style="max-width: 80%; height: auto; margin-top: 75px;">
+                    <p><a href="#" class="blue-box"
+                            style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Enchants</a>
+                    </p>
+                </section>
 
-            <!-- Box 6 -->
-            <section id="box6" class="box"
-                style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                <img src="/Photos/pic1.jpeg" alt="Box 6" style="max-width: 40%; height: auto;">
-                <p><a href="#" class="blue-box"
-                        style="display: inline-block; padding: 10px 20px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px;">Learn
-                        more</a></p>
-            </section>
+                <!-- Box 4 -->
+                <section id="box4" class="box"
+                    style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <img src="/Photos/LkLogo.png" alt="Box 4" style="max-width: 50%; height: auto;">
+                    <p><a href="https://youtube.com/channel/UCbT7lMYjI2OH878HRWpREpQ?sub_confirmation=1" target="_blank"
+                            class="blue-box"
+                            style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Video
+                            Guides</a></p>
+                </section>
+
+                <!-- Box 5 -->
+                <section id="box5" class="box"
+                    style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <img src="/Photos/disc.png" alt="Box 5" style="max-width: 60%; height: auto;">
+                    <p><a href="#" class="blue-box"
+                            style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Discord</a>
+                    </p>
+                </section>
+
+                <!-- Box 6 -->
+                <section id="box6" class="box"
+                    style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <img src="/Photos/MobFavicon.png" alt="Box 6" style="max-width: 70%; height: auto; margin-top: 10px;">
+                    <p><a href="#" class="blue-box"
+                            style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Learn
+                            more</a></p>
+                </section>
+                <!-- Box 7 -->
+                <section id="box7" class="box"
+                    style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <img src="/Photos/MobFavicon.png" alt="Box 7" style="max-width: 70%; height: auto; margin-top: 10px;">
+                    <p><a href="#" class="blue-box"
+                            style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Learn
+                            more</a></p>
+                </section>
+                <!-- Box 8 -->
+                <section id="box8" class="box"
+                    style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <img src="/Photos/MobFavicon.png" alt="Box 8" style="max-width: 70%; height: auto; margin-top: 10px;">
+                    <p><a href="#" class="blue-box"
+                            style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Learn
+                            more</a></p>
+                </section>
+            </div>
         </div>
     </div>
 
@@ -284,6 +337,7 @@
     </footer>
 
     <script src="Dark&Light.js"></script>
+    <script src="SamePage.js"></script>
 
 
 </body>
