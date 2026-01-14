@@ -1,543 +1,466 @@
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #ececec;
-        transition: background-color 0.3s;
+/* ==================== Base Styles ==================== */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ececec;
+    transition: background-color 0.3s;
+}
+
+body.dark-mode {
+    background-color: #1a1a1a;
+}
+
+/* ==================== Header ==================== */
+header {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+#dark-mode-btn {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+#dark-mode-btn:hover {
+    background-color: #777;
+}
+
+/* ==================== Container ==================== */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ececec;
+    transition: background-color 0.3s;
+}
+
+body.dark-mode .container {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+/* ==================== Content Box ==================== */
+.content-box {
+    position: relative;
+    /* for pseudo-element gradient border */
+    background-color: #f5f5f5;
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 30px;
+    min-height: 200px;
+    box-sizing: border-box;
+    /* keep padding inside border */
+    overflow: hidden;
+    /* ensures rounded corners clip content */
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Gradient border pseudo-element */
+.content-box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 3px;
+    /* border thickness */
+    background: linear-gradient(135deg, #6ae3ff, #9b6bff, #ff6ad5);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+    animation: hueShift 15s linear infinite;
+}
+
+/* Light mode gradient */
+body:not(.dark-mode) .content-box::before {
+    background: linear-gradient(135deg,
+            rgba(102, 204, 255, 0.5),
+            rgba(179, 129, 255, 0.5),
+            rgba(255, 160, 196, 0.5));
+    padding: 5px;
+    animation: hueShift 25s linear infinite;
+}
+
+/* Dark mode content box */
+body.dark-mode .content-box {
+    background-color: #333;
+    border-color: #555;
+}
+
+/* Heading inside content box */
+.content-box h2 {
+    margin-top: 0;
+}
+
+/* ==================== Headings & Text ==================== */
+h1,
+h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+body.dark-mode h1,
+body.dark-mode h2 {
+    color: #e0e0e0;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ==================== Wiki Content ==================== */
+.wiki-content {
+    background-color: rgb(224, 224, 224);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.wiki-content h1 {
+    color: #2563eb;
+}
+
+.wiki-content p,
+.wiki-content ul,
+.wiki-content li {
+    color: #4b5563;
+    font-size: 1.05rem;
+}
+
+.wiki-content .muted {
+    color: #6b7280;
+    font-weight: bold;
+}
+
+.wiki-content .accent {
+    color: #0d9488;
+    font-weight: bold;
+}
+
+body.dark-mode .wiki-content {
+    background-color: rgb(42, 42, 42);
+    color: #e0e0e0;
+}
+
+body.dark-mode .wiki-content h1 {
+    color: #60a5fa;
+}
+
+body.dark-mode .wiki-content p,
+body.dark-mode .wiki-content ul,
+body.dark-mode .wiki-content li {
+    color: #d1d5db;
+}
+
+body.dark-mode .wiki-content .muted {
+    color: #9ca3af;
+}
+
+body.dark-mode .wiki-content .accent {
+    color: #5eead4;
+}
+
+/* ==================== Boxes & Box Containers ==================== */
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.box {
+    border: 1px solid #ddd;
+    padding: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: calc(25% - 20px);
+    box-sizing: border-box;
+    background-image: url('/Photos/LightBoxBG.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: background-color 0.3s, border-color 0.3s, background-image 0.3s;
+}
+
+body.dark-mode .box {
+    background-color: #333;
+    border-color: #555;
+    background-image: url('/Photos/DarkBoxBG.jpeg');
+}
+
+.box img {
+    max-width: 60%;
+    height: auto;
+}
+
+.box p {
+    margin: 10px 0 0 0;
+}
+
+.blue-box {
+    transition: transform 0.3s;
+}
+
+.blue-box:hover {
+    transform: scale(1.1);
+}
+
+/* ==================== Footer ==================== */
+footer {
+    text-align: center;
+    font-size: 12px;
+    color: #888;
+    margin-top: 20px;
+    transition: color 0.3s;
+}
+
+body.dark-mode footer {
+    color: #999;
+}
+
+/* ==================== Sidebar ==================== */
+.page-wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.vertical-sidebar {
+    flex: 0 0 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+}
+
+.vertical-sidebar h2 {
+    margin-bottom: 10px;
+    margin-left: 5px;
+    text-align: left;
+    font-size: 1rem;
+    color: #2563eb;
+}
+
+.vertical-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.vertical-sidebar li {
+    margin-bottom: 8px;
+}
+
+.vertical-sidebar a {
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: bold;
+    display: block;
+    padding: 5px 8px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.vertical-sidebar a:hover {
+    background-color: #0066cc;
+    color: white;
+}
+
+/* Boxes inside sidebar */
+.vertical-sidebar .box {
+    text-align: center;
+    padding: 15px;
+    background-color: #0066cc;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.vertical-sidebar .box img {
+    max-width: 70%;
+    height: auto;
+}
+
+.vertical-sidebar .box a {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #004aad;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: transform 0.3s;
+}
+
+.vertical-sidebar .box a:hover {
+    transform: scale(1.1);
+}
+
+/* Sidebar dark mode */
+body.dark-mode .vertical-sidebar {
+    background-color: #2a2a2a;
+}
+
+body.dark-mode .vertical-sidebar .box {
+    background-color: #333;
+}
+
+body.dark-mode .vertical-sidebar .box a {
+    background-color: #1a73e8;
+    color: white;
+}
+
+body.dark-mode .vertical-sidebar a {
+    color: #60a5fa;
+}
+
+body.dark-mode .vertical-sidebar a:hover {
+    background-color: #60a5fa;
+    color: #1a1a1a;
+}
+
+/* Sidebar top image */
+.sidebar-top-image {
+    width: 100px;
+    border-radius: 8px;
+    align-self: center;
+}
+
+/* ==================== Animations ==================== */
+@keyframes hueShift {
+    0% {
+        filter: hue-rotate(0deg);
     }
 
-    body.dark-mode {
-        background-color: #1a1a1a;
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 1024px) {
+    .box {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .page-wrapper {
+        flex-direction: column;
     }
 
-    /* Header Style */
-    header {
-        background-color: #333;
-        color: white;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 20px;
-        flex-wrap: wrap;
-    }
-
-    header .logo {
-        font-size: 24px;
-        font-weight: bold;
-    }
-
-    header nav {
-        display: flex;
-        gap: 20px;
-        align-items: center;
-    }
-
-    header nav a {
-        color: white;
-        text-decoration: none;
-        font-size: 16px;
-        font-weight: normal;
-    }
-
-    header nav a:hover {
-        text-decoration: underline;
-    }
-
-    #dark-mode-btn {
-        background-color: #555;
-        color: white;
-        border: none;
-        padding: 8px 15px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 14px;
-        transition: background-color 0.3s;
-    }
-
-    #dark-mode-btn:hover {
-        background-color: #777;
-    }
-
-    .container {
-        max-width: 1200px;
-        margin: 20px auto;
-        padding: 20px;
-        background-color: #ececec;
-        transition: background-color 0.3s;
-    }
-
-    body.dark-mode .container {
-        background-color: #2a2a2a;
-        color: #e0e0e0;
-    }
-
-    .content-box {
-        position: relative;
-        /* needed if you want pseudo-elements for borders */
-        background-color: #f5f5f5;
-        /* inner background */
-        border: 1px solid #ddd;
-        /* solid border */
-        padding: 32px;
-        /* space inside the border */
-        border-radius: 16px;
-        /* rounded corners */
-        margin-bottom: 30px;
-        min-height: 200px;
-        box-sizing: border-box;
-        /* ensures padding stays inside the border */
-        transition: background-color 0.3s, border-color 0.3s;
-    }
-
-    .content-box::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: inherit;
-        padding: 3px;
-        /* thickness of the border */
-        background: linear-gradient(135deg,
-                #6ae3ff,
-                #9b6bff,
-                #ff6ad5);
-        -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-        -webkit-mask-composite: xor;
-        mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-        mask-composite: exclude;
-
-
-        /* Animate hue rotation (RGB cycling) */
-        animation: hueShift 15s linear infinite;
-        pointer-events: none;
-        /* allow clicks to pass through */
-
-    }
-
-    /* Keyframes for hue rotation */
-    @keyframes hueShift {
-        0% {
-            filter: hue-rotate(0deg);
-        }
-
-        100% {
-            filter: hue-rotate(360deg);
-        }
-    }
-
-    /* Light mode gradient override with RGB rotation */
-    body:not(.dark-mode) .content-box::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        border-radius: inherit;
-
-        /* Thicker, pastel gradient for light mode */
-        background: linear-gradient(135deg,
-                rgba(102, 204, 255, 0.5),
-                /* soft cyan */
-                rgba(179, 129, 255, 0.5),
-                /* pastel purple */
-                rgba(255, 160, 196, 0.5)
-                /* pastel pink */
-            );
-        padding: 5px;
-        /* slightly thicker border for light mode */
-
-        -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-        -webkit-mask-composite: xor;
-        mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-        mask-composite: exclude;
-
-
-        /* Animate hue rotation for RGB cycling */
-        animation: hueShift 25s linear infinite;
-        pointer-events: none;
-
-    }
-
-    /* Keyframes (reuse the same as dark mode) */
-    @keyframes hueShift {
-        0% {
-            filter: hue-rotate(0deg);
-        }
-
-        100% {
-            filter: hue-rotate(360deg);
-        }
-    }
-
-    body.dark-mode .content-box {
-        background-color: #333;
-        border-color: #555;
-        padding: 32px;
-        border-radius: 16px;
-        box-sizing: border-box;
-    }
-
-    .content-box h2 {
-        margin-top: 0;
-    }
-
-    h1,
-    h2 {
-        color: #333;
-        margin-bottom: 10px;
-    }
-
-    body.dark-mode h1,
-    body.dark-mode h2 {
-        color: #e0e0e0;
-    }
-
-    a {
-        color: #0066cc;
-        text-decoration: none;
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-
-    .toc ul {
-        padding-left: 20px;
-    }
-
-    .toc li {
-        list-style-type: none;
-    }
-
-    /* Flexbox for responsive boxes */
-    .box-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: space-between;
+    .vertical-sidebar {
+        flex: 1;
+        margin-bottom: 20px;
     }
 
     .box {
-        border: 1px solid #ddd;
-        padding: 15px;
-        background-color: #ffffff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        width: calc(25% - 20px);
-        box-sizing: border-box;
-        transition: background-color 0.3s, border-color 0.3s, background-image 0.3s;
-        background-image: url('/Photos/LightBoxBG.jpg');
-        background-size: cover;
-        background-position: center;
+        width: 100%;
     }
 
-    body.dark-mode .box {
-        background-color: #333;
-        border-color: #555;
-        background-image: url('/Photos/DarkBoxBG.jpeg');
+    header {
+        padding: 10px 15px;
     }
 
-    .box img {
-        max-width: 60%;
-        height: auto;
+    header .logo {
+        font-size: 20px;
     }
 
-    .box p {
-        margin: 10px 0 0 0;
-    }
-
-    footer {
-        text-align: center;
-        font-size: 12px;
-        color: #888;
-        margin-top: 20px;
-        transition: color 0.3s;
-    }
-
-    body.dark-mode footer {
-        color: #999;
-    }
-
-    .blue-box {
-        transition: transform 0.3s;
-    }
-
-    .blue-box:hover {
-        transform: scale(1.1);
-    }
-
-    /* Tablet: 2 boxes per row */
-    @media (max-width: 1024px) {
-        .box {
-            width: calc(50% - 20px);
-        }
-    }
-
-    /* Mobile: 1 box per row */
-    @media (max-width: 768px) {
-        .box {
-            width: 100%;
-        }
-
-        header {
-            padding: 10px 15px;
-        }
-
-        header .logo {
-            font-size: 20px;
-        }
-
-        header nav {
-            gap: 10px;
-            font-size: 14px;
-        }
-
-        .container {
-            padding: 15px;
-            margin: 20px 10px;
-        }
-    }
-
-    /* Small mobile devices */
-    @media (max-width: 480px) {
-        header .logo {
-            font-size: 18px;
-        }
-
-        header nav {
-            gap: 8px;
-            font-size: 12px;
-        }
-
-        .container {
-            padding: 10px;
-        }
-
-        .box {
-            padding: 15px;
-        }
-    }
-
-    /* Wiki text colors (light mode default) */
-    .wiki-content h1 {
-        color: #2563eb;
-    }
-
-    .wiki-content p,
-    .wiki-content ul,
-    .wiki-content li {
-        color: #4b5563;
-        font-size: 1.05rem;
-    }
-
-    .wiki-content .muted {
-        color: #6b7280;
-        font-weight: bold;
-    }
-
-    .wiki-content .accent {
-        color: #0d9488;
-        font-weight: bold;
-    }
-
-    /* Dark mode overrides */
-    body.dark-mode .wiki-content h1 {
-        color: #60a5fa;
-    }
-
-    body.dark-mode .wiki-content p,
-    body.dark-mode .wiki-content ul,
-    body.dark-mode .wiki-content li {
-        color: #d1d5db;
-    }
-
-    body.dark-mode .wiki-content .muted {
-        color: #9ca3af;
-    }
-
-    body.dark-mode .wiki-content .accent {
-        color: #5eead4;
-    }
-
-    /* ----------------- Vertical Sidebar ----------------- */
-    .vertical-sidebar {
-        flex: 0 0 200px;
-        /* Fixed width sidebar */
-        display: flex;
-        flex-direction: column;
-        /* Stack boxes vertically */
-        gap: 15px;
-        padding: 10px;
-        background-color: #e0e0e0;
-        /* Light gray background */
-        border-radius: 10px;
-    }
-
-    /* Boxes inside the vertical sidebar */
-    .vertical-sidebar .box {
-        text-align: center;
-        padding: 15px;
-        background-color: #0066cc;
-        /* Default box color */
-        color: white;
-        border-radius: 8px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    header nav {
         gap: 10px;
-        transition: background-color 0.3s, transform 0.3s;
-    }
-
-    .vertical-sidebar .box img {
-        max-width: 70%;
-        height: auto;
-    }
-
-    .vertical-sidebar .box a {
-        display: inline-block;
-        padding: 8px 15px;
-        background-color: #004aad;
-        color: white;
-        text-decoration: none;
-        border-radius: 5px;
         font-size: 14px;
-        transition: transform 0.3s;
     }
 
-    .vertical-sidebar .box a:hover {
-        transform: scale(1.1);
+    .container {
+        padding: 15px;
+        margin: 20px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo {
+        font-size: 18px;
     }
 
-    /* Dark mode for sidebar */
-    body.dark-mode .vertical-sidebar {
-        background-color: #2a2a2a;
+    header nav {
+        gap: 8px;
+        font-size: 12px;
     }
 
-    body.dark-mode .vertical-sidebar .box {
-        background-color: #333;
+    .container {
+        padding: 10px;
     }
 
-    body.dark-mode .vertical-sidebar .box a {
-        background-color: #1a73e8;
+    .box {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidecontentbox {
+        display: none; /* hide sidebar content box */
     }
 
-    .vertical-sidebar {
+    .sidebar-column {
+        flex: 0 0 auto;           /* shrink to fit content */
+        width: 100%;              /* full width */
         display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    /* Parent wrapper to hold sidebar + main content */
-    .page-wrapper {
-        display: flex;
-        gap: 20px;
-        /* Space between sidebar and content */
-        align-items: flex-start;
-    }
-
-    /* Sidebar content box */
-    .vertical-sidebar {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    /* Sidebar heading */
-    .vertical-sidebar h2 {
-        margin-bottom: 10px;
-        color: #2563eb;
-        /* Matches your wiki headings */
-        font-size: 1.2rem;
-        text-align: center;
-    }
-
-    /* Sidebar list */
-    .vertical-sidebar ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    /* Sidebar items */
-    .vertical-sidebar li {
-        margin-bottom: 8px;
-    }
-
-    /* Sidebar links */
-    .vertical-sidebar a {
-        text-decoration: none;
-        color: #0066cc;
-        font-weight: bold;
-        display: block;
-        padding: 5px 8px;
-        border-radius: 5px;
-        transition: background-color 0.3s, color 0.3s;
-    }
-
-    /* Hover effect for links */
-    .vertical-sidebar a:hover {
-        background-color: #0066cc;
-        color: white;
-    }
-
-    /* Dark mode for sidebar */
-    body.dark-mode .vertical-sidebar {
-        background-color: #2a2a2a;
-    }
-
-    body.dark-mode .vertical-sidebar a {
-        color: #60a5fa;
-    }
-
-    body.dark-mode .vertical-sidebar a:hover {
-        background-color: #60a5fa;
-        color: #1a1a1a;
-    }
-
-    .vertical-sidebar h2 {
-        margin-left: 5px;
-        /* move it slightly left */
-        text-align: left;
-        /* ensure text aligns to left */
-        color: #2563eb;
-        font-size: 1.0rem;
-        margin-bottom: 10px;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-        .page-wrapper {
-            flex-direction: column;
-            /* Stack sidebar and content on small screens */
-        }
-
-        .vertical-sidebar {
-            flex: 1;
-            margin-bottom: 20px;
-        }
+        justify-content: center;  /* center horizontally */
+        align-items: center;      /* center vertically if needed */
+        margin: 0 auto;           /* ensure proper horizontal centering */
     }
 
     .sidebar-top-image {
-        width: 100px;
-        /* set desired width */
-        border-radius: 8px;
-        align-self: center;
-        /* centers image in flex column */
+        max-width: 120px;          /* constrain image so it doesn’t stretch on large screens */
+        height: auto;
+        margin: 20px 0;
+        display: block;
     }
-
-    .wiki-content {
-        background-color: rgb(224, 224, 224);
-        /* light gray */
-        padding: 20px;
-        /* spacing inside the box */
-        border-radius: 8px;
-        /* smooth corners */
-        max-width: 800px;
-        margin: auto;
-        text-align: center;
-        transition: background-color 0.3s, color 0.3s;
-    }
-
-    /* Dark mode override */
-    body.dark-mode .wiki-content {
-        background-color: rgb(42, 42, 42);
-        /* darker gray for dark mode */
-        color: #e0e0e0;
-        /* text color adjustment for readability */
-    }
+}
