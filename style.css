@@ -128,15 +128,29 @@ body.dark-mode .content-box {
 }
 
 /* ==================== Headings & Text ==================== */
+/* Light mode: general headings */
 h1,
 h2 {
     color: #333;
     margin-bottom: 10px;
 }
 
+/* Light mode: header headings stay white */
+header h1,
+header h2 {
+    color: white;
+}
+
+/* Dark mode: general headings */
 body.dark-mode h1,
 body.dark-mode h2 {
     color: #e0e0e0;
+}
+
+/* Dark mode: header headings stay white */
+body.dark-mode header h1,
+body.dark-mode header h2 {
+    color: white;
 }
 
 a {
