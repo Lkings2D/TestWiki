@@ -524,3 +524,19 @@ body.dark .ad-demo {
         display: none;
     }
 }
+
+/* ==================== Table Responsive ==================== */
+@media (max-width: 480px) {
+    table {
+        font-size: 12px;
+    }
+    
+    table img {
+        width: 35px !important;
+        height: 35px !important;
+    }
+    
+    table th, table td {
+        padding: 6px 4px;
+    }
+}
