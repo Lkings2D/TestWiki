@@ -510,19 +510,7 @@ body.dark .ad-demo {
     max-width: 970px;
     height: 120px;
     margin: 15px auto;
-}
-
-.side-ad-demo {
-    width: 160px;
-    height: 600px;
-    position: sticky;
-    top: 15px;
-}
-
-@media (max-width: 900px) {
-    .side-ad-demo {
-        display: none;
-    }
+    box-sizing: border-box;
 }
 
 /* ==================== Table Responsive ==================== */
