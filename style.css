@@ -526,9 +526,35 @@ body.dark .ad-demo {
 }
 
 /* ==================== Table Responsive ==================== */
+@media (max-width: 768px) {
+    /* Maximize table space on mobile */
+    table {
+        margin: 10px 0 !important;
+        width: 100% !important;
+        max-width: none !important;
+    }
+    
+    .wiki-content {
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: none !important;
+    }
+    
+    .container {
+        padding: 10px 5px !important;
+        margin: 10px 5px !important;
+    }
+    
+    .content-box {
+        padding: 10px !important;
+        margin-bottom: 15px !important;
+    }
+}
+
 @media (max-width: 480px) {
     table {
         font-size: 12px;
+        margin: 5px 0 !important;
     }
     
     table img {
@@ -537,6 +563,15 @@ body.dark .ad-demo {
     }
     
     table th, table td {
-        padding: 6px 4px;
+        padding: 6px 2px;
+    }
+    
+    .container {
+        padding: 5px 2px !important;
+        margin: 5px 2px !important;
+    }
+    
+    .content-box {
+        padding: 8px !important;
     }
 }
