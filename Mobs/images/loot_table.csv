@@ -1,0 +1,538 @@
+Name	Item	Amount	Chance
+Bandit			
+"	"	Gold Coin	10-20	0.5
+"	"	Minor Health Potion	0-0	0.05
+"	"	Paper	0-0	0.005
+"	"	Iron Ingot	0-0	0.005
+"	"	Salmon	0-4	0.1
+"	"	Wood Cutter	0-0	0.0001
+"	"	Metal Chain	0-0	0.001
+Bandit Master			
+"	"	Molten Cape	0-0	0.005
+"	"	Molten Hat	0-0	0.005
+"	"	Molten Pants	0-0	0.005
+"	"	Skull Wand	0-0	0.005
+Bandit Ranger			
+"	"	Prism Armor	0-0	0.005
+"	"	Prism Helmet	0-0	0.005
+"	"	Prism Legs	0-0	0.005
+"	"	Piercing Bow	0-0	0.005
+Behemoth			
+"	"	Gold Coin	40-70	1
+"	"	Bone Axe	0-0	0.01
+"	"	Iron Ore	0-0	0.005
+"	"	Legion Legs	0-0	0.001
+"	"	Royal Helmet	0-0	0.001
+"	"	Royal Legs	0-0	0.001
+"	"	Illusion Hat	0-0	0.001
+"	"	Illusion Pants	0-0	0.001
+"	"	Chain Legs	0-0	0.01
+"	"	Strong Health Potion	0-1	0.01
+"	"	Strong Mana Potion	0-1	0.01
+"	"	Harplane Hat	0-0	0.01
+"	"	Behemoth Hoof	0-0	0.005
+"	"	Energy Shard	0-0	0.001
+"	"	Bone	0-0	0.005
+"	"	Warrior Legs	0-0	0.005
+"	"	Green Pants	0-0	0.005
+Bel'morak			
+"	"	Gold Coin	4000-6000	1
+"	"	Gold Ore	0-5	0.5
+"	"	Ember Shard	0-10	0.5
+"	"	Ice Shard	0-10	0.5
+"	"	Energy Shard	0-10	0.5
+"	"	Etherial Buckler	0-0	0.001
+Black Wolf			
+"	"	Meat	0-3	0.25
+"	"	Gold Coin	2-9	0.5
+"	"	Wolf Fur	0-0	0.075
+Blizzard Imp			
+"	"	Gold Coin	80-100	0.5
+"	"	Ice Shard	0-2	0.005
+"	"	Power Health Potion	0-0	0.01
+"	"	Power Mana Potion	0-0	0.01
+"	"	Strong Health Potion	0-3	0.1
+"	"	Strong Mana Potion	0-3	0.1
+"	"	Black Sun Tome	0-0	0.0001
+"	"	Arcane Legs	0-0	0.02
+"	"	Gold Plated Legs	0-0	0.005
+"	"	Imp Wing	0-0	0.005
+"	"	Gold Ore	0-0	0.005
+Boar			
+"	"	Gold Coin	3-5	0.8
+"	"	Meat	2-4	0.25
+"	"	Paper	0-0	0.005
+Cyclop			
+"	"	Gold Coin	8-18	0.5
+"	"	Meat	0-3	0.1
+"	"	Leather Boots	0-0	0.05
+"	"	Cyclop Eye	0-0	0.01
+"	"	Cyclop Finger	0-0	0.075
+"	"	Copper Buckler	0-0	0.02
+Cyclop Basher			
+"	"	Chain Armor	0-0	0.01
+"	"	Chain Helmet	0-0	0.01
+"	"	Chain Legs	0-0	0.01
+"	"	Spike Sword	0-0	0.005
+Cyclop Stonethrower			
+"	"	Elven Armor	0-0	0.01
+"	"	Elven Hat	0-0	0.01
+"	"	Elven Legs	0-0	0.01
+"	"	Precise Bow	0-0	0.005
+Cyclop Wizard			
+"	"	Harplane Hat	0-0	0.01
+"	"	Harplane Pants	0-0	0.01
+"	"	Harplane Vest	0-0	0.01
+"	"	Celestial Wand	0-0	0.005
+"	"	Vilshaard's Tome	0-0	0.005
+Demon			
+"	"	Gold Coin	60-200	0.5
+"	"	Death Armor	0-0	0.001
+"	"	Noble Bow	0-0	0.005
+"	"	Power Health Potion	0-2	0.01
+"	"	Power Mana Potion	0-2	0.01
+"	"	Strong Health Potion	0-3	0.1
+"	"	Strong Mana Potion	0-3	0.1
+"	"	Steel Armor	0-0	0.01
+"	"	Royal Armor	0-0	0.002
+"	"	Eldrith's Cape	0-0	0.001
+"	"	Iron Ore	0-0	0.015
+"	"	Gold Ore	0-0	0.0075
+"	"	Demon Core	0-0	0.005
+"	"	Spiked Boots	0-0	0.0025
+"	"	Eclipse Band	0-0	0.0001
+"	"	Emerald Crest	0-0	0.001
+"	"	Ember Shard	0-0	0.002
+"	"	Enforced Plated Helmet	0-0	0.01
+Demonic Behemoth			
+"	"	Aegis Shield	0-0	0.001
+"	"	Sword of Flames	0-0	0.001
+"	"	Demonic Bow	0-0	0.001
+"	"	Death Wand	0-0	0.001
+"	"	Gold Ore	0-0	0.005
+"	"	Celestial Wand	0-0	0.005
+"	"	Spike Sword	0-0	0.005
+"	"	Precise Bow	0-0	0.005
+"	"	Gold Coin	50-150	0.5
+"	"	Strong Health Potion	0-3	0.01
+"	"	Strong Mana Potion	0-3	0.01
+"	"	Arcane Veil Tome	0-0	0.0008
+"	"	Behemoth Hoof	0-0	0.005
+"	"	Energy Shard	0-0	0.001
+Devil of Flames			
+"	"	Gold Coin	100-150	0.1
+"	"	Majestic Plate Shield	0-0	0.001
+"	"	Dark Helmet	0-0	0.001
+"	"	Demon Core	0-0	0.0025
+"	"	Strong Health Potion	0-2	0.01
+"	"	Strong Mana Potion	0-2	0.01
+"	"	Power Health Potion	0-2	0.01
+"	"	Power Mana Potion	0-0	0.01
+"	"	Gold Ore	0-0	0.005
+"	"	Iron Ore	0-0	0.01
+"	"	Ember Shard	0-0	0.002
+"	"	Enforced Leather legs	0-0	0.01
+"	"	Enforced Plated Armor	0-0	0.01
+"	"	Enforced Plated Helmet	0-0	0.01
+Devil of Ice			
+"	"	Gold Coin	100-150	0.1
+"	"	Dark Armor	0-0	0.001
+"	"	Eldrith's Circlet	0-0	0.001
+"	"	Demon Core	0-0	0.0025
+"	"	Strong Health Potion	0-2	0.01
+"	"	Strong Mana Potion	0-2	0.01
+"	"	Power Health Potion	0-2	0.01
+"	"	Power Mana Potion	0-2	0.01
+"	"	Gold Ore	0-0	0.005
+"	"	Iron Ore	0-0	0.01
+"	"	Ice Shard	0-0	0.002
+"	"	Arcane Cape	0-0	0.01
+"	"	Arcane Hood	0-0	0.01
+"	"	Arcane Legs	0-0	0.01
+Devil of Lightning			
+"	"	Gold Coin	100-150	0.1
+"	"	Dark Legs	0-0	0.001
+"	"	Eldrith's Cape	0-0	0.001
+"	"	Demon Core	0-0	0.0025
+"	"	Strong Health Potion	0-2	0.01
+"	"	Strong Mana Potion	0-2	0.01
+"	"	Power Health Potion	0-2	0.01
+"	"	Power Mana Potion	0-2	0.01
+"	"	Gold Ore	0-0	0.005
+"	"	Iron Ore	0-0	0.01
+"	"	Energy Shard	0-0	0.002
+"	"	Green Archer Armor	0-0	0.01
+"	"	Green Archer Hat	0-0	0.01
+"	"	Green Archer Legs	0-0	0.01
+Dragon			
+"	"	Gold Coin	25-50	0.5
+"	"	Meat	0-4	0.25
+"	"	Harplane Shield	0-0	0.02
+"	"	Wooden Ring	0-0	0.02
+"	"	Voidscript Tome	0-0	0.002
+"	"	Kings Shield	0-0	0.002
+"	"	Minor Mana Potion	0-0	0.05
+"	"	Minor Health Potion	0-0	0.05
+"	"	Dragon Scale	0-0	0.005
+"	"	Skull	0-0	0.005
+Dragon of Abyss			
+"	"	Gold Plated Armor	0-0	0.0015
+"	"	Gold Plated Helmet	0-0	0.0015
+"	"	Gold Plated Legs	0-0	0.0015
+"	"	Ember Shard	0-0	0.002
+Dwarf			
+"	"	Gold Coin	1-45	0.5
+"	"	Banana	0-3	0.05
+"	"	Iron Axe	0-0	0.01
+"	"	Battle Axe	0-0	0.01
+"	"	Iron Ore	0-0	0.005
+"	"	Dwarf Beard	0-0	0.005
+Dwarf Champion			
+"	"	Dwarf Shield	0-0	0.0025
+"	"	Long Sword	0-0	0.005
+Dwarf Marksman			
+"	"	Tempest Bow	0-0	0.005
+"	"	Hardend Arrow	0-10	0.1
+Dwarf Warlock			
+"	"	Magic Tome	0-0	0.005
+"	"	Mystic Wand	0-0	0.005
+Frozen Djinn			
+"	"	Starforged Shield	0-0	0.005
+"	"	Gold Coin	50-100	0.7
+"	"	Ice Shard	0-0	0.005
+"	"	Amulet of Ice Protection	0-0	0.001
+"	"	Blue Tunic	0-0	0.0001
+"	"	Djinn's Lamp	0-0	0.005
+"	"	Strong Health Potion	0-2	0.01
+"	"	Strong Mana Potion	0-2	0.01
+"	"	Fallen Star Amulet	0-0	0.0004
+"	"	Steel Shield	0-0	0.02
+Glacier Dragon			
+"	"	Mystweave Hood	0-0	0.0015
+"	"	Mystweave Legs	0-0	0.0015
+"	"	Mystweave Robe	0-0	0.0015
+"	"	Storm Wand	0-0	0.0009
+"	"	Ice Shard	0-0	0.002
+Goblin			
+"	"	Gold Coin	12-22	0.5
+"	"	Cod	2-3	0.07
+"	"	Goblin Tooth	0-0	0.02
+"	"	Goblin Ear	0-0	0.02
+"	"	Minor Health Potion	0-0	0.01
+Goblin Reaper			
+"	"	Warrior Helmet	0-0	0.0075
+"	"	Warrior Legs	0-0	0.0075
+"	"	Strong Health Potion	0-0	0.15
+Goblin Shaman			
+"	"	Green Hat	0-0	0.0075
+"	"	Green Pants	0-0	0.0075
+"	"	Strong Mana Potion	0-0	0.15
+"	"	Ancient Tome	0-0	0.005
+Goblin Spearman			
+"	"	Archer Hat	0-0	0.0075
+"	"	Archer Legs	0-0	0.0075
+"	"	Strong Health Potion	0-0	0.15
+Hydra Overlord			
+"	"	Gold Coin	50-150	0.7
+"	"	Ember Shard	0-0	0.001
+"	"	Energy Shard	0-0	0.001
+"	"	Ice Shard	0-0	0.001
+"	"	Gold Ore	0-0	0.001
+"	"	Iron Ore	0-0	0.005
+"	"	Hydra Neck	0-0	0.001
+"	"	Captain's Ring	0-0	0.001
+"	"	Emerald Crest	0-0	0.001
+"	"	Gold Ring	0-0	0.001
+Infernal Hydra			
+"	"	Gold Coin	40-100	0.8
+"	"	Magic Cape	0-0	0.001
+"	"	Magic Circlet	0-0	0.001
+"	"	Magic Pants	0-0	0.001
+"	"	Gold Ore	0-0	0.0025
+"	"	Green Cape	0-0	0.015
+"	"	Green Hat	0-0	0.015
+"	"	Green Pants	0-0	0.015
+"	"	Strong Health Potion	0-2	0.01
+"	"	Strong Mana Potion	0-2	0.01
+"	"	Hydra Neck	0-0	0.005
+"	"	Ember Shard	0-0	0.001
+Inferno Imp			
+"	"	Gold Coin	80-100	0.5
+"	"	Ember Shard	0-0	0.005
+"	"	Power Health Potion	0-0	0.01
+"	"	Power Mana Potion	0-0	0.01
+"	"	Strong Health Potion	0-3	0.1
+"	"	Strong Mana Potion	0-3	0.1
+"	"	Arcane Cape	0-0	0.02
+"	"	Black Sun Tome	0-0	0.0005
+"	"	Gold Plated Armor	0-0	0.005
+"	"	Imp Wing	0-0	0.005
+"	"	Gold Ore	0-0	0.005
+Lich Demon			
+"	"	Gold Coin	60-160	0.5
+"	"	Death Helmet	0-0	0.001
+"	"	Power Health Potion	0-2	0.01
+"	"	Power Mana Potion	0-2	0.01
+"	"	Strong Health Potion	0-3	0.1
+"	"	Strong Mana Potion	0-3	0.01
+"	"	Prism Helmet	0-0	0.01
+"	"	Legion Helmet	0-0	0.005
+"	"	Eldrith's Pants	0-0	0.001
+"	"	Gold Ore	0-0	0.005
+"	"	Demon Core	0-0	0.005
+"	"	Iron Ore	0-0	0.015
+"	"	Spiked Boots	0-0	0.0025
+"	"	Eclipse Band	0-0	0.0001
+"	"	Emerald Crest	0-0	0.001
+"	"	Energy Shard	0-0	0.002
+Minotaur			
+"	"	Gold Coin	10-45	0.5
+"	"	Iron Ore	0-0	0.001
+"	"	Meat	0-3	0.1
+"	"	Boxik's Axe	0-0	0.01
+"	"	Minotaur Horn	0-0	0.005
+"	"	Gold Ring	0-0	0.001
+Minotaur Arcanist			
+"	"	Spirit Tome	0-0	0.001
+"	"	Green Cape	0-0	0.0075
+Minotaur Archer			
+"	"	Archer Armor	0-0	0.0075
+"	"	Wooden Arrow	0-10	0.25
+Minotaur Guard			
+"	"	Warrior Armor	0-0	0.0075
+"	"	Harplane Shield	0-0	0.0075
+Orc			
+"	"	Gold Coin	5-10	0.5
+"	"	Leather Armor	0-0	0.05
+"	"	Leather Legs	0-0	0.05
+"	"	Leather Hood	0-0	0.05
+"	"	Orc Toe	0-0	0.01
+"	"	Orc Fat	0-0	0.075
+"	"	Meat	0-2	0.1
+"	"	Wooden Buckler	0-0	0.02
+"	"	Wooden sword	0-0	0.02
+Orc Clubmaster			
+"	"	Steel Sword	0-0	0.01
+"	"	Copper Armor	0-0	0.01
+"	"	Copper Helmet	0-0	0.01
+"	"	Copper Legs	0-0	0.01
+"	"	Wooden Shield	0-0	0.01
+Orc Shaman			
+"	"	Magic Wand	0-0	0.01
+"	"	Grey Cape	0-0	0.01
+"	"	Grey Hat	0-0	0.01
+"	"	Grey Pants	0-0	0.01
+"	"	Old Tome	0-0	0.01
+Orc Stonethrower			
+"	"	Hard Bow	0-0	0.01
+"	"	Feather Armor	0-0	0.01
+"	"	Feather Hat	0-0	0.01
+"	"	Feather Legs	0-0	0.01
+"	"	Wooden Arrow	0-10	0.05
+Pirate Buccaneer			
+"	"	Gold Coin	50-70	0.5
+"	"	Paper	0-2	0.005
+"	"	Meat	0-2	0.1
+"	"	Iron Ore	0-0	0.005
+"	"	Strong Health Potion	0-2	0.01
+"	"	Strong Mana Potion	0-2	0.01
+"	"	Starforged Shield	0-0	0.002
+"	"	Copper Shield	0-0	0.02
+"	"	Pirate Hook	0-0	0.005
+"	"	Legion Helmet	0-0	0.001
+"	"	Energy Shard	0-0	0.001
+Pirate Captain			
+"	"	Royal Armor	0-0	0.001
+"	"	Illusion Robe	0-0	0.001
+"	"	Iron Ore	0-0	0.005
+"	"	Strong Health Potion	0-2	0.01
+"	"	Strong Mana Potion	0-2	0.01
+"	"	Elven Armor	0-0	0.05
+"	"	Paper	0-0	0.005
+"	"	Gold Coin	50-70	0.5
+"	"	Pirate Hook	0-0	0.005
+"	"	Eye Patch	0-0	0.0025
+"	"	Captain's Ring	0-0	0.001
+"	"	Energy Shard	0-0	0.001
+Pirate Marauder			
+"	"	Crystal Sword	0-0	0.001
+"	"	Noble Bow	0-0	0.001
+"	"	Iron Ore	0-0	0.005
+"	"	Strong Health Potion	0-2	0.01
+"	"	Strong Mana Potion	0-2	0.01
+"	"	Sharp Sword	0-0	0.02
+"	"	Paper	0-0	0.005
+"	"	Gold Coin	50-70	0.5
+"	"	Pirate Hook	0-0	0.005
+"	"	Legion Armor	0-0	0.001
+"	"	Energy Shard	0-0	0.001
+Plague Rat			
+"	"	Cheese	0-2	0.1
+"	"	Gold Coin	0-7	0.5
+Pyro Djinn			
+"	"	Gold Coin	150-200	0.7
+"	"	Ember Shard	0-0	0.005
+"	"	Amulet of Fire Protection	0-0	0.001
+"	"	Blue Tunic	0-0	0.0001
+"	"	Stormbinder Tome	0-0	0.005
+"	"	Djinn's Lamp	0-0	0.005
+"	"	Fallen Star Amulet	0-0	0.0004
+"	"	Steel Shield	0-0	0.02
+Rat			
+"	"	Gold Coin	1-4	0.5
+"	"	Cheese	0-2	0.05
+"	"	Rat Tail	0-0	0.05
+"	"	Rat Teeth	0-0	0.05
+Red Hound			
+"	"	Gold Coin	0-0	0
+"	"	Wolf Fur	0-0	0.075
+Riftborn Hydra			
+"	"	Majestic Plate Armor	0-0	0.001
+"	"	Majestic Plate Helmet	0-0	0.001
+"	"	Majestic Plate Legs	0-0	0.001
+"	"	Gold Coin	40-100	0.8
+"	"	Archer Hat	0-0	0.015
+"	"	Archer Legs	0-0	0.015
+"	"	Archer Armor	0-0	0.015
+"	"	Strong Health Potion	0-1	0.01
+"	"	Strong Mana Potion	0-1	0.01
+"	"	Gold Ore	0-0	0.0025
+"	"	Hydra Neck	0-0	0.005
+"	"	Ice Shard	0-0	0.001
+Serpent Hydra			
+"	"	Gold Coin	40-100	0.7
+"	"	Golden Armor	0-0	0.001
+"	"	Golden Helmet	0-0	0.001
+"	"	Golden Legs	0-0	0.001
+"	"	Strong Health Potion	0-2	0.01
+"	"	Strong Mana Potion	0-2	0.01
+"	"	Warrior Armor	0-0	0.015
+"	"	Warrior Helmet	0-0	0.015
+"	"	Warrior Legs	0-0	0.015
+"	"	Gold Ore	0-0	0.0025
+"	"	Hydra Neck	0-0	0.005
+"	"	Energy Shard	0-0	0.001
+Sheep			
+"	"	Meat	0-3	0.25
+Skeleton			
+"	"	Gold Coin	5-15	0.5
+"	"	Bone	0-0	0.005
+"	"	Skull	0-0	0.025
+"	"	Wooden Ring	0-0	0.005
+Skeleton Ranger			
+"	"	Light Armor	0-0	0.02
+"	"	Light Hat	0-0	0.02
+"	"	Light Legs	0-0	0.02
+"	"	Bulon's Bow	0-0	0.02
+"	"	Steel Arrow	0-10	0.02
+Skeleton Warrior			
+"	"	Plated Armor	0-0	0.02
+"	"	Plated Helmet	0-0	0.02
+"	"	Plated Legs	0-0	0.02
+"	"	Smoked's Sword	0-0	0.02
+Skeleton Witcher			
+"	"	Silver Hat	0-0	0.02
+"	"	Silver Pants	0-0	0.02
+"	"	Silver Robe	0-0	0.02
+"	"	Nebula Wand	0-0	0.02
+"	"	Ripped Tome	0-0	0.02
+Sparkborn Dragon			
+"	"	Ranger Armor	0-0	0.0015
+"	"	Ranger Helmet	0-0	0.0015
+"	"	Ranger Legs	0-0	0.0015
+"	"	Energy Shard	0-0	0.002
+"	"	Stormbinder Tome	0-0	0.001
+Spider			
+"	"	Gold Coin	3-6	0.5
+"	"	Spider Web	0-0	0.001
+"	"	Spider Leg	0-0	0.05
+Swamp Spider			
+"	"	Gold Coin	10-25	0.6
+"	"	Spider Leg	0-0	0.01
+"	"	Spider Web	0-0	0.005
+"	"	Celestial Wand	0-0	0.005
+"	"	Emerald Crest	0-0	0.001
+"	"	Minor Health Potion	0-0	0.01
+"	"	Minor Mana Potion	0-0	0.01
+"	"	Ember Shard	0-0	0.001
+Tarantula			
+"	"	Gold Coin	4-10	0.5
+"	"	Spider Leg	0-2	0.005
+"	"	Spider Web	0-0	0.0025
+Thug			
+"	"	Steel Helmet	0-0	0.01
+"	"	Steel Legs	0-0	0.01
+"	"	Steel Armor	0-0	0.01
+"	"	Sharp Sword	0-0	0.005
+"	"	Copper Shield	0-0	0.01
+Undead Demon			
+"	"	Gold Coin	60-200	0.5
+"	"	Death Legs	0-0	0.001
+"	"	Eldrith's Pants	0-0	0.001
+"	"	Power Health Potion	0-2	0.01
+"	"	Power Mana Potion	0-2	0.01
+"	"	Strong Health Potion	0-3	0.1
+"	"	Strong Mana Potion	0-3	0.01
+"	"	Warrior Legs	0-0	0.01
+"	"	Royal Legs	0-0	0.005
+"	"	Iron Ore	0-0	0.015
+"	"	Gold Ore	0-0	0.0075
+"	"	Demon Core	0-0	0.005
+"	"	Spiked Boots	0-0	0.0025
+"	"	Emerald Crest	0-0	0.001
+"	"	Eclipse Band	0-0	0.0001
+"	"	Ice Shard	0-0	0.002
+Vampire			
+"	"	Gold Coin	12-24	0.5
+"	"	Minor Mana Potion	0-2	0.05
+"	"	Strong Mana Potion	0-2	0.01
+"	"	Steel Shield	0-0	0.0125
+"	"	Vampire Tooth	0-0	0.005
+"	"	Ember Shard	0-0	0.001
+Vampire Assassin			
+"	"	Green Archer Armor	0-0	0.005
+"	"	Green Archer Legs	0-0	0.005
+"	"	Green Archer Hat	0-0	0.005
+"	"	Ember Bow	0-0	0.002
+Vampire Countess			
+"	"	Arcane Cape	0-0	0.005
+"	"	Arcane Hood	0-0	0.005
+"	"	Arcane Legs	0-0	0.005
+"	"	Void Wand	0-0	0.002
+Vampire Lord			
+"	"	Enforced Plated Armor	0-0	0.005
+"	"	Enforced Plated Helmet	0-0	0.005
+"	"	Enforced Leather legs	0-0	0.005
+"	"	Void Sword	0-0	0.002
+Velkrath			
+"	"	Amulet of Energy Protection	0-0	0.001
+"	"	Amulet of Fire Protection	0-0	0.001
+"	"	Gold Coin	4000-6000	1
+"	"	Payne's Cape	0-0	0.001
+Void Djinn			
+"	"	Gold Coin	150-200	0
+"	"	Energy Shard	0-0	0.005
+"	"	Amulet of Energy Protection	0-0	0.001
+"	"	Blue Tunic	0-0	0.0001
+"	"	Illusion Hat	0-0	0.005
+"	"	Strong Health Potion	0-2	0.01
+"	"	Strong Mana Potion	0-2	0.01
+"	"	Djinn's Lamp	0-0	0.005
+"	"	Fallen Star Amulet	0-0	0.0004
+"	"	Steel Shield	0-0	0.02
+Volt Imp			
+"	"	Gold Coin	80-100	0.5
+"	"	Black Sun Tome	0-0	0.0001
+"	"	Energy Shard	0-0	0.005
+"	"	Power Health Potion	0-0	0.01
+"	"	Power Mana Potion	0-0	0.01
+"	"	Strong Health Potion	0-3	0.1
+"	"	Strong Mana Potion	0-3	0.1
+"	"	Arcane Hood	0-0	0.02
+"	"	Gold Plated Helmet	0-0	0.005
+"	"	Imp Wing	0-0	0.005
+"	"	Gold Ore	0-0	0.005
+Wolf			
+"	"	Meat	0-3	0.25
+"	"	Gold Coin	2-6	0.5
+"	"	Wolf Fur	0-0	0.075

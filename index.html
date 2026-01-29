@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wiki Page</title>
+    <title>Halmgaard Wiki</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <header>
-        <h1 style="text-align: center; margin-top: 10px;">Lkings Wiki</h1>
+        <h1 style="text-align: center; margin-top: 10px;">Halmgaard Wiki</h1>
         <nav>
             <button id="dark-mode-btn">🌙 Dark Mode</button>
         </nav>
@@ -23,30 +23,43 @@
         <div class="sidebar-column" style="display: flex; flex-direction: column; gap: 10px; flex: 0 0 200px;">
 
             <!-- Image above the sidebar, now clickable -->
-            <img src="/Photos/LkLogo.png" alt="Top Image" class="sidebar-top-image" style="cursor: pointer;"
+            <img src="/Halmgaard/Logo.png" alt="Top Image" class="sidebar-top-image" style="cursor: pointer;"
                 onclick="loadContent('/');">
 
-            <!-- Sidebar -->
-            <div class="content-box sidecontentbox" style="padding: 20px; margin-bottom: 0px;">
+            <!-- Links Section -->
+            <div class="content-box Essentials-box" id="essentials-mobile" style="padding: 20px; margin-bottom: 0px;">
+                <h3 style="margin-top: 0; text-align: center; color: #2563eb;">Essentials</h3>
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <a href="https://discord.gg/cj42ACTEXv" target="_blank"
+                        style="display: block; padding: 12px; background: linear-gradient(135deg, #5865F2, #4752C4); color: white; text-decoration: none; border-radius: 8px; text-align: center; font-weight: bold; transition: transform 0.3s;">
+                        Halmgaard Discord
+                    </a>
+                    <a href="https://halmgaard.com" target="_blank"
+                        style="display: block; padding: 12px; background: linear-gradient(135deg, #ff8c00, #ffd700); color: white; text-decoration: none; border-radius: 8px; text-align: center; font-weight: bold; transition: transform 0.3s;">
+                        Halmgaard Website
+                    </a>
+                </div>
+            </div>
+
+            <!-- Sidebar - Desktop Only -->
+            <div class="content-box sidecontentbox" id="quicklinks-desktop" style="padding: 20px; margin-bottom: 0px;">
                 <div class="vertical-sidebar">
                     <h2>Quick Links</h2>
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">News</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Tutorials</a></li>
-                        <li><a href="#">Guides</a></li>
-                        <li><a href="#">Resources</a></li>
-                        <li><a href="#">Community</a></li>
-                        <li><a href="#">Forums</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Downloads</a></li>
-                        <li><a href="#">Events</a></li>
-                        <li><a href="#">Partners</a></li>
-                        <li><a href="#">Support</a></li>
-                        <li><a href="#">Feedback</a></li>
+                        <li><a href="index.html" onclick="event.preventDefault(); loadContent('/');">Home</a></li>
+                        <li><a href="Halmgaard/TermsService.html"
+                                onclick="event.preventDefault(); loadContent('/Halmgaard/TermsService/');">Terms of
+                                Service</a></li>
+                        <li><a href="Halmgaard/PrivacyPolicy.html"
+                                onclick="event.preventDefault(); loadContent('/Halmgaard/PrivacyPolicy/');">Privacy and
+                                Policy</a></li>
+                        <li><a href="Halmgaard/AboutPage/index.html"
+                                onclick="event.preventDefault(); loadContent('/Halmgaard/AboutPage/');">About Page</a>
+                        </li>
+                        <li><a href="Halmgaard/ContactPage/index.html"
+                                onclick="event.preventDefault(); loadContent('/Halmgaard/ContactPage/');">Contact
+                                Page</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -56,7 +69,7 @@
             <!-- Content Box -->
             <div class="content-box" style="margin-bottom: 0px;">
                 <div class="ad-demo top-ad-demo">
-                    TOP BANNER AD 970x120 (Demo)
+                    TOP BANNER 970x120 (Demo)
                 </div>
 
                 <div class="content-box" style="margin-bottom: 20px;">
@@ -64,28 +77,38 @@
                     <div class="wiki-content" style="text-align: center; max-width: 800px; margin: auto;"
                         id="main-content">
 
-                        <h1><b>Welcome to the Official Wiki</b></h1>
+                        <h1><b>Welcome to Halmgaard Wiki</b></h1>
 
                         <p>
-                            This wiki is the <span class="muted">central knowledge base</span> for accurate
-                            information, documentation, and updates.
+                            <span class="muted">Halmgaard</span> is an immersive MMO developed by <span
+                                class="muted">Gruset</span>, heavily inspired by the classic MMORPG Tibia and similar
+                            games.
                         </p>
 
                         <p>
-                            It is designed to be clear, accessible, and easy to navigate for all users.
+                            Set in a vast, open world, Halmgaard offers players the freedom to explore diverse
+                            environments, engage in strategic combat, and embark on epic quests. With a focus on
+                            community interaction and challenging gameplay, players can form alliances, discover hidden
+                            treasures, and build their legacy in a world full of danger and adventure.
                         </p>
-
-                        <p>Here you will find:</p>
-
-                        <ul style="list-style-position: inside; padding: 0;">
-                            <li><span class="muted">Guides</span> to help you get started</li>
-                            <li><span class="muted">Detailed explanations</span> of features and systems</li>
-                            <li><span class="muted">Up-to-date information</span> as the project evolves</li>
-                        </ul>
 
                         <p class="accent">
-                            Whether you are new or experienced, this wiki aims to be a
-                            reliable reference for everyone.
+                            Whether you're battling fierce monsters, mastering skills, or uncovering ancient secrets,
+                            Halmgaard promises a nostalgic yet fresh experience for all MMO enthusiasts.
+                        </p>
+
+                        <p>
+                            <span class="muted">Wiki Editors:</span> Lkings, Canuck
+                        </p>
+
+                        <p>
+                            <span class="muted">Wiki Contributers:</span> Gruset [<span style="color: red;">Game
+                                Developer</span>]
+                        </p>
+
+                        <p class="accent">
+                            To help or add content to the Wiki, submit a message in the wiki-feedback channel, in the
+                            Official Halmgaard Discord.
                         </p>
 
                     </div>
@@ -95,49 +118,54 @@
                     <!-- Box 1 -->
                     <section id="box1" class="box"
                         style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;">
-                        <img src="/Photos/ComingSoon.png" alt="Box 1" style="max-width: 55%; height: auto;">
+                        <img src="/Items/images/80CROSSBOW copy.png" alt="Box 1"
+                            style="max-width: 40%; height: auto;margin-top: 30px;">
                         <p><a href="/Items/index.html" class="blue-box"
                                 onclick="event.preventDefault(); loadContent('/Items/');"
-                                style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Items</a>
+                                style="display: inline-block; padding: 10px 18px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 15px;">Items</a>
                         </p>
                     </section>
 
                     <!-- Box 2 -->
                     <section id="box2" class="box"
                         style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;">
-                        <img src="/Photos/MobFavicon.png" alt="Box 2" style="max-width: 70%; height: auto;">
+                        <img src="/Mobs/images/Hydra_overlord copy.png" alt="Box 2"
+                            style="max-width: 40%; height: auto;margin-top: 20px;">
                         <p><a href="/Mobs/index.html" class="blue-box"
                                 onclick="event.preventDefault(); loadContent('/Mobs/');"
-                                style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Mobs</a>
+                                style="display: inline-block; padding: 10px 18px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 15px;">Mobs</a>
                         </p>
                     </section>
 
                     <!-- Box 3 -->
                     <section id="box3" class="box"
                         style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;">
-                        <img src="/Photos/ComingSoon.png" alt="Box 3" style="max-width: 55%; height: auto;">
-                        <p><a href="#" class="blue-box"
-                                style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Coming
-                                Soon</a>
+                        <img src="/Items/images/80tome copy 2.png" alt="Box 3"
+                            style="max-width: 40%; height: auto;margin-top: 35px;">
+                        <p><a href="Halmgaard/ClassEquip/index.html" class="blue-box"
+                                onclick="event.preventDefault(); loadContent('/Halmgaard/ClassEquip/');"
+                                style="display: inline-block; padding: 10px 18px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 15px;">Class
+                                Equipment Guide</a>
                         </p>
                     </section>
 
                     <!-- Box 4 -->
                     <section id="box4" class="box"
                         style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;">
-                        <img src="/Photos/LkLogo.png" alt="Box 4" style="max-width: 35%; height: auto;">
-                        <p><a href="https://youtube.com/channel/UCbT7lMYjI2OH878HRWpREpQ?sub_confirmation=1"
-                                target="_blank" class="blue-box"
-                                style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">YouTube</a>
+                        <img src="/Halmgaard/Blacksmithing.webp" alt="Box 4" style="max-width: 50%; height: auto;margin-top: 20px;">
+                        <p><a href="Halmgaard/Blacksmithing/index.html" class="blue-box"
+                                onclick="event.preventDefault(); loadContent('/Halmgaard/Blacksmithing/');"
+                                style="display: inline-block; padding: 10px 18px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 15px;">Blacksmithing</a>
                         </p>
                     </section>
 
                     <!-- Box 5 -->
                     <section id="box5" class="box"
                         style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;">
-                        <img src="/Photos/disc.png" alt="Box 5" style="max-width: 52%; height: auto;">
-                        <p><a href="#" class="blue-box"
-                                style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Discord</a>
+                        <img src="/Halmgaard/Enchanting.webp" alt="Box 5" style="max-width: 50%; height: auto;;">
+                        <p><a href="Halmgaard/Enchanting/index.html" class="blue-box"
+                                onclick="event.preventDefault(); loadContent('/Halmgaard/Enchanting/');"
+                                style="display: inline-block; padding: 10px 18px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 15px;">Enchanting</a>
                         </p>
                     </section>
 
@@ -146,7 +174,7 @@
                         style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;">
                         <img src="/Photos/ComingSoon.png" alt="Box 6" style="max-width: 55%; height: auto;">
                         <p><a href="#" class="blue-box"
-                                style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Coming
+                                style="display: inline-block; padding: 10px 18px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 15px;">Coming
                                 Soon</a></p>
                     </section>
                     <!-- Box 7 -->
@@ -154,7 +182,7 @@
                         style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;">
                         <img src="/Photos/ComingSoon.png" alt="Box 7" style="max-width: 55%; height: auto;">
                         <p><a href="#" class="blue-box"
-                                style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Coming
+                                style="display: inline-block; padding: 10px 18px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 15px;">Coming
                                 Soon</a></p>
                     </section>
                     <!-- Box 8 -->
@@ -162,12 +190,36 @@
                         style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: space-evenly;">
                         <img src="/Photos/ComingSoon.png" alt="Box 8" style="max-width: 55%; height: auto;">
                         <p><a href="#" class="blue-box"
-                                style="display: inline-block; padding: 8px 15px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 14px;">Coming
+                                style="display: inline-block; padding: 10px 18px; background-color: #0066cc; color: white; text-decoration: none; border-radius: 5px; font-size: 15px;">Coming
                                 Soon</a></p>
                     </section>
                 </div>
                 <div class="ad-demo top-ad-demo">
-                    TOP BANNER AD 970x120 (Demo)
+                    BOTTOM BANNER 970x120 (Demo)
+                </div>
+
+                <!-- Quick Links - Mobile Only -->
+                <div class="content-box sidecontentbox" id="quicklinks-mobile"
+                    style="padding: 20px; margin-top: 20px; display: none;">
+                    <div class="vertical-sidebar">
+                        <h2>Quick Links</h2>
+                        <ul>
+
+                            <li><a href="Halmgaard/TermsService.html"
+                                    onclick="event.preventDefault(); loadContent('/Halmgaard/TermsService/');">Terms of
+                                    Service</a></li>
+                            <li><a href="Halmgaard/PrivacyPolicy.html"
+                                    onclick="event.preventDefault(); loadContent('/Halmgaard/PrivacyPolicy/');">Privacy
+                                    and Policy</a></li>
+                            <li><a href="Halmgaard/AboutPage/index.html"
+                                    onclick="event.preventDefault(); loadContent('/Halmgaard/AboutPage/');">About
+                                    Page</a></li>
+                            <li><a href="Halmgaard/ContactPage/index.html"
+                                    onclick="event.preventDefault(); loadContent('/Halmgaard/ContactPage/');">Contact
+                                    Page</a></li>
+
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -181,8 +233,23 @@
 
     <script src="Dark&Light.js"></script>
     <script src="SamePage.js"></script>
+    <script>
+        (function () {
+            const params = new URLSearchParams(window.location.search);
+            const spaPath = params.get('spa');
+            if (!spaPath || typeof loadContent !== 'function') return;
 
+            const cleanPath = spaPath.endsWith('/') ? spaPath : spaPath + '/';
+            const hash = window.location.hash || '';
+            loadContent(cleanPath, false);
 
-</body>
+            if (hash) {
+                setTimeout(() => {
+                    const target = document.querySelector(hash);
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 0);
+            }
+        })();
+    </script>
 
 </html>

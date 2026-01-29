@@ -4,11 +4,32 @@ body {
     margin: 0;
     padding: 0;
     background-color: #ececec;
+    background-image: url('/Halmgaard/HalmBackground.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     transition: background-color 0.3s;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(236, 236, 236, 0.2);
+    z-index: -1;
+    pointer-events: none;
 }
 
 body.dark-mode {
     background-color: #1a1a1a;
+}
+
+body.dark-mode::before {
+    background-color: rgba(26, 26, 26, 0.3);
 }
 
 /* ==================== Header ==================== */
@@ -153,6 +174,12 @@ body.dark-mode header h2 {
     color: white;
 }
 
+@media (max-width: 768px) {
+    .back-to-top-link {
+        display: none !important;
+    }
+}
+
 a {
     color: #0066cc;
     text-decoration: none;
@@ -175,6 +202,45 @@ a:hover {
 
 .wiki-content h1 {
     color: #2563eb;
+}
+
+table {
+    margin-bottom: 24px;
+}
+
+/* Equipment info boxes */
+.equipment-info {
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .equipment-info {
+    background: #2a2a2a;
+    border-color: #555;
+    color: #e0e0e0;
+}
+
+/* Item and mob name styling */
+.item-name {
+    color: #ff8c00;
+    font-weight: normal;
+}
+
+body.dark-mode .item-name {
+    color: #ffa500;
+}
+
+.mob-name {
+    color: #0066cc;
+    font-weight: normal;
+}
+
+body.dark-mode .mob-name {
+    color: #4d9fff;
 }
 
 .wiki-content p,
@@ -232,7 +298,7 @@ body.dark-mode .wiki-content .accent {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: calc(25% - 20px);
     box-sizing: border-box;
-    background-image: url('/Photos/LightBoxBG.jpg');
+    background-image: url('/Halmgaard/LightBoxBG.jpg');
     background-size: cover;
     background-position: center;
     transition: background-color 0.3s, border-color 0.3s, background-image 0.3s;
@@ -241,7 +307,7 @@ body.dark-mode .wiki-content .accent {
 body.dark-mode .box {
     background-color: #333;
     border-color: #555;
-    background-image: url('/Photos/DarkBoxBG.jpeg');
+    background-image: url('/Halmgaard/DarkBoxBG.jpeg');
 }
 
 .box img {
@@ -279,6 +345,15 @@ body.dark-mode footer {
     display: flex;
     gap: 20px;
     align-items: flex-start;
+}
+
+.sidebar-column {
+    position: sticky;
+    top: 20px;
+    flex: 0 0 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .vertical-sidebar {
@@ -382,9 +457,10 @@ body.dark-mode .vertical-sidebar a:hover {
 
 /* Sidebar top image */
 .sidebar-top-image {
-    width: 100px;
+    width: 150px;
     border-radius: 8px;
-    align-self: center;
+    display: block;
+    margin: 0 auto;
 }
 
 /* ==================== Animations ==================== */
@@ -408,6 +484,16 @@ body.dark-mode .vertical-sidebar a:hover {
 @media (max-width: 768px) {
     .page-wrapper {
         flex-direction: column;
+    }
+
+    .sidebar-column {
+        position: static;
+        flex: 1;
+        margin-bottom: 20px;
+    }
+
+    .video-box {
+        display: none;
     }
 
     .vertical-sidebar {
@@ -458,31 +544,88 @@ body.dark-mode .vertical-sidebar a:hover {
 }
 
 @media (max-width: 768px) {
-    .sidecontentbox {
-        display: none;
-        /* hide sidebar content box */
+    .page-wrapper {
+        flex-direction: column;
     }
-
+    
     .sidebar-column {
+        order: -1;
         flex: 0 0 auto;
-        /* shrink to fit content */
         width: 100%;
-        /* full width */
         display: flex;
-        justify-content: center;
-        /* center horizontally */
-        align-items: center;
-        /* center vertically if needed */
-        margin: 0 auto;
-        /* ensure proper horizontal centering */
+        flex-direction: column;
+        margin: 0 auto 20px;
     }
 
     .sidebar-top-image {
-        max-width: 120px;
-        /* constrain image so it doesn’t stretch on large screens */
-        height: auto;
-        margin: 20px 0;
         display: block;
+        max-width: 150px;
+        margin: 0 auto 15px;
+    }
+    
+    #essentials-mobile {
+        display: block;
+        width: 100%;
+        margin: 0 auto 20px;
+        padding: 20px;
+    }
+    
+    #quicklinks-desktop {
+        display: none !important;
+    }
+    
+    #quicklinks-mobile {
+        display: block !important;
+        width: 100%;
+        margin: 20px auto 0 !important;
+        padding: 20px !important;
+    }
+    
+    #quicklinks-mobile .vertical-sidebar h2 {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .sidecontentbox .vertical-sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .sidecontentbox .vertical-sidebar li {
+        margin: 0;
+    }
+
+    .sidecontentbox .vertical-sidebar a {
+        display: block;
+        padding: 10px 15px;
+        font-size: 13px;
+        white-space: nowrap;
+        border-radius: 5px;
+        background: #0066cc;
+        color: white !important;
+        text-decoration: none;
+        transition: background 0.3s;
+    }
+    
+    .sidecontentbox .vertical-sidebar a:hover {
+        background: #0052a3;
+    }
+
+    body.dark-mode .sidecontentbox .vertical-sidebar a {
+        background: #1a5490;
+    }
+    
+    body.dark-mode .sidecontentbox .vertical-sidebar a:hover {
+        background: #134070;
+    }
+    
+    .container {
+        order: 1;
     }
 }
 
@@ -561,5 +704,511 @@ body.dark .ad-demo {
     
     .content-box {
         padding: 8px !important;
+    }
+
+    /* Mobile wikitable adjustments */
+    .wikitable {
+        font-size: 10px;
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .wikitable th, .wikitable td {
+        padding: 4px 2px;
+        font-size: 10px;
+    }
+
+    .wikitable img {
+        max-height: 40px;
+        width: auto;
+    }
+
+    /* Standardized mob image sizing */
+    .wikitable td:first-child img {
+        max-width: 60px;
+        height: auto;
+    }
+
+    /* Elemental icon sizing */
+    .wikitable td img[src*="Elemental"] {
+        max-width: 35px;
+        height: auto;
+    }
+}
+/* ==================== Mob Table Styles ==================== */
+table.wikitable {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    border: 2px solid #000;
+}
+
+.wikitable th, .wikitable td {
+    border: 1px solid #000;
+    padding: 10px;
+}
+
+.wikitable th {
+    background: #333;
+    color: white;
+    font-weight: bold;
+    border: 1px solid #000;
+}
+
+.wikitable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.wikitable tr:hover {
+    background-color: #e8e8e8;
+}
+
+.wikitable img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+}
+
+/* Mobile optimization for tablets */
+@media (max-width: 768px) {
+    /* Wrap table in scrollable container */
+    table.wikitable {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 11px;
+    }
+
+    table.wikitable thead,
+    table.wikitable tbody,
+    table.wikitable tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    .wikitable th, .wikitable td {
+        padding: 8px 4px;
+        font-size: 10px;
+        word-wrap: break-word;
+    }
+
+    .wikitable th {
+        font-size: 9px;
+        padding: 8px 4px;
+    }
+
+    .wikitable img {
+        max-width: 35px;
+        height: auto;
+    }
+}
+
+/* Mobile optimization for phones */
+@media (max-width: 480px) {
+    table.wikitable {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 9px;
+    }
+
+    table.wikitable thead,
+    table.wikitable tbody,
+    table.wikitable tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    .wikitable th, .wikitable td {
+        padding: 6px 2px;
+        font-size: 8px;
+        word-wrap: break-word;
+    }
+
+    .wikitable th {
+        font-size: 7px;
+        padding: 6px 2px;
+    }
+
+    .wikitable img {
+        max-width: 28px;
+        height: auto;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .content-box, .wiki-content {
+        padding: 15px;
+    }
+}
+
+/* Dark mode styles for wikitable */
+body.dark-mode table.wikitable {
+    border: 2px solid #fff;
+}
+
+body.dark-mode .wikitable th, 
+body.dark-mode .wikitable td {
+    border: 1px solid #fff;
+}
+
+body.dark-mode .wikitable th {
+    background: #1a1a1a;
+    border: 1px solid #fff;
+}
+
+body.dark-mode .wikitable tr:nth-child(even) {
+    background-color: #2a2a2a;
+}
+
+body.dark-mode .wikitable tr:nth-child(odd) {
+    background-color: #333;
+}
+
+body.dark-mode .wikitable tr:hover {
+    background-color: #404040;
+}
+
+body.dark-mode .wikitable td {
+    color: #e0e0e0;
+}
+/* ==================== Subpage Styles ==================== */
+/* Styles for standalone subpages like Enchanting/Blacksmithing */
+.subpage-container {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.subpage-container h1 {
+    color: #333;
+    border-bottom: 3px solid #4a5568;
+    padding-bottom: 10px;
+}
+
+.subpage-container h2 {
+    color: #2d3748;
+    margin-top: 30px;
+    border-bottom: 2px solid #cbd5e0;
+    padding-bottom: 8px;
+}
+
+.subpage-container h3 {
+    color: #4a5568;
+    margin-top: 20px;
+}
+
+.subpage-quote {
+    font-style: italic;
+    color: #718096;
+    text-align: center;
+    font-size: 1.1em;
+    margin: 20px 0;
+}
+
+.subpage-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.subpage-container th {
+    background-color: #4a5568;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.subpage-container td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.subpage-container tr:hover {
+    background-color: #f7fafc;
+}
+
+.subpage-note {
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+.subpage-container hr {
+    border: none;
+    border-top: 1px solid #cbd5e0;
+    margin: 30px 0;
+}
+
+.subpage-container ol, 
+.subpage-container ul {
+    margin: 15px 0;
+    padding-left: 30px;
+}
+
+.subpage-container li {
+    margin: 8px 0;
+}
+
+.subpage-container strong {
+    color: #2d3748;
+}
+
+.subpage-content-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+/* Dark mode for subpages */
+body.dark-mode .subpage-container {
+    background-color: #1a1a1a;
+}
+
+body.dark-mode .subpage-container h1,
+body.dark-mode .subpage-container h2,
+body.dark-mode .subpage-container h3 {
+    color: #e0e0e0;
+    border-color: #4a5568;
+}
+
+body.dark-mode .subpage-quote {
+    color: #a0aec0;
+}
+
+body.dark-mode .subpage-container table {
+    background-color: #2a2a2a;
+}
+
+body.dark-mode .subpage-container th {
+    background-color: #374151;
+}
+
+body.dark-mode .subpage-container td {
+    border-color: #4a5568;
+    color: #e0e0e0;
+}
+
+body.dark-mode .subpage-container tr:hover {
+    background-color: #374151;
+}
+
+body.dark-mode .subpage-note {
+    background-color: #4a3a1a;
+    border-color: #d97706;
+    color: #fef3c7;
+}
+
+body.dark-mode .subpage-content-box {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+body.dark-mode .subpage-container strong {
+    color: #f3f4f6;
+}
+
+/* ==================== Info Box Styles ==================== */
+.subpage-info-box {
+    background: #f8f9fa;
+    color: #333;
+    flex: 0 0 300px;
+    border: 2px solid #4a5568;
+    border-radius: 8px;
+    padding: 15px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+body.dark-mode .subpage-info-box {
+    background: #2a2a2a;
+    color: #e0e0e0;
+}
+
+.subpage-info-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+}
+
+.subpage-info-box table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    table-layout: fixed;
+}
+
+.subpage-info-box table tr {
+    background: #e2e8f0;
+}
+
+body.dark-mode .subpage-info-box table tr {
+    background: #374151;
+}
+
+.subpage-info-box table tr:nth-child(2) {
+    background: transparent;
+}
+
+body.dark-mode .subpage-info-box table tr:nth-child(2) {
+    background: transparent;
+}
+
+.subpage-info-box table th,
+.subpage-info-box table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #cbd5e0;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+/* ==================== Flex Content Responsive ==================== */
+.flex-content {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .flex-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .subpage-info-box {
+        flex: 0 0 100% !important;
+        min-width: 100% !important;
+    }
+
+    .subpage-info-box table {
+        font-size: 14px;
+    }
+
+    .subpage-info-box table th,
+    .subpage-info-box table td {
+        padding: 6px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .subpage-info-box {
+        padding: 12px !important;
+    }
+
+    .subpage-info-box img {
+        max-width: 150px !important;
+    }
+
+    .subpage-info-box table {
+        font-size: 13px;
+    }
+
+    .subpage-info-box table th,
+    .subpage-info-box table td {
+        padding: 5px !important;
+        font-size: 12px;
+    }
+}
+
+/* ==================== Subpage Button Styles ==================== */
+.subpage-back-button {
+    display: block;
+    margin-bottom: 20px;
+    padding: 12px 24px;
+    background-color: #4a5568;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: auto;
+}
+
+body.dark-mode .subpage-back-button {
+    background-color: #5a6b7c;
+}
+
+.subpage-back-button:hover {
+    background-color: #374151;
+}
+
+body.dark-mode .subpage-back-button:hover {
+    background-color: #4a5568;
+}
+
+@media (max-width: 768px) {
+    .subpage-back-button {
+        width: 100%;
+        padding: 15px 20px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .subpage-back-button {
+        padding: 12px 16px;
+        font-size: 16px;
+    }
+}
+
+/* ==================== Subpage Responsive Typography ==================== */
+@media (max-width: 768px) {
+    .subpage-container h1 {
+        font-size: 28px;
+        margin: 15px 0;
+    }
+
+    .subpage-container h2 {
+        font-size: 22px;
+        margin: 15px 0 10px 0;
+    }
+
+    .subpage-container p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 480px) {
+    .subpage-container {
+        padding: 8px;
+    }
+
+    .subpage-container h1 {
+        font-size: 24px;
+        margin: 10px 0;
+    }
+
+    .subpage-container h2 {
+        font-size: 20px;
+        margin: 12px 0 8px 0;
+    }
+
+    .subpage-container p {
+        font-size: 14px;
+        line-height: 1.4;
     }
 }

@@ -20,9 +20,68 @@ function loadContent(folderPath, push = true) {
             document.querySelector('#main-content').innerHTML = content;
             document.title = title;
 
-            if (push) history.pushState({ url: folderPath }, title, folderPath); // push folder path, not index.html
+            if (push) {
+                history.pushState({ url: folderPath }, title, folderPath); // push folder path, not index.html
+            } else {
+                history.replaceState({ url: folderPath }, title, folderPath); // replace current state
+            }
 
-            window.scrollTo(0, 0);
+            // Restore scroll position for /Mobs/ page, otherwise scroll to top
+            if (folderPath === '/Mobs/') {
+                const savedScrollPos = sessionStorage.getItem('mobsScrollPos');
+                if (savedScrollPos !== null) {
+                    const pos = parseInt(savedScrollPos);
+                    requestAnimationFrame(() => {
+                        window.scrollTo(0, pos);
+                    });
+                } else {
+                    window.scrollTo(0, 0);
+                }
+                // Set up listener to save scroll position before leaving Mobs
+                setupMobsScrollSaver();
+            } else {
+                window.scrollTo(0, 0);
+            }
         })
         .catch(error => console.error('Error loading content:', error));
 }
+
+function setupMobsScrollSaver() {
+    // Save scroll position whenever ANY link is clicked from Mobs page
+    const mainContent = document.querySelector('#main-content');
+    if (mainContent) {
+        mainContent.addEventListener('click', function(e) {
+            const link = e.target.closest('a');
+            if (link) {
+                const scrollPos = window.scrollY;
+                console.log('Saving Mobs scroll position:', scrollPos);
+                sessionStorage.setItem('mobsScrollPos', scrollPos);
+            }
+        });
+    }
+}
+
+// Handle browser back/forward buttons
+window.addEventListener('popstate', function(event) {
+    if (event.state && event.state.url) {
+        loadContent(event.state.url, false);
+    } else {
+        // If no state, go to homepage
+        loadContent('/', false);
+    }
+});
+
+// Handle in-page anchor links inside loaded content
+document.addEventListener('click', function(event) {
+    const link = event.target.closest('a');
+    if (!link) return;
+
+    const href = link.getAttribute('href');
+    if (!href || !href.startsWith('#')) return;
+
+    const target = document.querySelector(href);
+    if (!target) return;
+
+    event.preventDefault();
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
