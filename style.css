@@ -1369,3 +1369,349 @@ body.dark-mode .subpage-back-button:hover {
         line-height: 1.4;
     }
 }
+
+/* ==================== MapGuide Styles ==================== */
+.mapguide-main-container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.mapguide-main-container h1 {
+    text-align: center;
+    color: #2563eb;
+    margin-bottom: 5px;
+    font-size: 2.5em;
+}
+
+body.dark-mode .mapguide-main-container h1 {
+    color: #60a5fa;
+}
+
+.mapguide-main-container h2 {
+    text-align: center;
+    color: #2563eb;
+    margin: 50px 0 15px 0;
+    font-size: 2em;
+}
+
+body.dark-mode .mapguide-main-container h2 {
+    color: #60a5fa;
+}
+
+.mapguide-intro {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+body.dark-mode .mapguide-intro {
+    color: #a0aec0;
+}
+
+.mapguide-nav-container {
+    text-align: center;
+    padding: 10px;
+}
+
+.mapguide-nav-container a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: opacity 0.3s;
+    display: inline-block;
+}
+
+.mapguide-nav-container a:hover {
+    opacity: 0.8;
+}
+
+.map-container {
+    margin: 30px auto;
+    max-width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.map-image {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: block;
+}
+
+body.dark-mode .map-image {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.hunting-section {
+    margin: 30px 0;
+    padding: 25px;
+    background: linear-gradient(135deg, #f5f5f5 0%, #efefef 100%);
+    border-left: 4px solid #2563eb;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.hunting-section:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+body.dark-mode .hunting-section {
+    background: linear-gradient(135deg, #2a2a2a 0%, #333 100%);
+    border-left-color: #60a5fa;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .hunting-section:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.mob-icon {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin: 0;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+body.dark-mode .mob-icon {
+    filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.1));
+}
+
+.mob-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.mob-info {
+    flex: 1;
+}
+
+.mob-info h3 {
+    margin: 0 0 8px 0;
+    color: #2563eb;
+    font-size: 1.4em;
+}
+
+body.dark-mode .mob-info h3 {
+    color: #60a5fa;
+}
+
+.recommended-level {
+    font-weight: 600;
+    color: #ff8c00;
+    margin: 8px 0;
+    font-size: 0.95em;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+}
+
+.mapguide-divider {
+    border: none;
+    border-top: 2px solid #e0e0e0;
+    margin: 50px 0;
+    opacity: 0.6;
+}
+
+body.dark-mode .mapguide-divider {
+    border-top-color: #444;
+}
+
+.mapguide-description {
+    color: #555;
+    line-height: 1.7;
+    margin: 10px 0 0 0;
+    font-size: 0.95em;
+}
+
+body.dark-mode .mapguide-description {
+    color: #d1d5db;
+}
+
+.mapguide-description-levels {
+    margin-left: 20px;
+}
+
+/* ==================== MapGuide Mobile Responsive ==================== */
+@media (max-width: 1024px) {
+    .mapguide-main-container {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mapguide-main-container {
+        padding: 0 12px;
+        margin: 20px auto;
+    }
+
+    .mapguide-main-container h1 {
+        font-size: 1.8em;
+        margin-bottom: 8px;
+    }
+
+    .mapguide-main-container h2 {
+        font-size: 1.4em;
+        margin: 30px 0 10px 0;
+    }
+
+    .mapguide-intro {
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    .hunting-section {
+        padding: 18px;
+        margin: 20px 0;
+    }
+
+    .mob-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .mob-icon {
+        width: 90px;
+        height: 90px;
+    }
+
+    .mob-info {
+        text-align: center;
+        width: 100%;
+    }
+
+    .mob-info h3 {
+        font-size: 1.1em;
+        margin-bottom: 6px;
+    }
+
+    .recommended-level {
+        font-size: 0.9em;
+        margin: 6px 0;
+    }
+
+    .mapguide-description {
+        font-size: 0.9em;
+        line-height: 1.6;
+    }
+
+    .mapguide-divider {
+        margin: 30px 0;
+    }
+
+    .video-container {
+        max-width: 100%;
+        margin: 15px 0;
+    }
+
+    .map-container {
+        padding: 15px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .mapguide-main-container {
+        padding: 0 8px;
+        margin: 15px auto;
+    }
+
+    .mapguide-main-container h1 {
+        font-size: 1.5em;
+        margin-bottom: 8px;
+    }
+
+    .mapguide-main-container h2 {
+        font-size: 1.2em;
+        margin: 20px 0 8px 0;
+    }
+
+    .mapguide-intro {
+        font-size: 0.9em;
+        margin-bottom: 15px;
+        line-height: 1.4;
+    }
+
+    .hunting-section {
+        padding: 15px;
+        margin: 15px 0;
+        border-left-width: 3px;
+    }
+
+    .hunting-section:hover {
+        transform: none;
+    }
+
+    .mob-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .mob-info h3 {
+        font-size: 1em;
+    }
+
+    .recommended-level {
+        font-size: 0.85em;
+    }
+
+    .mapguide-description {
+        font-size: 0.85em;
+        line-height: 1.5;
+    }
+
+    .mapguide-divider {
+        margin: 20px 0;
+    }
+
+    .video-container {
+        margin: 15px 0;
+    }
+
+    .map-image {
+        margin: 15px 0;
+    }
+
+    .mapguide-nav-container a {
+        display: inline-block;
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+}
