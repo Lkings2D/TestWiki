@@ -80,6 +80,97 @@ header nav a:hover {
     background-color: #777;
 }
 
+.wiki-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.wiki-search input {
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    font-size: 14px;
+    min-width: 220px;
+    background-color: #fff;
+    color: #111;
+}
+
+body.dark-mode .wiki-search input {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border-color: #666;
+}
+
+.wiki-search button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.wiki-search button:hover {
+    background-color: #777;
+}
+
+.wiki-search-suggestions {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    padding: 6px;
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 1000;
+}
+
+body.dark-mode .wiki-search-suggestions {
+    background: #2f2f2f;
+    border-color: #555;
+}
+
+.wiki-search-suggestions.visible {
+    display: flex;
+}
+
+.wiki-search-suggestion {
+    text-align: left;
+    padding: 6px 8px;
+    border-radius: 4px;
+    border: none;
+    background: transparent;
+    color: #111;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+body.dark-mode .wiki-search-suggestion {
+    color: #e0e0e0;
+}
+
+.wiki-search-suggestion:hover {
+    background: rgba(0, 102, 204, 0.15);
+}
+
+tr.search-hit {
+    outline: 2px solid #ff8c00;
+    background-color: rgba(255, 140, 0, 0.08);
+}
+
+body.dark-mode tr.search-hit {
+    background-color: rgba(255, 140, 0, 0.2);
+}
+
 /* ==================== Container ==================== */
 .container {
     max-width: 1200px;

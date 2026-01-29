@@ -13,6 +13,12 @@
     <header>
         <h1 style="text-align: center; margin-top: 10px;">Halmgaard Wiki</h1>
         <nav>
+            <div class="wiki-search" role="search">
+                <input id="wiki-search-input" type="search" placeholder="Search items & mobs" aria-label="Search items and mobs" autocomplete="off">
+                <button id="wiki-search-btn" type="button">Search</button>
+                <div id="wiki-search-suggestions" class="wiki-search-suggestions" role="listbox"
+                    aria-label="Search suggestions"></div>
+            </div>
             <button id="dark-mode-btn">🌙 Dark Mode</button>
         </nav>
     </header>
@@ -232,6 +238,7 @@
     </footer>
 
     <script src="Dark&Light.js"></script>
+    <script src="Search.js"></script>
     <script src="SamePage.js"></script>
     <script>
         (function () {
