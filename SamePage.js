@@ -22,6 +22,7 @@ function loadContent(folderPath, push = true) {
             document.title = title;
 
             normalizeRelativeImagePaths(mainContent, folderPath);
+            normalizeAbsoluteImagePaths(mainContent);
 
             if (push) {
                 history.pushState({ url: folderPath }, title, folderPath); // push folder path, not index.html
@@ -82,6 +83,33 @@ function normalizeRelativeImagePaths(container, folderPath) {
             img.setAttribute('src', folderPath + src.replace('./', ''));
             return;
         }
+    });
+}
+
+function getRepoBasePath() {
+    const host = window.location.hostname;
+    if (!host.endsWith('github.io')) return '';
+
+    const parts = window.location.pathname.split('/').filter(Boolean);
+    if (parts.length === 0) return '';
+
+    const rootFolders = new Set(['Mobs', 'Items', 'Halmgaard', 'Photos']);
+    if (rootFolders.has(parts[0])) return '';
+
+    return '/' + parts[0];
+}
+
+function normalizeAbsoluteImagePaths(container) {
+    if (!container) return;
+    const basePath = getRepoBasePath();
+    if (!basePath) return;
+
+    const images = container.querySelectorAll('img[src]');
+    images.forEach((img) => {
+        const src = img.getAttribute('src');
+        if (!src || !src.startsWith('/')) return;
+        if (src.startsWith(basePath + '/')) return;
+        img.setAttribute('src', basePath + src);
     });
 }
 
