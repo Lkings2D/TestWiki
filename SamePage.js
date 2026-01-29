@@ -21,8 +21,7 @@ function loadContent(folderPath, push = true) {
             mainContent.innerHTML = content;
             document.title = title;
 
-            normalizeRelativeImagePaths(mainContent, folderPath);
-            normalizeAbsoluteImagePaths(mainContent);
+            // No need to normalize - all paths are already absolute in HTML files
 
             if (push) {
                 history.pushState({ url: folderPath }, title, folderPath); // push folder path, not index.html
@@ -143,37 +142,4 @@ document.addEventListener('click', function(event) {
     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
 
-// Fix image paths on page load only if needed (e.g., when loaded via /index.html)
-document.addEventListener('DOMContentLoaded', function() {
-    const mainContent = document.querySelector('#main-content');
-    const wikiContent = document.querySelector('.wiki-content');
-    
-    // Only normalize if we detect we're in SPA mode and content was loaded dynamically
-    // Check if the main content contains relative image paths that need normalization
-    if (mainContent || wikiContent) {
-        const container = mainContent || wikiContent;
-        const images = container.querySelectorAll('img[src^="images/"], img[src^="Elemental/"], img[src^="./images/"]');
-        
-        // Only run normalization if we have relative paths AND we're not at the root
-        if (images.length > 0) {
-            let currentPath = window.location.pathname;
-            
-            // If we're at /index.html, treat it as root /
-            if (currentPath === '/index.html' || currentPath.endsWith('/index.html')) {
-                currentPath = currentPath.replace(/index\.html$/, '');
-            }
-            
-            // Extract directory path
-            if (currentPath.includes('.html')) {
-                currentPath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1);
-            }
-            
-            if (!currentPath.endsWith('/')) {
-                currentPath += '/';
-            }
-            
-            normalizeRelativeImagePaths(container, currentPath);
-            normalizeAbsoluteImagePaths(container);
-        }
-    }
-});
+// No DOMContentLoaded handler needed - all paths are absolute in HTML files
