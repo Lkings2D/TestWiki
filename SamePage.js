@@ -17,8 +17,11 @@ function loadContent(folderPath, push = true) {
             const content = fetchedBox ? fetchedBox.innerHTML : doc.body.innerHTML;
             const title = doc.querySelector('title') ? doc.querySelector('title').innerText : document.title;
 
-            document.querySelector('#main-content').innerHTML = content;
+            const mainContent = document.querySelector('#main-content');
+            mainContent.innerHTML = content;
             document.title = title;
+
+            normalizeRelativeImagePaths(mainContent, folderPath);
 
             if (push) {
                 history.pushState({ url: folderPath }, title, folderPath); // push folder path, not index.html
@@ -59,6 +62,27 @@ function setupMobsScrollSaver() {
             }
         });
     }
+}
+
+function normalizeRelativeImagePaths(container, folderPath) {
+    if (!container) return;
+    if (!folderPath.endsWith('/')) folderPath += '/';
+
+    const images = container.querySelectorAll('img[src]');
+    images.forEach((img) => {
+        const src = img.getAttribute('src');
+        if (!src) return;
+
+        if (src.startsWith('images/')) {
+            img.setAttribute('src', folderPath + src);
+            return;
+        }
+
+        if (src.startsWith('./images/')) {
+            img.setAttribute('src', folderPath + src.replace('./', ''));
+            return;
+        }
+    });
 }
 
 // Handle browser back/forward buttons
