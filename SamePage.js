@@ -142,7 +142,14 @@ document.addEventListener('click', function(event) {
 document.addEventListener('DOMContentLoaded', function() {
     const mainContent = document.querySelector('#main-content');
     if (mainContent) {
-        const currentPath = window.location.pathname;
+        let currentPath = window.location.pathname;
+        // Extract directory path (remove filename if present)
+        if (currentPath.endsWith('.html')) {
+            currentPath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1);
+        }
+        if (!currentPath.endsWith('/')) {
+            currentPath += '/';
+        }
         normalizeRelativeImagePaths(mainContent, currentPath);
         normalizeAbsoluteImagePaths(mainContent);
     }
