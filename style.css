@@ -171,6 +171,72 @@ body.dark-mode tr.search-hit {
     background-color: rgba(255, 140, 0, 0.2);
 }
 
+/* ==================== Mobile Responsive for Header/Search ==================== */
+@media (max-width: 768px) {
+    header {
+        padding: 10px;
+    }
+    
+    header nav {
+        gap: 10px;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .wiki-search {
+        flex: 1 1 auto;
+        min-width: 0;
+        max-width: 100%;
+    }
+    
+    .wiki-search input {
+        min-width: 0;
+        width: 100%;
+        flex: 1;
+        font-size: 13px;
+        padding: 7px 8px;
+    }
+    
+    .wiki-search button {
+        font-size: 13px;
+        padding: 7px 10px;
+        white-space: nowrap;
+    }
+    
+    #dark-mode-btn {
+        font-size: 13px;
+        padding: 7px 10px;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 20px;
+        margin-top: 5px;
+    }
+    
+    header nav {
+        gap: 8px;
+    }
+    
+    .wiki-search input {
+        font-size: 12px;
+        padding: 6px 7px;
+    }
+    
+    .wiki-search button {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+    
+    #dark-mode-btn {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+}
+
 /* ==================== Container ==================== */
 .container {
     max-width: 1200px;
