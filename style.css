@@ -1715,3 +1715,765 @@ body.dark-mode .mapguide-description {
         font-size: 0.9em;
     }
 }
+
+/* Combat System Page Styles */
+.combat-overview-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.combat-overview-box h2,
+.combat-overview-box p {
+    color: white;
+}
+
+.combat-overview-box h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.combat-divider {
+    border: none;
+    border-top: 2px solid #e5e7eb;
+    margin: 25px 0;
+}
+
+body.dark-mode .combat-divider {
+    border-top-color: #374151;
+}
+
+.combat-section-title {
+    color: #2563eb;
+    margin-top: 30px;
+}
+
+body.dark-mode .combat-section-title {
+    color: #60a5fa;
+}
+
+.vocation-card {
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background: #f9fafb;
+}
+
+body.dark-mode .vocation-card {
+    background: #1f2937;
+}
+
+.vocation-card.knight {
+    border-left: 4px solid #3b82f6;
+}
+
+.vocation-card.archer {
+    border-left: 4px solid #10b981;
+}
+
+.vocation-card.sorcerer {
+    border-left: 4px solid #8b5cf6;
+}
+
+.vocation-card h4 {
+    margin-top: 0;
+}
+
+.vocation-card.knight h4 {
+    color: #1e40af;
+}
+
+body.dark-mode .vocation-card.knight h4 {
+    color: #60a5fa;
+}
+
+.vocation-card.archer h4 {
+    color: #047857;
+}
+
+body.dark-mode .vocation-card.archer h4 {
+    color: #34d399;
+}
+
+.vocation-card.sorcerer h4 {
+    color: #6d28d9;
+}
+
+body.dark-mode .vocation-card.sorcerer h4 {
+    color: #a78bfa;
+}
+
+.vocation-card p {
+    margin-bottom: 0;
+}
+
+.training-grid {
+    display: grid;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.training-method {
+    padding: 18px;
+    border-radius: 8px;
+}
+
+.training-method h4 {
+    margin-top: 0;
+}
+
+.training-method p {
+    margin-bottom: 0;
+}
+
+.training-method.pve {
+    background: #f0fdf4;
+    border-left: 4px solid #10b981;
+}
+
+body.dark-mode .training-method.pve {
+    background: #064e3b;
+}
+
+.training-method.pve h4 {
+    color: #047857;
+}
+
+body.dark-mode .training-method.pve h4 {
+    color: #34d399;
+}
+
+.training-method.pve .efficiency {
+    color: #059669;
+}
+
+body.dark-mode .training-method.pve .efficiency {
+    color: #6ee7b7;
+}
+
+.training-method.pvp {
+    background: #fef2f2;
+    border-left: 4px solid #ef4444;
+}
+
+body.dark-mode .training-method.pvp {
+    background: #7f1d1d;
+}
+
+.training-method.pvp h4 {
+    color: #991b1b;
+}
+
+body.dark-mode .training-method.pvp h4 {
+    color: #fca5a5;
+}
+
+.training-method.pvp .efficiency {
+    color: #dc2626;
+}
+
+body.dark-mode .training-method.pvp .efficiency {
+    color: #fecaca;
+}
+
+.training-method.dummy {
+    background: #faf5ff;
+    border-left: 4px solid #a855f7;
+}
+
+body.dark-mode .training-method.dummy {
+    background: #581c87;
+}
+
+.training-method.dummy h4 {
+    color: #7c3aed;
+}
+
+body.dark-mode .training-method.dummy h4 {
+    color: #c084fc;
+}
+
+.training-method.dummy .efficiency {
+    color: #9333ea;
+}
+
+body.dark-mode .training-method.dummy .efficiency {
+    color: #d8b4fe;
+}
+
+.info-box {
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.info-box.warning {
+    background: #fef2f2;
+    border: 2px solid #fecaca;
+}
+
+body.dark-mode .info-box.warning {
+    background: #7f1d1d;
+    border-color: #991b1b;
+}
+
+.info-box.note {
+    background: #fef3c7;
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 3px solid #f59e0b;
+    margin-top: 20px;
+}
+
+body.dark-mode .info-box.note {
+    background: #78350f;
+    border-left-color: #fbbf24;
+}
+
+.info-box.success {
+    background: #dcfce7;
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 3px solid #10b981;
+    margin-bottom: 25px;
+}
+
+body.dark-mode .info-box.success {
+    background: #064e3b;
+    border-left-color: #34d399;
+}
+
+.combat-list {
+    line-height: 1.8;
+}
+
+.skull-details {
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    cursor: pointer;
+    background: #f9fafb;
+}
+
+body.dark-mode .skull-details {
+    background: #1f2937;
+}
+
+.skull-details.white {
+    border-left: 4px solid #6b7280;
+}
+
+.skull-details.red {
+    border-left: 4px solid #dc2626;
+}
+
+.skull-details summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.skull-details.white summary {
+    color: #374151;
+}
+
+body.dark-mode .skull-details.white summary {
+    color: #d1d5db;
+}
+
+.skull-details.red summary {
+    color: #991b1b;
+}
+
+body.dark-mode .skull-details.red summary {
+    color: #fca5a5;
+}
+
+.skull-details-content {
+    margin-top: 15px;
+    padding-left: 10px;
+}
+
+.skull-duration {
+    background: #eff6ff;
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+
+body.dark-mode .skull-duration {
+    background: #1e3a8a;
+}
+
+.skull-details.red .skull-duration {
+    background: #fee2e2;
+}
+
+body.dark-mode .skull-details.red .skull-duration {
+    background: #7f1d1d;
+}
+
+.muted-text {
+    color: #6b7280;
+}
+
+body.dark-mode .muted-text {
+    color: #9ca3af;
+}
+
+.danger-text {
+    color: #991b1b;
+}
+
+body.dark-mode .danger-text {
+    color: #fca5a5;
+}
+
+.intro-text {
+    font-size: 1.05em;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+body.dark-mode .intro-text {
+    color: #d1d5db;
+}
+
+/* Skull Table/Card Responsive Views */
+.skull-table-wrapper {
+    display: block;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.skull-cards-mobile {
+    display: none;
+}
+
+.skull-card {
+    background: #f9fafb;
+    border-left: 4px solid #6b7280;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+
+body.dark-mode .skull-card {
+    background: #1f2937;
+    border-left-color: #4b5563;
+}
+
+.skull-card-header {
+    font-weight: bold;
+    font-size: 1.05em;
+    margin-bottom: 10px;
+    color: #374151;
+}
+
+body.dark-mode .skull-card-header {
+    color: #d1d5db;
+}
+
+.skull-card-body p {
+    margin: 6px 0;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.skull-card-body strong {
+    color: #6b7280;
+}
+
+body.dark-mode .skull-card-body strong {
+    color: #9ca3af;
+}
+
+/* Mobile Responsive Styles for Combat System & FAQ Pages */
+@media (max-width: 768px) {
+    /* Hide table, show cards on mobile */
+    .skull-table-wrapper {
+        display: none;
+    }
+
+    .skull-cards-mobile {
+        display: block;
+        margin-top: 15px;
+    }
+
+    .skull-card {
+        padding: 10px;
+        margin-bottom: 8px;
+    }
+
+    .skull-card-header {
+        font-size: 1em;
+        margin-bottom: 8px;
+    }
+
+    .skull-card-body p {
+        margin: 5px 0;
+        font-size: 0.85em;
+    }
+
+    .combat-overview-box {
+        padding: 15px 12px;
+        margin-bottom: 15px;
+    }
+
+    .combat-overview-box h2 {
+        font-size: 1.2em;
+    }
+
+    .combat-overview-box p {
+        font-size: 0.95em;
+    }
+
+    .vocation-card,
+    .training-method,
+    .skull-details {
+        padding: 12px;
+    }
+
+    .vocation-card h4,
+    .training-method h4 {
+        font-size: 0.95em;
+    }
+
+    .combat-section-title {
+        font-size: 1.15em;
+    }
+
+    .training-grid {
+        gap: 10px;
+    }
+
+    .info-box {
+        padding: 12px;
+    }
+
+    .skull-details summary {
+        font-size: 1em;
+        padding: 8px 0;
+    }
+
+    .skull-details-content {
+        padding-left: 5px;
+        margin-top: 10px;
+    }
+
+    .skull-details-content p {
+        margin-top: 10px !important;
+        margin-bottom: 10px;
+    }
+
+    .skull-details-content ul {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+
+    .wikitable {
+        font-size: 0.85em;
+    }
+
+    .wikitable th,
+    .wikitable td {
+        padding: 6px 4px;
+    }
+
+    /* Make tables horizontally scrollable on mobile */
+    .subpage-content-box {
+        overflow-x: auto;
+        padding: 12px;
+        margin-bottom: 12px;
+    }
+
+    .wikitable {
+        min-width: 500px;
+    }
+
+    h2 {
+        font-size: 1.3em;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    h3 {
+        font-size: 1.15em;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+
+    .combat-list {
+        padding-left: 20px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+
+    .combat-list li {
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ensure cards are compact on small mobile */
+    .skull-card {
+        padding: 8px;
+        margin-bottom: 6px;
+    }
+
+    .skull-card-header {
+        font-size: 0.95em;
+        margin-bottom: 6px;
+    }
+
+    .skull-card-body p {
+        margin: 4px 0;
+        font-size: 0.8em;
+    }
+
+    .combat-overview-box {
+        padding: 12px 10px;
+        margin-bottom: 12px;
+    }
+
+    .combat-overview-box h2 {
+        font-size: 1.1em;
+        margin-top: 0;
+        margin-bottom: 8px;
+    }
+
+    .combat-overview-box p {
+        font-size: 0.9em;
+        line-height: 1.4;
+    }
+
+    h1 {
+        font-size: 1.5em !important;
+        margin-top: 10px !important;
+        margin-bottom: 15px !important;
+    }
+
+    h2 {
+        font-size: 1.2em;
+        margin-top: 8px;
+        margin-bottom: 12px;
+    }
+
+    h3 {
+        font-size: 1.1em;
+        margin-top: 12px;
+        margin-bottom: 8px;
+    }
+
+    h4 {
+        font-size: 0.95em;
+        margin-top: 0;
+        margin-bottom: 8px;
+    }
+
+    .vocation-card,
+    .training-method,
+    .skull-details {
+        padding: 10px 8px;
+        border-radius: 6px;
+        margin-bottom: 8px;
+    }
+
+    .vocation-card h4,
+    .training-method h4 {
+        font-size: 0.9em;
+    }
+
+    .vocation-card p,
+    .training-method p,
+    .skull-details-content p {
+        font-size: 0.9em;
+        margin-top: 8px !important;
+        margin-bottom: 8px !important;
+    }
+
+    .training-method .efficiency,
+    .efficiency {
+        font-size: 0.8em !important;
+        display: block;
+        margin-top: 4px;
+    }
+
+    .combat-section-title {
+        font-size: 1.05em;
+        margin-top: 15px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .combat-divider {
+        margin: 12px 0;
+    }
+
+    .training-grid {
+        gap: 8px;
+    }
+
+    .info-box {
+        padding: 10px 8px;
+        font-size: 0.9em;
+        margin-bottom: 10px;
+    }
+
+    .info-box.note,
+    .info-box.success {
+        padding: 10px 8px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .info-box.warning {
+        padding: 10px 8px;
+        margin-bottom: 10px;
+    }
+
+    .skull-details {
+        margin-top: 8px !important;
+        padding: 10px 8px;
+    }
+
+    .skull-details summary {
+        font-size: 0.95em;
+        padding: 6px 0;
+        line-height: 1.3;
+    }
+
+    .skull-details-content {
+        padding-left: 3px;
+        margin-top: 8px;
+    }
+
+    .skull-duration {
+        padding: 8px;
+        font-size: 0.85em;
+        margin-top: 10px;
+    }
+
+    .combat-list {
+        padding-left: 18px;
+        line-height: 1.5;
+        margin-top: 6px;
+        margin-bottom: 6px;
+    }
+
+    .combat-list li {
+        margin-bottom: 4px;
+        font-size: 0.9em;
+    }
+
+    .intro-text {
+        font-size: 0.95em;
+        margin-bottom: 12px;
+    }
+
+    .wikitable {
+        font-size: 0.8em;
+        min-width: 420px;
+    }
+
+    .wikitable th,
+    .wikitable td {
+        padding: 5px 3px;
+        font-size: 0.85em;
+    }
+
+    /* Reduce all margins between elements */
+    p {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        margin-top: 6px;
+        margin-bottom: 6px;
+    }
+
+    /* More aggressive spacing reduction */
+    .subpage-content-box {
+        padding: 10px 8px;
+        margin-bottom: 10px;
+    }
+
+    body > div[style*="max-width: 900px"] {
+        padding: 0 8px !important;
+        margin: 10px auto !important;
+    }
+
+    /* Make sure long words don't break layout */
+    p, li, td, th, summary {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+
+    /* Reduce emoji spacing */
+    h2, h3, h4 {
+        word-spacing: -2px;
+    }
+
+    strong {
+        font-size: 1em;
+    }
+
+    /* Tighter spacing for details elements on mobile */
+    details[open] {
+        margin-bottom: 8px;
+    }
+
+    /* Compact links */
+    a {
+        word-break: break-all;
+        font-size: 0.9em;
+    }
+}
+
+/* Tablet adjustments */
+@media (min-width: 481px) and (max-width: 768px) {
+    .combat-overview-box p {
+        font-size: 0.95em;
+    }
+
+    .training-grid {
+        gap: 10px;
+    }
+
+    .wikitable {
+        font-size: 0.9em;
+    }
+
+    .subpage-content-box {
+        padding: 12px;
+    }
+}
+
+/* Ensure content containers adapt to mobile */
+@media (max-width: 768px) {
+    /* Adjust inline max-width container */
+    body > div[style*="max-width: 900px"] {
+        padding: 0 12px !important;
+        margin: 15px auto !important;
+    }
+
+    footer {
+        padding: 15px 12px;
+        font-size: 0.85em;
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 12px 8px;
+        font-size: 0.8em;
+    }
+
+    footer p {
+        margin: 5px 0;
+    }
+}
+
