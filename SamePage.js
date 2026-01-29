@@ -83,6 +83,11 @@ function normalizeRelativeImagePaths(container, folderPath) {
             img.setAttribute('src', folderPath + src.replace('./', ''));
             return;
         }
+
+        if (src.startsWith('Elemental/')) {
+            img.setAttribute('src', folderPath + src);
+            return;
+        }
     });
 }
 
@@ -136,21 +141,4 @@ document.addEventListener('click', function(event) {
 
     event.preventDefault();
     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-});
-
-// Fix image paths on initial page load (for direct access/refresh)
-document.addEventListener('DOMContentLoaded', function() {
-    const mainContent = document.querySelector('#main-content');
-    if (mainContent) {
-        let currentPath = window.location.pathname;
-        // Extract directory path (remove filename if present)
-        if (currentPath.endsWith('.html')) {
-            currentPath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1);
-        }
-        if (!currentPath.endsWith('/')) {
-            currentPath += '/';
-        }
-        normalizeRelativeImagePaths(mainContent, currentPath);
-        normalizeAbsoluteImagePaths(mainContent);
-    }
 });
