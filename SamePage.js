@@ -137,3 +137,13 @@ document.addEventListener('click', function(event) {
     event.preventDefault();
     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
+
+// Fix image paths on initial page load (for direct access/refresh)
+document.addEventListener('DOMContentLoaded', function() {
+    const mainContent = document.querySelector('#main-content');
+    if (mainContent) {
+        const currentPath = window.location.pathname;
+        normalizeRelativeImagePaths(mainContent, currentPath);
+        normalizeAbsoluteImagePaths(mainContent);
+    }
+});
