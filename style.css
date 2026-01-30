@@ -1006,6 +1006,51 @@ table.wikitable {
     .content-box, .wiki-content {
         padding: 15px;
     }
+
+    /* Drop table specific fix for subpages */
+    .subpage-container table.wikitable {
+        display: table !important;
+        width: auto !important;
+        min-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .subpage-container table.wikitable th,
+    .subpage-container table.wikitable td {
+        display: table-cell !important;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .content-box, .wiki-content {
+        padding: 15px;
+    }
+
+    /* Items and Mobs home page table mobile optimization */
+    table.wikitable:not(.subpage-container table.wikitable) {
+        display: table !important;
+        width: auto !important;
+        min-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 7px;
+    }
+
+    table.wikitable:not(.subpage-container table.wikitable) th,
+    table.wikitable:not(.subpage-container table.wikitable) td {
+        padding: 3px 1px !important;
+        font-size: 7px !important;
+        word-break: break-word !important;
+        display: table-cell !important;
+    }
+
+    table.wikitable:not(.subpage-container table.wikitable) img {
+        max-width: 20px !important;
+        height: auto;
+    }
 }
 
 /* Dark mode styles for wikitable */
