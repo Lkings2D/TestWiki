@@ -444,16 +444,17 @@ body.dark-mode .wiki-content .accent {
 .box-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
+    gap: 15px;
+    justify-content: center;
 }
 
 .box {
     border: 1px solid #ddd;
-    padding: 15px;
+    padding: 8px;
     background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: calc(25% - 20px);
+    width: calc(25% - 12px);
+    max-width: 220px;
     box-sizing: border-box;
     background-image: url('/Halmgaard/LightBoxBG.jpg');
     background-size: cover;
@@ -2474,6 +2475,343 @@ body.dark-mode .skull-card-body strong {
 
     footer p {
         margin: 5px 0;
+    }
+}
+
+/* ==================== Outfits Page Styles ==================== */
+.outfit-section {
+    margin: 40px 0;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.outfit-section h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #0066cc;
+}
+
+body.dark-mode .outfit-section {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.outfit-images {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.image-block {
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px;
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+body.dark-mode .image-block {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.image-block p {
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #4a9eff;
+}
+
+.image-block img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: block;
+}
+
+.notes {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: rgba(255, 200, 100, 0.1);
+    border-left: 4px solid #ff8c00;
+    border-radius: 5px;
+}
+
+body.dark-mode .notes {
+    background-color: rgba(255, 140, 0, 0.15);
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #ff8c00;
+}
+
+/* Mobile responsive for outfits */
+@media (max-width: 768px) {
+    .outfit-section {
+        padding: 15px;
+        margin: 25px 0;
+    }
+
+    .outfit-images {
+        gap: 20px;
+    }
+
+    .image-block {
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .outfit-section h2 {
+        font-size: 1.3em;
+    }
+
+    .image-block p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .outfit-section {
+        padding: 10px;
+        margin: 20px 0;
+    }
+
+    .outfit-section h2 {
+        font-size: 1.1em;
+    }
+}
+
+/* ==================== Skills Pages Styles ==================== */
+
+.skills-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.skills-container h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+body.dark-mode .skills-container h1 {
+    color: #ffffff;
+}
+
+.skills-intro {
+    text-align: center;
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+body.dark-mode .skills-intro {
+    color: #cccccc;
+}
+
+.skill-section {
+    margin-bottom: 50px;
+}
+
+.section-title {
+    font-size: 1.8em;
+    color: #444;
+    border-bottom: 3px solid #FF6B35;
+    padding-bottom: 12px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+body.dark-mode .section-title {
+    color: #e0e0e0;
+    border-bottom-color: #FF6B35;
+}
+
+.skill-card {
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 18px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: inline-block;
+    width: calc(50% - 12px);
+    margin-right: 15px;
+    vertical-align: top;
+}
+
+.skill-card:nth-child(even) {
+    margin-right: 0;
+}
+
+body.dark-mode .skill-card {
+    background: #2a2a2a;
+    border-color: #444;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    border-color: #FF6B35;
+}
+
+body.dark-mode .skill-card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+.skill-card h3 {
+    font-size: 1.3em;
+    color: #333;
+    margin: 0 0 12px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #FF6B35;
+}
+
+body.dark-mode .skill-card h3 {
+    color: #ffffff;
+}
+
+.skill-info {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.skill-stat {
+    font-size: 0.95em;
+    color: #555;
+    background: #f5f5f5;
+    padding: 6px 12px;
+    border-radius: 6px;
+    margin: 4px 0;
+}
+
+body.dark-mode .skill-stat {
+    color: #ddd;
+    background: #3a3a3a;
+}
+
+.skill-stat strong {
+    color: #FF6B35;
+}
+
+body.dark-mode .skill-stat strong {
+    color: #FF8C5A;
+}
+
+.skill-desc {
+    color: #666;
+    line-height: 1.6;
+    margin: 12px 0 0 0;
+    font-size: 0.95em;
+}
+
+body.dark-mode .skill-desc {
+    color: #bbb;
+}
+
+/* Tablet Layout */
+@media (max-width: 768px) {
+    .skills-container {
+        padding: 30px 15px;
+    }
+
+    .skills-container h1 {
+        font-size: 2em;
+    }
+
+    .section-title {
+        font-size: 1.4em;
+        margin-bottom: 20px;
+    }
+
+    .skill-card {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .skill-card:nth-child(even) {
+        margin-right: 0;
+    }
+
+    .skill-info {
+        gap: 12px;
+    }
+
+    .skill-stat {
+        padding: 5px 10px;
+        font-size: 0.9em;
+    }
+}
+
+/* Mobile Layout */
+@media (max-width: 480px) {
+    .skills-container {
+        padding: 20px 12px;
+        overflow-x: hidden;
+    }
+
+    .skills-container h1 {
+        font-size: 1.6em;
+        margin-bottom: 12px;
+    }
+
+    .skills-intro {
+        font-size: 0.95em;
+        margin-bottom: 30px;
+    }
+
+    .section-title {
+        font-size: 1.2em;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+    }
+
+    .skill-card {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 15px;
+        margin-bottom: 12px;
+        margin-right: 0;
+        border-radius: 10px;
+    }
+
+    .skill-card h3 {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+
+    .skill-info {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .skill-stat {
+        padding: 5px 8px;
+        font-size: 0.85em;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .skill-desc {
+        font-size: 0.9em;
+        margin-top: 10px;
     }
 }
 
