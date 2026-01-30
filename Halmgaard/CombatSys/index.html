@@ -13,7 +13,7 @@
         
         <div class="combat-overview-box">
             <h2>⚔️ Quick Overview</h2>
-            <p style="font-size: 1.1em; line-height: 1.6; margin-bottom: 0;">Choose from <strong>Knight</strong>, <strong>Archer</strong>, or <strong>Sorcerer</strong>. Train through PvE, PvP, or training dummies. Skills grow through active use with no level caps. PvP unlocks at level 60 with 50% damage reduction.</p>
+            <p style="font-size: 1.1em; line-height: 1.6; margin-bottom: 0;">Choose from <strong>Knight</strong>, <strong>Archer</strong>, or <strong>Sorcerer</strong>. Train through PvE, PvP, or training dummies. Skills grow through active use with no level caps. PvP unlocks at level 50 with 50% damage reduction.</p>
         </div>
 
         <section class="subpage-content-box">
@@ -88,7 +88,7 @@
             <h2>⚔️ PvP & Damage Reduction</h2>
             
             <div class="info-box warning">
-                <p style="margin: 0; font-size: 1.05em;"><strong>🔴 Important:</strong> PvP unlocks at <strong>level 60</strong>. Damage in PvP is <strong>reduced by 50%</strong> to make fights more tactical and engaging.</p>
+                <p style="margin: 0; font-size: 1.05em;"><strong>🔴 Important:</strong> PvP unlocks at <strong>level 50</strong>. Damage in PvP is <strong>reduced by 50%</strong> to make fights more tactical and engaging.</p>
             </div>
 
             <h3 class="combat-section-title" style="margin-top: 25px;">🛡️ Combat Lock System</h3>
@@ -102,8 +102,62 @@
         </section>
 
         <section class="subpage-content-box">
+            <h2>💀 Penalty System on Death</h2>
+            <p class="intro-text">When your character dies, the experience penalty depends on your level and what protective items you're carrying.</p>
+            
+            <h3 class="combat-section-title">📋 Experience Loss by Level & Equipment</h3>
+            <div class="skull-table-wrapper">
+                <table class="wikitable skull-table" style="margin-top: 20px;">
+                    <thead>
+                        <tr>
+                            <th>Level Range</th>
+                            <th>Status</th>
+                            <th>Experience Loss</th>
+                            <th>Inventory Loss</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Below Level 50</strong></td>
+                            <td>No Penalties</td>
+                            <td>0% Exp</td>
+                            <td>None</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Level 50+</strong></td>
+                            <td>No Protection</td>
+                            <td>70% Exp</td>
+                            <td>Only with Red Skull</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Level 50+</strong></td>
+                            <td>With Protection Charm</td>
+                            <td>0% Exp</td>
+                            <td>None</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Level 50+</strong></td>
+                            <td>Protection Charm + Red Skull</td>
+                            <td>20% Exp</td>
+                            <td>Only with Red Skull</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="combat-section-title" style="margin-top: 25px;">🧿 Protection Charm</h3>
+            <p>The <strong>Protection Charm</strong> is an equippable item that provides experience protection when you die. It is equipped in the <strong>Charm Slot</strong> and significantly reduces experience loss at high levels.</p>
+            <ul class="combat-list">
+                <li>⚙️ <strong>Equipment Slot:</strong> Charm Slot</li>
+                <li>🛡️ <strong>Effect:</strong> Reduces experience loss from 70% to 0% (at level 50+)</li>
+                <li>⚠️ <strong>Red Skull Override:</strong> If you have a Red Skull, the charm still provides protection (only 20% loss instead of full inventory loss)</li>
+                <li>❌ <strong>Note:</strong> The old Amulet of Protection is no longer usable. Use Protection Charm instead.</li>
+            </ul>
+        </section>
+
+        <section class="subpage-content-box">
             <h2>💀 Skulls System</h2>
-            <p class="intro-text">Skulls are the various penalties you can accumulate by attacking players in PvP, each with their own experience loss on death.</p>
+            <p class="intro-text">Skulls are the various penalties you can accumulate by attacking players in PvP, each with their own effects on death.</p>
             
             <p class="info-box success"><strong>✅ Good News:</strong> Attacking a skulled player <strong>AFTER</strong> they attacked you will <strong>NOT</strong> result in a skull for you.</p>
 
