@@ -1,0 +1,2862 @@
+/* ==================== Base Styles ==================== */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ececec;
+    background-image: url('/Halmgaard/HalmBackground.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    transition: background-color 0.3s;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(236, 236, 236, 0.2);
+    z-index: -1;
+    pointer-events: none;
+}
+
+body.dark-mode {
+    background-color: #1a1a1a;
+}
+
+body.dark-mode::before {
+    background-color: rgba(26, 26, 26, 0.3);
+}
+
+/* ==================== Header ==================== */
+header {
+    background-color: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    flex-wrap: wrap;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+header nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: normal;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+#dark-mode-btn {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+#dark-mode-btn:hover {
+    background-color: #777;
+}
+
+.wiki-search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.wiki-search input {
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    font-size: 14px;
+    min-width: 220px;
+    background-color: #fff;
+    color: #111;
+}
+
+body.dark-mode .wiki-search input {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+    border-color: #666;
+}
+
+.wiki-search button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.wiki-search button:hover {
+    background-color: #777;
+}
+
+.wiki-search-suggestions {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    padding: 6px;
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 1000;
+}
+
+body.dark-mode .wiki-search-suggestions {
+    background: #2f2f2f;
+    border-color: #555;
+}
+
+.wiki-search-suggestions.visible {
+    display: flex;
+}
+
+.wiki-search-suggestion {
+    text-align: left;
+    padding: 6px 8px;
+    border-radius: 4px;
+    border: none;
+    background: transparent;
+    color: #111;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+body.dark-mode .wiki-search-suggestion {
+    color: #e0e0e0;
+}
+
+.wiki-search-suggestion:hover {
+    background: rgba(0, 102, 204, 0.15);
+}
+
+tr.search-hit {
+    outline: 2px solid #ff8c00;
+    background-color: rgba(255, 140, 0, 0.08);
+}
+
+body.dark-mode tr.search-hit {
+    background-color: rgba(255, 140, 0, 0.2);
+}
+
+/* ==================== Mobile Responsive for Header/Search ==================== */
+@media (max-width: 768px) {
+    header {
+        padding: 10px;
+    }
+    
+    header nav {
+        gap: 10px;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .wiki-search {
+        flex: 1 1 auto;
+        min-width: 0;
+        max-width: 100%;
+    }
+    
+    .wiki-search input {
+        min-width: 0;
+        width: 100%;
+        flex: 1;
+        font-size: 13px;
+        padding: 7px 8px;
+    }
+    
+    .wiki-search button {
+        font-size: 13px;
+        padding: 7px 10px;
+        white-space: nowrap;
+    }
+    
+    #dark-mode-btn {
+        font-size: 13px;
+        padding: 7px 10px;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 20px;
+        margin-top: 5px;
+    }
+    
+    header nav {
+        gap: 8px;
+    }
+    
+    .wiki-search input {
+        font-size: 12px;
+        padding: 6px 7px;
+    }
+    
+    .wiki-search button {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+    
+    #dark-mode-btn {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+}
+
+/* ==================== Container ==================== */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ececec;
+    transition: background-color 0.3s;
+}
+
+body.dark-mode .container {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+/* ==================== Content Box ==================== */
+.content-box {
+    position: relative;
+    /* for pseudo-element gradient border */
+    background-color: #f5f5f5;
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 30px;
+    min-height: 200px;
+    box-sizing: border-box;
+    /* keep padding inside border */
+    overflow: hidden;
+    /* ensures rounded corners clip content */
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+/* Gradient border pseudo-element */
+.content-box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 3px;
+    /* border thickness */
+    background: linear-gradient(135deg, #6ae3ff, #9b6bff, #ff6ad5);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+    animation: hueShift 15s linear infinite;
+}
+
+/* Light mode gradient */
+body:not(.dark-mode) .content-box::before {
+    background: linear-gradient(135deg,
+            rgba(102, 204, 255, 0.5),
+            rgba(179, 129, 255, 0.5),
+            rgba(255, 160, 196, 0.5));
+    padding: 5px;
+    animation: hueShift 25s linear infinite;
+}
+
+/* Dark mode content box */
+body.dark-mode .content-box {
+    background-color: #333;
+    border-color: #555;
+}
+
+/* Heading inside content box */
+.content-box h2 {
+    margin-top: 0;
+}
+
+/* ==================== Headings & Text ==================== */
+/* Light mode: general headings */
+h1,
+h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Light mode: header headings stay white */
+header h1,
+header h2 {
+    color: white;
+}
+
+/* Dark mode: general headings */
+body.dark-mode h1,
+body.dark-mode h2 {
+    color: #e0e0e0;
+}
+
+/* Dark mode: header headings stay white */
+body.dark-mode header h1,
+body.dark-mode header h2 {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .back-to-top-link {
+        display: none !important;
+    }
+}
+
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ==================== Wiki Content ==================== */
+.wiki-content {
+    background-color: rgb(224, 224, 224);
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.wiki-content h1 {
+    color: #2563eb;
+}
+
+table {
+    margin-bottom: 24px;
+}
+
+/* Equipment info boxes */
+.equipment-info {
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .equipment-info {
+    background: #2a2a2a;
+    border-color: #555;
+    color: #e0e0e0;
+}
+
+/* Item and mob name styling */
+.item-name {
+    color: #ff8c00;
+    font-weight: normal;
+}
+
+body.dark-mode .item-name {
+    color: #ffa500;
+}
+
+.mob-name {
+    color: #0066cc;
+    font-weight: normal;
+}
+
+body.dark-mode .mob-name {
+    color: #4d9fff;
+}
+
+.wiki-content p,
+.wiki-content ul,
+.wiki-content li {
+    color: #4b5563;
+    font-size: 1.05rem;
+}
+
+.wiki-content .muted {
+    color: #6b7280;
+    font-weight: bold;
+}
+
+.wiki-content .accent {
+    color: #0d9488;
+    font-weight: bold;
+}
+
+body.dark-mode .wiki-content {
+    background-color: rgb(42, 42, 42);
+    color: #e0e0e0;
+}
+
+body.dark-mode .wiki-content h1 {
+    color: #60a5fa;
+}
+
+body.dark-mode .wiki-content p,
+body.dark-mode .wiki-content ul,
+body.dark-mode .wiki-content li {
+    color: #d1d5db;
+}
+
+body.dark-mode .wiki-content .muted {
+    color: #9ca3af;
+}
+
+body.dark-mode .wiki-content .accent {
+    color: #5eead4;
+}
+
+/* ==================== Boxes & Box Containers ==================== */
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.box {
+    border: 1px solid #ddd;
+    padding: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: calc(25% - 12px);
+    max-width: 220px;
+    box-sizing: border-box;
+    background-image: url('/Halmgaard/LightBoxBG.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: background-color 0.3s, border-color 0.3s, background-image 0.3s;
+}
+
+body.dark-mode .box {
+    background-color: #333;
+    border-color: #555;
+    background-image: url('/Halmgaard/DarkBoxBG.jpeg');
+}
+
+.box img {
+    max-width: 60%;
+    height: auto;
+}
+
+.box p {
+    margin: 10px 0 0 0;
+}
+
+.blue-box {
+    transition: transform 0.3s;
+}
+
+.blue-box:hover {
+    transform: scale(1.1);
+}
+
+/* ==================== Footer ==================== */
+footer {
+    text-align: center;
+    font-size: 12px;
+    color: #888;
+    margin-top: 20px;
+    transition: color 0.3s;
+}
+
+body.dark-mode footer {
+    color: #999;
+}
+
+/* ==================== Sidebar ==================== */
+.page-wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.sidebar-column {
+    position: sticky;
+    top: 20px;
+    flex: 0 0 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.vertical-sidebar {
+    flex: 0 0 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+}
+
+.vertical-sidebar h2 {
+    margin-bottom: 10px;
+    margin-left: 5px;
+    text-align: left;
+    font-size: 1rem;
+    color: #2563eb;
+}
+
+.vertical-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.vertical-sidebar li {
+    margin-bottom: 8px;
+}
+
+.vertical-sidebar a {
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: bold;
+    display: block;
+    padding: 5px 8px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.vertical-sidebar a:hover {
+    background-color: #0066cc;
+    color: white;
+}
+
+/* Boxes inside sidebar */
+.vertical-sidebar .box {
+    text-align: center;
+    padding: 15px;
+    background-color: #0066cc;
+    color: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.vertical-sidebar .box img {
+    max-width: 70%;
+    height: auto;
+}
+
+.vertical-sidebar .box a {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #004aad;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: transform 0.3s;
+}
+
+.vertical-sidebar .box a:hover {
+    transform: scale(1.1);
+}
+
+/* Sidebar dark mode */
+body.dark-mode .vertical-sidebar {
+    background-color: #2a2a2a;
+}
+
+body.dark-mode .vertical-sidebar .box {
+    background-color: #333;
+}
+
+body.dark-mode .vertical-sidebar .box a {
+    background-color: #1a73e8;
+    color: white;
+}
+
+body.dark-mode .vertical-sidebar a {
+    color: #60a5fa;
+}
+
+body.dark-mode .vertical-sidebar a:hover {
+    background-color: #60a5fa;
+    color: #1a1a1a;
+}
+
+/* Sidebar top image */
+.sidebar-top-image {
+    width: 150px;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* ==================== Animations ==================== */
+@keyframes hueShift {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+/* ==================== Responsive ==================== */
+@media (max-width: 1024px) {
+    .box {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .page-wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar-column {
+        position: static;
+        flex: 1;
+        margin-bottom: 20px;
+    }
+
+    .video-box {
+        display: none;
+    }
+
+    .vertical-sidebar {
+        flex: 1;
+        margin-bottom: 20px;
+    }
+
+    .box {
+        width: 100%;
+    }
+
+    header {
+        padding: 10px 15px;
+    }
+
+    header .logo {
+        font-size: 20px;
+    }
+
+    header nav {
+        gap: 10px;
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 15px;
+        margin: 20px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    header .logo {
+        font-size: 18px;
+    }
+
+    header nav {
+        gap: 8px;
+        font-size: 12px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    .box {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-wrapper {
+        flex-direction: column;
+    }
+    
+    .sidebar-column {
+        order: -1;
+        flex: 0 0 auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto 20px;
+    }
+
+    .sidebar-top-image {
+        display: block;
+        max-width: 150px;
+        margin: 0 auto 15px;
+    }
+    
+    #essentials-mobile {
+        display: block;
+        width: 100%;
+        margin: 0 auto 20px;
+        padding: 20px;
+    }
+    
+    #quicklinks-desktop {
+        display: none !important;
+    }
+    
+    #quicklinks-mobile {
+        display: block !important;
+        width: 100%;
+        margin: 20px auto 0 !important;
+        padding: 20px !important;
+    }
+    
+    #quicklinks-mobile .vertical-sidebar h2 {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .sidecontentbox .vertical-sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .sidecontentbox .vertical-sidebar li {
+        margin: 0;
+    }
+
+    .sidecontentbox .vertical-sidebar a {
+        display: block;
+        padding: 10px 15px;
+        font-size: 13px;
+        white-space: nowrap;
+        border-radius: 5px;
+        background: #0066cc;
+        color: white !important;
+        text-decoration: none;
+        transition: background 0.3s;
+    }
+    
+    .sidecontentbox .vertical-sidebar a:hover {
+        background: #0052a3;
+    }
+
+    body.dark-mode .sidecontentbox .vertical-sidebar a {
+        background: #1a5490;
+    }
+    
+    body.dark-mode .sidecontentbox .vertical-sidebar a:hover {
+        background: #134070;
+    }
+    
+    .container {
+        order: 1;
+    }
+}
+
+.ad-demo {
+    background: #f0f0f0;
+    border: 2px dashed #999;
+    color: #555;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Dark mode version */
+body.dark-mode .ad-demo,
+body.dark .ad-demo {
+    background: #1e1e1e;
+    border-color: #666;
+    color: #ddd;
+}
+
+.top-ad-demo {
+    width: 100%;
+    max-width: 970px;
+    height: 120px;
+    margin: 15px auto;
+    box-sizing: border-box;
+}
+
+/* ==================== Table Responsive ==================== */
+@media (max-width: 768px) {
+    /* Maximize table space on mobile */
+    table {
+        margin: 10px 0 !important;
+        width: 100% !important;
+        max-width: none !important;
+    }
+    
+    .wiki-content {
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: none !important;
+    }
+    
+    .container {
+        padding: 10px 5px !important;
+        margin: 10px 5px !important;
+    }
+    
+    .content-box {
+        padding: 10px !important;
+        margin-bottom: 15px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    table {
+        font-size: 12px;
+        margin: 5px 0 !important;
+    }
+    
+    table img {
+        width: 35px !important;
+        height: 35px !important;
+    }
+    
+    table th, table td {
+        padding: 6px 2px;
+    }
+    
+    .container {
+        padding: 5px 2px !important;
+        margin: 5px 2px !important;
+    }
+    
+    .content-box {
+        padding: 8px !important;
+    }
+
+    /* Mobile wikitable adjustments */
+    .wikitable {
+        font-size: 10px;
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .wikitable th, .wikitable td {
+        padding: 4px 2px;
+        font-size: 10px;
+    }
+
+    .wikitable img {
+        max-height: 40px;
+        width: auto;
+    }
+
+    /* Standardized mob image sizing */
+    .wikitable td:first-child img {
+        max-width: 60px;
+        height: auto;
+    }
+
+    /* Elemental icon sizing */
+    .wikitable td img[src*="Elemental"] {
+        max-width: 35px;
+        height: auto;
+    }
+}
+/* ==================== Mob Table Styles ==================== */
+table.wikitable {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    border: 2px solid #000;
+}
+
+.wikitable th, .wikitable td {
+    border: 1px solid #000;
+    padding: 10px;
+}
+
+.wikitable th {
+    background: #333;
+    color: white;
+    font-weight: bold;
+    border: 1px solid #000;
+}
+
+.wikitable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.wikitable tr:hover {
+    background-color: #e8e8e8;
+}
+
+.wikitable img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+}
+
+/* Mobile optimization for tablets */
+@media (max-width: 768px) {
+    /* Wrap table in scrollable container */
+    table.wikitable {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 11px;
+    }
+
+    table.wikitable thead,
+    table.wikitable tbody,
+    table.wikitable tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    .wikitable th, .wikitable td {
+        padding: 8px 4px;
+        font-size: 10px;
+        word-wrap: break-word;
+    }
+
+    .wikitable th {
+        font-size: 9px;
+        padding: 8px 4px;
+    }
+
+    .wikitable img {
+        max-width: 35px;
+        height: auto;
+    }
+}
+
+/* Mobile optimization for phones */
+@media (max-width: 480px) {
+    table.wikitable {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 9px;
+    }
+
+    table.wikitable thead,
+    table.wikitable tbody,
+    table.wikitable tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    .wikitable th, .wikitable td {
+        padding: 6px 2px;
+        font-size: 8px;
+        word-wrap: break-word;
+    }
+
+    .wikitable th {
+        font-size: 7px;
+        padding: 6px 2px;
+    }
+
+    .wikitable img {
+        max-width: 28px;
+        height: auto;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .content-box, .wiki-content {
+        padding: 15px;
+    }
+
+    /* Drop table specific fix for subpages */
+    .subpage-container table.wikitable {
+        display: table !important;
+        width: auto !important;
+        min-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .subpage-container table.wikitable th,
+    .subpage-container table.wikitable td {
+        display: table-cell !important;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .content-box, .wiki-content {
+        padding: 15px;
+    }
+
+    /* Items and Mobs home page table mobile optimization */
+    table.wikitable:not(.subpage-container table.wikitable) {
+        display: table !important;
+        width: auto !important;
+        min-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 7px;
+    }
+
+    table.wikitable:not(.subpage-container table.wikitable) th,
+    table.wikitable:not(.subpage-container table.wikitable) td {
+        padding: 3px 1px !important;
+        font-size: 7px !important;
+        word-break: break-word !important;
+        display: table-cell !important;
+    }
+
+    table.wikitable:not(.subpage-container table.wikitable) img {
+        max-width: 20px !important;
+        height: auto;
+    }
+}
+
+/* Dark mode styles for wikitable */
+body.dark-mode table.wikitable {
+    border: 2px solid #fff;
+}
+
+body.dark-mode .wikitable th, 
+body.dark-mode .wikitable td {
+    border: 1px solid #fff;
+}
+
+body.dark-mode .wikitable th {
+    background: #1a1a1a;
+    border: 1px solid #fff;
+}
+
+body.dark-mode .wikitable tr:nth-child(even) {
+    background-color: #2a2a2a;
+}
+
+body.dark-mode .wikitable tr:nth-child(odd) {
+    background-color: #333;
+}
+
+body.dark-mode .wikitable tr:hover {
+    background-color: #404040;
+}
+
+body.dark-mode .wikitable td {
+    color: #e0e0e0;
+}
+/* ==================== Subpage Styles ==================== */
+/* Styles for standalone subpages like Enchanting/Blacksmithing */
+.subpage-container {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.subpage-container h1 {
+    color: #333;
+    border-bottom: 3px solid #4a5568;
+    padding-bottom: 10px;
+}
+
+.subpage-container h2 {
+    color: #2d3748;
+    margin-top: 30px;
+    border-bottom: 2px solid #cbd5e0;
+    padding-bottom: 8px;
+}
+
+.subpage-container h3 {
+    color: #4a5568;
+    margin-top: 20px;
+}
+
+.subpage-quote {
+    font-style: italic;
+    color: #718096;
+    text-align: center;
+    font-size: 1.1em;
+    margin: 20px 0;
+}
+
+.subpage-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.subpage-container th {
+    background-color: #4a5568;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.subpage-container td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.subpage-container tr:hover {
+    background-color: #f7fafc;
+}
+
+.subpage-note {
+    background-color: #fff3cd;
+    border-left: 4px solid #ffc107;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+.subpage-container hr {
+    border: none;
+    border-top: 1px solid #cbd5e0;
+    margin: 30px 0;
+}
+
+.subpage-container ol, 
+.subpage-container ul {
+    margin: 15px 0;
+    padding-left: 30px;
+}
+
+.subpage-container li {
+    margin: 8px 0;
+}
+
+.subpage-container strong {
+    color: #2d3748;
+}
+
+.subpage-content-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+/* Dark mode for subpages */
+body.dark-mode .subpage-container {
+    background-color: #1a1a1a;
+}
+
+body.dark-mode .subpage-container h1,
+body.dark-mode .subpage-container h2,
+body.dark-mode .subpage-container h3 {
+    color: #e0e0e0;
+    border-color: #4a5568;
+}
+
+body.dark-mode .subpage-quote {
+    color: #a0aec0;
+}
+
+body.dark-mode .subpage-container table {
+    background-color: #2a2a2a;
+}
+
+body.dark-mode .subpage-container th {
+    background-color: #374151;
+}
+
+body.dark-mode .subpage-container td {
+    border-color: #4a5568;
+    color: #e0e0e0;
+}
+
+body.dark-mode .subpage-container tr:hover {
+    background-color: #374151;
+}
+
+body.dark-mode .subpage-note {
+    background-color: #4a3a1a;
+    border-color: #d97706;
+    color: #fef3c7;
+}
+
+body.dark-mode .subpage-content-box {
+    background-color: #2a2a2a;
+    color: #e0e0e0;
+}
+
+body.dark-mode .subpage-container strong {
+    color: #f3f4f6;
+}
+
+/* ==================== Info Box Styles ==================== */
+.subpage-info-box {
+    background: #f8f9fa;
+    color: #333;
+    flex: 0 0 300px;
+    border: 2px solid #4a5568;
+    border-radius: 8px;
+    padding: 15px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+body.dark-mode .subpage-info-box {
+    background: #2a2a2a;
+    color: #e0e0e0;
+}
+
+.subpage-info-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    display: block;
+}
+
+.subpage-info-box table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    table-layout: fixed;
+}
+
+.subpage-info-box table tr {
+    background: #e2e8f0;
+}
+
+body.dark-mode .subpage-info-box table tr {
+    background: #374151;
+}
+
+.subpage-info-box table tr:nth-child(2) {
+    background: transparent;
+}
+
+body.dark-mode .subpage-info-box table tr:nth-child(2) {
+    background: transparent;
+}
+
+.subpage-info-box table th,
+.subpage-info-box table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #cbd5e0;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+/* ==================== Flex Content Responsive ==================== */
+.flex-content {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .flex-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .subpage-info-box {
+        flex: 0 0 100% !important;
+        min-width: 100% !important;
+    }
+
+    .subpage-info-box table {
+        font-size: 14px;
+    }
+
+    .subpage-info-box table th,
+    .subpage-info-box table td {
+        padding: 6px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .subpage-info-box {
+        padding: 12px !important;
+    }
+
+    .subpage-info-box img {
+        max-width: 150px !important;
+    }
+
+    .subpage-info-box table {
+        font-size: 13px;
+    }
+
+    .subpage-info-box table th,
+    .subpage-info-box table td {
+        padding: 5px !important;
+        font-size: 12px;
+    }
+}
+
+/* ==================== Subpage Button Styles ==================== */
+.subpage-back-button {
+    display: block;
+    margin-bottom: 20px;
+    padding: 12px 24px;
+    background-color: #4a5568;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: auto;
+}
+
+body.dark-mode .subpage-back-button {
+    background-color: #5a6b7c;
+}
+
+.subpage-back-button:hover {
+    background-color: #374151;
+}
+
+body.dark-mode .subpage-back-button:hover {
+    background-color: #4a5568;
+}
+
+@media (max-width: 768px) {
+    .subpage-back-button {
+        width: 100%;
+        padding: 15px 20px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .subpage-back-button {
+        padding: 12px 16px;
+        font-size: 16px;
+    }
+}
+
+/* ==================== Subpage Responsive Typography ==================== */
+@media (max-width: 768px) {
+    .subpage-container h1 {
+        font-size: 28px;
+        margin: 15px 0;
+    }
+
+    .subpage-container h2 {
+        font-size: 22px;
+        margin: 15px 0 10px 0;
+    }
+
+    .subpage-container p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 480px) {
+    .subpage-container {
+        padding: 8px;
+    }
+
+    .subpage-container h1 {
+        font-size: 24px;
+        margin: 10px 0;
+    }
+
+    .subpage-container h2 {
+        font-size: 20px;
+        margin: 12px 0 8px 0;
+    }
+
+    .subpage-container p {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+}
+
+/* ==================== MapGuide Styles ==================== */
+.mapguide-main-container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.mapguide-main-container h1 {
+    text-align: center;
+    color: #2563eb;
+    margin-bottom: 5px;
+    font-size: 2.5em;
+}
+
+body.dark-mode .mapguide-main-container h1 {
+    color: #60a5fa;
+}
+
+.mapguide-main-container h2 {
+    text-align: center;
+    color: #2563eb;
+    margin: 50px 0 15px 0;
+    font-size: 2em;
+}
+
+body.dark-mode .mapguide-main-container h2 {
+    color: #60a5fa;
+}
+
+.mapguide-intro {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+body.dark-mode .mapguide-intro {
+    color: #a0aec0;
+}
+
+.mapguide-nav-container {
+    text-align: center;
+    padding: 10px;
+}
+
+.mapguide-nav-container a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: opacity 0.3s;
+    display: inline-block;
+}
+
+.mapguide-nav-container a:hover {
+    opacity: 0.8;
+}
+
+.map-container {
+    margin: 30px auto;
+    max-width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.map-image {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: block;
+}
+
+body.dark-mode .map-image {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.hunting-section {
+    margin: 30px 0;
+    padding: 25px;
+    background: linear-gradient(135deg, #f5f5f5 0%, #efefef 100%);
+    border-left: 4px solid #2563eb;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.hunting-section:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+body.dark-mode .hunting-section {
+    background: linear-gradient(135deg, #2a2a2a 0%, #333 100%);
+    border-left-color: #60a5fa;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .hunting-section:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.mob-icon {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin: 0;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+body.dark-mode .mob-icon {
+    filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.1));
+}
+
+.mob-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.mob-info {
+    flex: 1;
+}
+
+.mob-info h3 {
+    margin: 0 0 8px 0;
+    color: #2563eb;
+    font-size: 1.4em;
+}
+
+body.dark-mode .mob-info h3 {
+    color: #60a5fa;
+}
+
+.recommended-level {
+    font-weight: 600;
+    color: #ff8c00;
+    margin: 8px 0;
+    font-size: 0.95em;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+}
+
+.mapguide-divider {
+    border: none;
+    border-top: 2px solid #e0e0e0;
+    margin: 50px 0;
+    opacity: 0.6;
+}
+
+body.dark-mode .mapguide-divider {
+    border-top-color: #444;
+}
+
+.mapguide-description {
+    color: #555;
+    line-height: 1.7;
+    margin: 10px 0 0 0;
+    font-size: 0.95em;
+}
+
+body.dark-mode .mapguide-description {
+    color: #d1d5db;
+}
+
+.mapguide-description-levels {
+    margin-left: 20px;
+}
+
+/* ==================== MapGuide Mobile Responsive ==================== */
+@media (max-width: 1024px) {
+    .mapguide-main-container {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mapguide-main-container {
+        padding: 0 12px;
+        margin: 20px auto;
+    }
+
+    .mapguide-main-container h1 {
+        font-size: 1.8em;
+        margin-bottom: 8px;
+    }
+
+    .mapguide-main-container h2 {
+        font-size: 1.4em;
+        margin: 30px 0 10px 0;
+    }
+
+    .mapguide-intro {
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    .hunting-section {
+        padding: 18px;
+        margin: 20px 0;
+    }
+
+    .mob-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .mob-icon {
+        width: 90px;
+        height: 90px;
+    }
+
+    .mob-info {
+        text-align: center;
+        width: 100%;
+    }
+
+    .mob-info h3 {
+        font-size: 1.1em;
+        margin-bottom: 6px;
+    }
+
+    .recommended-level {
+        font-size: 0.9em;
+        margin: 6px 0;
+    }
+
+    .mapguide-description {
+        font-size: 0.9em;
+        line-height: 1.6;
+    }
+
+    .mapguide-divider {
+        margin: 30px 0;
+    }
+
+    .video-container {
+        max-width: 100%;
+        margin: 15px 0;
+    }
+
+    .map-container {
+        padding: 15px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .mapguide-main-container {
+        padding: 0 8px;
+        margin: 15px auto;
+    }
+
+    .mapguide-main-container h1 {
+        font-size: 1.5em;
+        margin-bottom: 8px;
+    }
+
+    .mapguide-main-container h2 {
+        font-size: 1.2em;
+        margin: 20px 0 8px 0;
+    }
+
+    .mapguide-intro {
+        font-size: 0.9em;
+        margin-bottom: 15px;
+        line-height: 1.4;
+    }
+
+    .hunting-section {
+        padding: 15px;
+        margin: 15px 0;
+        border-left-width: 3px;
+    }
+
+    .hunting-section:hover {
+        transform: none;
+    }
+
+    .mob-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .mob-info h3 {
+        font-size: 1em;
+    }
+
+    .recommended-level {
+        font-size: 0.85em;
+    }
+
+    .mapguide-description {
+        font-size: 0.85em;
+        line-height: 1.5;
+    }
+
+    .mapguide-divider {
+        margin: 20px 0;
+    }
+
+    .video-container {
+        margin: 15px 0;
+    }
+
+    .map-image {
+        margin: 15px 0;
+    }
+
+    .mapguide-nav-container a {
+        display: inline-block;
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+}
+
+/* Combat System Page Styles */
+.combat-overview-box {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.combat-overview-box h2,
+.combat-overview-box p {
+    color: white;
+}
+
+.combat-overview-box h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+.combat-divider {
+    border: none;
+    border-top: 2px solid #e5e7eb;
+    margin: 25px 0;
+}
+
+body.dark-mode .combat-divider {
+    border-top-color: #374151;
+}
+
+.combat-section-title {
+    color: #2563eb;
+    margin-top: 30px;
+}
+
+body.dark-mode .combat-section-title {
+    color: #60a5fa;
+}
+
+.vocation-card {
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background: #f9fafb;
+}
+
+body.dark-mode .vocation-card {
+    background: #1f2937;
+}
+
+.vocation-card.knight {
+    border-left: 4px solid #3b82f6;
+}
+
+.vocation-card.archer {
+    border-left: 4px solid #10b981;
+}
+
+.vocation-card.sorcerer {
+    border-left: 4px solid #8b5cf6;
+}
+
+.vocation-card h4 {
+    margin-top: 0;
+}
+
+.vocation-card.knight h4 {
+    color: #1e40af;
+}
+
+body.dark-mode .vocation-card.knight h4 {
+    color: #60a5fa;
+}
+
+.vocation-card.archer h4 {
+    color: #047857;
+}
+
+body.dark-mode .vocation-card.archer h4 {
+    color: #34d399;
+}
+
+.vocation-card.sorcerer h4 {
+    color: #6d28d9;
+}
+
+body.dark-mode .vocation-card.sorcerer h4 {
+    color: #a78bfa;
+}
+
+.vocation-card p {
+    margin-bottom: 0;
+}
+
+.training-grid {
+    display: grid;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.training-method {
+    padding: 18px;
+    border-radius: 8px;
+}
+
+.training-method h4 {
+    margin-top: 0;
+}
+
+.training-method p {
+    margin-bottom: 0;
+}
+
+.training-method.pve {
+    background: #f0fdf4;
+    border-left: 4px solid #10b981;
+}
+
+body.dark-mode .training-method.pve {
+    background: #064e3b;
+}
+
+.training-method.pve h4 {
+    color: #047857;
+}
+
+body.dark-mode .training-method.pve h4 {
+    color: #34d399;
+}
+
+.training-method.pve .efficiency {
+    color: #059669;
+}
+
+body.dark-mode .training-method.pve .efficiency {
+    color: #6ee7b7;
+}
+
+.training-method.pvp {
+    background: #fef2f2;
+    border-left: 4px solid #ef4444;
+}
+
+body.dark-mode .training-method.pvp {
+    background: #7f1d1d;
+}
+
+.training-method.pvp h4 {
+    color: #991b1b;
+}
+
+body.dark-mode .training-method.pvp h4 {
+    color: #fca5a5;
+}
+
+.training-method.pvp .efficiency {
+    color: #dc2626;
+}
+
+body.dark-mode .training-method.pvp .efficiency {
+    color: #fecaca;
+}
+
+.training-method.dummy {
+    background: #faf5ff;
+    border-left: 4px solid #a855f7;
+}
+
+body.dark-mode .training-method.dummy {
+    background: #581c87;
+}
+
+.training-method.dummy h4 {
+    color: #7c3aed;
+}
+
+body.dark-mode .training-method.dummy h4 {
+    color: #c084fc;
+}
+
+.training-method.dummy .efficiency {
+    color: #9333ea;
+}
+
+body.dark-mode .training-method.dummy .efficiency {
+    color: #d8b4fe;
+}
+
+.info-box {
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.info-box.warning {
+    background: #fef2f2;
+    border: 2px solid #fecaca;
+}
+
+body.dark-mode .info-box.warning {
+    background: #7f1d1d;
+    border-color: #991b1b;
+}
+
+.info-box.note {
+    background: #fef3c7;
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 3px solid #f59e0b;
+    margin-top: 20px;
+}
+
+body.dark-mode .info-box.note {
+    background: #78350f;
+    border-left-color: #fbbf24;
+}
+
+.info-box.success {
+    background: #dcfce7;
+    padding: 15px;
+    border-radius: 6px;
+    border-left: 3px solid #10b981;
+    margin-bottom: 25px;
+}
+
+body.dark-mode .info-box.success {
+    background: #064e3b;
+    border-left-color: #34d399;
+}
+
+.combat-list {
+    line-height: 1.8;
+}
+
+.skull-details {
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    cursor: pointer;
+    background: #f9fafb;
+}
+
+body.dark-mode .skull-details {
+    background: #1f2937;
+}
+
+.skull-details.white {
+    border-left: 4px solid #6b7280;
+}
+
+.skull-details.red {
+    border-left: 4px solid #dc2626;
+}
+
+.skull-details summary {
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.skull-details.white summary {
+    color: #374151;
+}
+
+body.dark-mode .skull-details.white summary {
+    color: #d1d5db;
+}
+
+.skull-details.red summary {
+    color: #991b1b;
+}
+
+body.dark-mode .skull-details.red summary {
+    color: #fca5a5;
+}
+
+.skull-details-content {
+    margin-top: 15px;
+    padding-left: 10px;
+}
+
+.skull-duration {
+    background: #eff6ff;
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 15px;
+}
+
+body.dark-mode .skull-duration {
+    background: #1e3a8a;
+}
+
+.skull-details.red .skull-duration {
+    background: #fee2e2;
+}
+
+body.dark-mode .skull-details.red .skull-duration {
+    background: #7f1d1d;
+}
+
+.muted-text {
+    color: #6b7280;
+}
+
+body.dark-mode .muted-text {
+    color: #9ca3af;
+}
+
+.danger-text {
+    color: #991b1b;
+}
+
+body.dark-mode .danger-text {
+    color: #fca5a5;
+}
+
+.intro-text {
+    font-size: 1.05em;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+body.dark-mode .intro-text {
+    color: #d1d5db;
+}
+
+/* Skull Table/Card Responsive Views */
+.skull-table-wrapper {
+    display: block;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.skull-cards-mobile {
+    display: none;
+}
+
+.skull-card {
+    background: #f9fafb;
+    border-left: 4px solid #6b7280;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+
+body.dark-mode .skull-card {
+    background: #1f2937;
+    border-left-color: #4b5563;
+}
+
+.skull-card-header {
+    font-weight: bold;
+    font-size: 1.05em;
+    margin-bottom: 10px;
+    color: #374151;
+}
+
+body.dark-mode .skull-card-header {
+    color: #d1d5db;
+}
+
+.skull-card-body p {
+    margin: 6px 0;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+.skull-card-body strong {
+    color: #6b7280;
+}
+
+body.dark-mode .skull-card-body strong {
+    color: #9ca3af;
+}
+
+/* Mobile Responsive Styles for Combat System & FAQ Pages */
+@media (max-width: 768px) {
+    /* Hide table, show cards on mobile */
+    .skull-table-wrapper {
+        display: none;
+    }
+
+    .skull-cards-mobile {
+        display: block;
+        margin-top: 15px;
+    }
+
+    .skull-card {
+        padding: 10px;
+        margin-bottom: 8px;
+    }
+
+    .skull-card-header {
+        font-size: 1em;
+        margin-bottom: 8px;
+    }
+
+    .skull-card-body p {
+        margin: 5px 0;
+        font-size: 0.85em;
+    }
+
+    .combat-overview-box {
+        padding: 15px 12px;
+        margin-bottom: 15px;
+    }
+
+    .combat-overview-box h2 {
+        font-size: 1.2em;
+    }
+
+    .combat-overview-box p {
+        font-size: 0.95em;
+    }
+
+    .vocation-card,
+    .training-method,
+    .skull-details {
+        padding: 12px;
+    }
+
+    .vocation-card h4,
+    .training-method h4 {
+        font-size: 0.95em;
+    }
+
+    .combat-section-title {
+        font-size: 1.15em;
+    }
+
+    .training-grid {
+        gap: 10px;
+    }
+
+    .info-box {
+        padding: 12px;
+    }
+
+    .skull-details summary {
+        font-size: 1em;
+        padding: 8px 0;
+    }
+
+    .skull-details-content {
+        padding-left: 5px;
+        margin-top: 10px;
+    }
+
+    .skull-details-content p {
+        margin-top: 10px !important;
+        margin-bottom: 10px;
+    }
+
+    .skull-details-content ul {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+
+    .wikitable {
+        font-size: 0.85em;
+    }
+
+    .wikitable th,
+    .wikitable td {
+        padding: 6px 4px;
+    }
+
+    /* Make tables horizontally scrollable on mobile */
+    .subpage-content-box {
+        overflow-x: auto;
+        padding: 12px;
+        margin-bottom: 12px;
+    }
+
+    .wikitable {
+        min-width: 500px;
+    }
+
+    h2 {
+        font-size: 1.3em;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    h3 {
+        font-size: 1.15em;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+
+    .combat-list {
+        padding-left: 20px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+
+    .combat-list li {
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Ensure cards are compact on small mobile */
+    .skull-card {
+        padding: 8px;
+        margin-bottom: 6px;
+    }
+
+    .skull-card-header {
+        font-size: 0.95em;
+        margin-bottom: 6px;
+    }
+
+    .skull-card-body p {
+        margin: 4px 0;
+        font-size: 0.8em;
+    }
+
+    .combat-overview-box {
+        padding: 12px 10px;
+        margin-bottom: 12px;
+    }
+
+    .combat-overview-box h2 {
+        font-size: 1.1em;
+        margin-top: 0;
+        margin-bottom: 8px;
+    }
+
+    .combat-overview-box p {
+        font-size: 0.9em;
+        line-height: 1.4;
+    }
+
+    h1 {
+        font-size: 1.5em !important;
+        margin-top: 10px !important;
+        margin-bottom: 15px !important;
+    }
+
+    h2 {
+        font-size: 1.2em;
+        margin-top: 8px;
+        margin-bottom: 12px;
+    }
+
+    h3 {
+        font-size: 1.1em;
+        margin-top: 12px;
+        margin-bottom: 8px;
+    }
+
+    h4 {
+        font-size: 0.95em;
+        margin-top: 0;
+        margin-bottom: 8px;
+    }
+
+    .vocation-card,
+    .training-method,
+    .skull-details {
+        padding: 10px 8px;
+        border-radius: 6px;
+        margin-bottom: 8px;
+    }
+
+    .vocation-card h4,
+    .training-method h4 {
+        font-size: 0.9em;
+    }
+
+    .vocation-card p,
+    .training-method p,
+    .skull-details-content p {
+        font-size: 0.9em;
+        margin-top: 8px !important;
+        margin-bottom: 8px !important;
+    }
+
+    .training-method .efficiency,
+    .efficiency {
+        font-size: 0.8em !important;
+        display: block;
+        margin-top: 4px;
+    }
+
+    .combat-section-title {
+        font-size: 1.05em;
+        margin-top: 15px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .combat-divider {
+        margin: 12px 0;
+    }
+
+    .training-grid {
+        gap: 8px;
+    }
+
+    .info-box {
+        padding: 10px 8px;
+        font-size: 0.9em;
+        margin-bottom: 10px;
+    }
+
+    .info-box.note,
+    .info-box.success {
+        padding: 10px 8px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .info-box.warning {
+        padding: 10px 8px;
+        margin-bottom: 10px;
+    }
+
+    .skull-details {
+        margin-top: 8px !important;
+        padding: 10px 8px;
+    }
+
+    .skull-details summary {
+        font-size: 0.95em;
+        padding: 6px 0;
+        line-height: 1.3;
+    }
+
+    .skull-details-content {
+        padding-left: 3px;
+        margin-top: 8px;
+    }
+
+    .skull-duration {
+        padding: 8px;
+        font-size: 0.85em;
+        margin-top: 10px;
+    }
+
+    .combat-list {
+        padding-left: 18px;
+        line-height: 1.5;
+        margin-top: 6px;
+        margin-bottom: 6px;
+    }
+
+    .combat-list li {
+        margin-bottom: 4px;
+        font-size: 0.9em;
+    }
+
+    .intro-text {
+        font-size: 0.95em;
+        margin-bottom: 12px;
+    }
+
+    .wikitable {
+        font-size: 0.8em;
+        min-width: 420px;
+    }
+
+    .wikitable th,
+    .wikitable td {
+        padding: 5px 3px;
+        font-size: 0.85em;
+    }
+
+    /* Reduce all margins between elements */
+    p {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+
+    ul, ol {
+        margin-top: 6px;
+        margin-bottom: 6px;
+    }
+
+    /* More aggressive spacing reduction */
+    .subpage-content-box {
+        padding: 10px 8px;
+        margin-bottom: 10px;
+    }
+
+    body > div[style*="max-width: 900px"] {
+        padding: 0 8px !important;
+        margin: 10px auto !important;
+    }
+
+    /* Make sure long words don't break layout */
+    p, li, td, th, summary {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+
+    /* Reduce emoji spacing */
+    h2, h3, h4 {
+        word-spacing: -2px;
+    }
+
+    strong {
+        font-size: 1em;
+    }
+
+    /* Tighter spacing for details elements on mobile */
+    details[open] {
+        margin-bottom: 8px;
+    }
+
+    /* Compact links */
+    a {
+        word-break: break-all;
+        font-size: 0.9em;
+    }
+}
+
+/* Tablet adjustments */
+@media (min-width: 481px) and (max-width: 768px) {
+    .combat-overview-box p {
+        font-size: 0.95em;
+    }
+
+    .training-grid {
+        gap: 10px;
+    }
+
+    .wikitable {
+        font-size: 0.9em;
+    }
+
+    .subpage-content-box {
+        padding: 12px;
+    }
+}
+
+/* Ensure content containers adapt to mobile */
+@media (max-width: 768px) {
+    /* Adjust inline max-width container */
+    body > div[style*="max-width: 900px"] {
+        padding: 0 12px !important;
+        margin: 15px auto !important;
+    }
+
+    footer {
+        padding: 15px 12px;
+        font-size: 0.85em;
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 12px 8px;
+        font-size: 0.8em;
+    }
+
+    footer p {
+        margin: 5px 0;
+    }
+}
+
+/* ==================== Outfits Page Styles ==================== */
+.outfit-section {
+    margin: 40px 0;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.outfit-section h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #0066cc;
+}
+
+body.dark-mode .outfit-section {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.outfit-images {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.image-block {
+    flex: 1;
+    min-width: 250px;
+    max-width: 400px;
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+body.dark-mode .image-block {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.image-block p {
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #4a9eff;
+}
+
+.image-block img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: block;
+}
+
+.notes {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: rgba(255, 200, 100, 0.1);
+    border-left: 4px solid #ff8c00;
+    border-radius: 5px;
+}
+
+body.dark-mode .notes {
+    background-color: rgba(255, 140, 0, 0.15);
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #ff8c00;
+}
+
+/* Mobile responsive for outfits */
+@media (max-width: 768px) {
+    .outfit-section {
+        padding: 15px;
+        margin: 25px 0;
+    }
+
+    .outfit-images {
+        gap: 20px;
+    }
+
+    .image-block {
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .outfit-section h2 {
+        font-size: 1.3em;
+    }
+
+    .image-block p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .outfit-section {
+        padding: 10px;
+        margin: 20px 0;
+    }
+
+    .outfit-section h2 {
+        font-size: 1.1em;
+    }
+}
+
+/* ==================== Skills Pages Styles ==================== */
+
+.skills-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.skills-container h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+body.dark-mode .skills-container h1 {
+    color: #ffffff;
+}
+
+.skills-intro {
+    text-align: center;
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+body.dark-mode .skills-intro {
+    color: #cccccc;
+}
+
+.skill-section {
+    margin-bottom: 50px;
+}
+
+.section-title {
+    font-size: 1.8em;
+    color: #444;
+    border-bottom: 3px solid #FF6B35;
+    padding-bottom: 12px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+body.dark-mode .section-title {
+    color: #e0e0e0;
+    border-bottom-color: #FF6B35;
+}
+
+.skill-card {
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 18px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: inline-block;
+    width: calc(50% - 12px);
+    margin-right: 15px;
+    vertical-align: top;
+}
+
+.skill-card:nth-child(even) {
+    margin-right: 0;
+}
+
+body.dark-mode .skill-card {
+    background: #2a2a2a;
+    border-color: #444;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    border-color: #FF6B35;
+}
+
+body.dark-mode .skill-card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+.skill-card h3 {
+    font-size: 1.3em;
+    color: #333;
+    margin: 0 0 12px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #FF6B35;
+}
+
+body.dark-mode .skill-card h3 {
+    color: #ffffff;
+}
+
+.skill-info {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.skill-stat {
+    font-size: 0.95em;
+    color: #555;
+    background: #f5f5f5;
+    padding: 6px 12px;
+    border-radius: 6px;
+    margin: 4px 0;
+}
+
+body.dark-mode .skill-stat {
+    color: #ddd;
+    background: #3a3a3a;
+}
+
+.skill-stat strong {
+    color: #FF6B35;
+}
+
+body.dark-mode .skill-stat strong {
+    color: #FF8C5A;
+}
+
+.skill-desc {
+    color: #666;
+    line-height: 1.6;
+    margin: 12px 0 0 0;
+    font-size: 0.95em;
+}
+
+body.dark-mode .skill-desc {
+    color: #bbb;
+}
+
+/* Tablet Layout */
+@media (max-width: 768px) {
+    .skills-container {
+        padding: 30px 15px;
+    }
+
+    .skills-container h1 {
+        font-size: 2em;
+    }
+
+    .section-title {
+        font-size: 1.4em;
+        margin-bottom: 20px;
+    }
+
+    .skill-card {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .skill-card:nth-child(even) {
+        margin-right: 0;
+    }
+
+    .skill-info {
+        gap: 12px;
+    }
+
+    .skill-stat {
+        padding: 5px 10px;
+        font-size: 0.9em;
+    }
+}
+
+/* Mobile Layout */
+@media (max-width: 480px) {
+    .skills-container {
+        padding: 20px 12px;
+        overflow-x: hidden;
+    }
+
+    .skills-container h1 {
+        font-size: 1.6em;
+        margin-bottom: 12px;
+    }
+
+    .skills-intro {
+        font-size: 0.95em;
+        margin-bottom: 30px;
+    }
+
+    .section-title {
+        font-size: 1.2em;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+    }
+
+    .skill-card {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 15px;
+        margin-bottom: 12px;
+        margin-right: 0;
+        border-radius: 10px;
+    }
+
+    .skill-card h3 {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+    }
+
+    .skill-info {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .skill-stat {
+        padding: 5px 8px;
+        font-size: 0.85em;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .skill-desc {
+        font-size: 0.9em;
+        margin-top: 10px;
+    }
+}
+
