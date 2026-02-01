@@ -1,4 +1,4 @@
-/* ==================== Base Styles ==================== */
+/* ==================== BASE STYLES ==================== */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -32,7 +32,7 @@ body.dark-mode::before {
     background-color: rgba(26, 26, 26, 0.3);
 }
 
-/* ==================== Header ==================== */
+/* ==================== HEADER & NAVIGATION ==================== */
 header {
     background-color: #333;
     color: white;
@@ -65,6 +65,17 @@ header nav a:hover {
     text-decoration: underline;
 }
 
+header h1,
+header h2 {
+    color: white;
+}
+
+body.dark-mode header h1,
+body.dark-mode header h2 {
+    color: white;
+}
+
+/* ==================== DARK MODE BUTTON ==================== */
 #dark-mode-btn {
     background-color: #555;
     color: white;
@@ -80,6 +91,7 @@ header nav a:hover {
     background-color: #777;
 }
 
+/* ==================== SEARCH BAR ==================== */
 .wiki-search {
     position: relative;
     display: flex;
@@ -118,6 +130,7 @@ body.dark-mode .wiki-search input {
     background-color: #777;
 }
 
+/* ==================== SEARCH SUGGESTIONS ==================== */
 .wiki-search-suggestions {
     position: absolute;
     top: calc(100% + 6px);
@@ -171,73 +184,7 @@ body.dark-mode tr.search-hit {
     background-color: rgba(255, 140, 0, 0.2);
 }
 
-/* ==================== Mobile Responsive for Header/Search ==================== */
-@media (max-width: 768px) {
-    header {
-        padding: 10px;
-    }
-    
-    header nav {
-        gap: 10px;
-        flex-wrap: wrap;
-        width: 100%;
-        justify-content: center;
-    }
-    
-    .wiki-search {
-        flex: 1 1 auto;
-        min-width: 0;
-        max-width: 100%;
-    }
-    
-    .wiki-search input {
-        min-width: 0;
-        width: 100%;
-        flex: 1;
-        font-size: 13px;
-        padding: 7px 8px;
-    }
-    
-    .wiki-search button {
-        font-size: 13px;
-        padding: 7px 10px;
-        white-space: nowrap;
-    }
-    
-    #dark-mode-btn {
-        font-size: 13px;
-        padding: 7px 10px;
-        white-space: nowrap;
-    }
-}
-
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 20px;
-        margin-top: 5px;
-    }
-    
-    header nav {
-        gap: 8px;
-    }
-    
-    .wiki-search input {
-        font-size: 12px;
-        padding: 6px 7px;
-    }
-    
-    .wiki-search button {
-        font-size: 12px;
-        padding: 6px 8px;
-    }
-    
-    #dark-mode-btn {
-        font-size: 12px;
-        padding: 6px 8px;
-    }
-}
-
-/* ==================== Container ==================== */
+/* ==================== CONTAINER ==================== */
 .container {
     max-width: 1200px;
     margin: 20px auto;
@@ -251,30 +198,25 @@ body.dark-mode .container {
     color: #e0e0e0;
 }
 
-/* ==================== Content Box ==================== */
+/* ==================== CONTENT BOX ==================== */
 .content-box {
     position: relative;
-    /* for pseudo-element gradient border */
     background-color: #f5f5f5;
     border-radius: 16px;
     padding: 32px;
     margin-bottom: 30px;
     min-height: 200px;
     box-sizing: border-box;
-    /* keep padding inside border */
     overflow: hidden;
-    /* ensures rounded corners clip content */
     transition: background-color 0.3s, border-color 0.3s;
 }
 
-/* Gradient border pseudo-element */
 .content-box::before {
     content: "";
     position: absolute;
     inset: 0;
     border-radius: inherit;
     padding: 3px;
-    /* border thickness */
     background: linear-gradient(135deg, #6ae3ff, #9b6bff, #ff6ad5);
     -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
     -webkit-mask-composite: xor;
@@ -284,7 +226,6 @@ body.dark-mode .container {
     animation: hueShift 15s linear infinite;
 }
 
-/* Light mode gradient */
 body:not(.dark-mode) .content-box::before {
     background: linear-gradient(135deg,
             rgba(102, 204, 255, 0.5),
@@ -294,47 +235,25 @@ body:not(.dark-mode) .content-box::before {
     animation: hueShift 25s linear infinite;
 }
 
-/* Dark mode content box */
 body.dark-mode .content-box {
     background-color: #333;
     border-color: #555;
 }
 
-/* Heading inside content box */
 .content-box h2 {
     margin-top: 0;
 }
 
-/* ==================== Headings & Text ==================== */
-/* Light mode: general headings */
+/* ==================== HEADINGS & TEXT ==================== */
 h1,
 h2 {
     color: #333;
     margin-bottom: 10px;
 }
 
-/* Light mode: header headings stay white */
-header h1,
-header h2 {
-    color: white;
-}
-
-/* Dark mode: general headings */
 body.dark-mode h1,
 body.dark-mode h2 {
     color: #e0e0e0;
-}
-
-/* Dark mode: header headings stay white */
-body.dark-mode header h1,
-body.dark-mode header h2 {
-    color: white;
-}
-
-@media (max-width: 768px) {
-    .back-to-top-link {
-        display: none !important;
-    }
 }
 
 a {
@@ -346,7 +265,7 @@ a:hover {
     text-decoration: underline;
 }
 
-/* ==================== Wiki Content ==================== */
+/* ==================== WIKI CONTENT ==================== */
 .wiki-content {
     background-color: rgb(224, 224, 224);
     padding: 20px;
@@ -359,45 +278,6 @@ a:hover {
 
 .wiki-content h1 {
     color: #2563eb;
-}
-
-table {
-    margin-bottom: 24px;
-}
-
-/* Equipment info boxes */
-.equipment-info {
-    border: 1px solid #ccc;
-    background: #f9f9f9;
-    padding: 10px;
-    margin: 10px 0;
-    border-radius: 8px;
-    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
-}
-
-body.dark-mode .equipment-info {
-    background: #2a2a2a;
-    border-color: #555;
-    color: #e0e0e0;
-}
-
-/* Item and mob name styling */
-.item-name {
-    color: #ff8c00;
-    font-weight: normal;
-}
-
-body.dark-mode .item-name {
-    color: #ffa500;
-}
-
-.mob-name {
-    color: #0066cc;
-    font-weight: normal;
-}
-
-body.dark-mode .mob-name {
-    color: #4d9fff;
 }
 
 .wiki-content p,
@@ -440,7 +320,42 @@ body.dark-mode .wiki-content .accent {
     color: #5eead4;
 }
 
-/* ==================== Boxes & Box Containers ==================== */
+/* ==================== ITEM & MOB STYLING ==================== */
+.item-name {
+    color: #ff8c00;
+    font-weight: normal;
+}
+
+body.dark-mode .item-name {
+    color: #ffa500;
+}
+
+.mob-name {
+    color: #0066cc;
+    font-weight: normal;
+}
+
+body.dark-mode .mob-name {
+    color: #4d9fff;
+}
+
+/* ==================== EQUIPMENT INFO ==================== */
+.equipment-info {
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 8px;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .equipment-info {
+    background: #2a2a2a;
+    border-color: #555;
+    color: #e0e0e0;
+}
+
+/* ==================== BOXES & BOX CONTAINERS ==================== */
 .box-container {
     display: flex;
     flex-wrap: wrap;
@@ -485,7 +400,7 @@ body.dark-mode .box {
     transform: scale(1.1);
 }
 
-/* ==================== Footer ==================== */
+/* ==================== FOOTER ==================== */
 footer {
     text-align: center;
     font-size: 12px;
@@ -498,7 +413,7 @@ body.dark-mode footer {
     color: #999;
 }
 
-/* ==================== Sidebar ==================== */
+/* ==================== SIDEBAR ==================== */
 .page-wrapper {
     display: flex;
     gap: 20px;
@@ -557,7 +472,6 @@ body.dark-mode footer {
     color: white;
 }
 
-/* Boxes inside sidebar */
 .vertical-sidebar .box {
     text-align: center;
     padding: 15px;
@@ -590,7 +504,6 @@ body.dark-mode footer {
     transform: scale(1.1);
 }
 
-/* Sidebar dark mode */
 body.dark-mode .vertical-sidebar {
     background-color: #2a2a2a;
 }
@@ -613,7 +526,6 @@ body.dark-mode .vertical-sidebar a:hover {
     color: #1a1a1a;
 }
 
-/* Sidebar top image */
 .sidebar-top-image {
     width: 150px;
     border-radius: 8px;
@@ -621,280 +533,11 @@ body.dark-mode .vertical-sidebar a:hover {
     margin: 0 auto;
 }
 
-/* ==================== Animations ==================== */
-@keyframes hueShift {
-    0% {
-        filter: hue-rotate(0deg);
-    }
-
-    100% {
-        filter: hue-rotate(360deg);
-    }
+/* ==================== TABLES ==================== */
+table {
+    margin-bottom: 24px;
 }
 
-/* ==================== Responsive ==================== */
-@media (max-width: 1024px) {
-    .box {
-        width: calc(50% - 20px);
-    }
-}
-
-@media (max-width: 768px) {
-    .page-wrapper {
-        flex-direction: column;
-    }
-
-    .sidebar-column {
-        position: static;
-        flex: 1;
-        margin-bottom: 20px;
-    }
-
-    .video-box {
-        display: none;
-    }
-
-    .vertical-sidebar {
-        flex: 1;
-        margin-bottom: 20px;
-    }
-
-    .box {
-        width: 100%;
-    }
-
-    header {
-        padding: 10px 15px;
-    }
-
-    header .logo {
-        font-size: 20px;
-    }
-
-    header nav {
-        gap: 10px;
-        font-size: 14px;
-    }
-
-    .container {
-        padding: 15px;
-        margin: 20px 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    header .logo {
-        font-size: 18px;
-    }
-
-    header nav {
-        gap: 8px;
-        font-size: 12px;
-    }
-
-    .container {
-        padding: 10px;
-    }
-
-    .box {
-        padding: 15px;
-    }
-}
-
-@media (max-width: 768px) {
-    .page-wrapper {
-        flex-direction: column;
-    }
-    
-    .sidebar-column {
-        order: -1;
-        flex: 0 0 auto;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        margin: 0 auto 20px;
-    }
-
-    .sidebar-top-image {
-        display: block;
-        max-width: 150px;
-        margin: 0 auto 15px;
-    }
-    
-    #essentials-mobile {
-        display: block;
-        width: 100%;
-        margin: 0 auto 20px;
-        padding: 20px;
-    }
-    
-    #quicklinks-desktop {
-        display: none !important;
-    }
-    
-    #quicklinks-mobile {
-        display: block !important;
-        width: 100%;
-        margin: 20px auto 0 !important;
-        padding: 20px !important;
-    }
-    
-    #quicklinks-mobile .vertical-sidebar h2 {
-        text-align: center;
-        margin-bottom: 15px;
-    }
-
-    .sidecontentbox .vertical-sidebar ul {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-
-    .sidecontentbox .vertical-sidebar li {
-        margin: 0;
-    }
-
-    .sidecontentbox .vertical-sidebar a {
-        display: block;
-        padding: 10px 15px;
-        font-size: 13px;
-        white-space: nowrap;
-        border-radius: 5px;
-        background: #0066cc;
-        color: white !important;
-        text-decoration: none;
-        transition: background 0.3s;
-    }
-    
-    .sidecontentbox .vertical-sidebar a:hover {
-        background: #0052a3;
-    }
-
-    body.dark-mode .sidecontentbox .vertical-sidebar a {
-        background: #1a5490;
-    }
-    
-    body.dark-mode .sidecontentbox .vertical-sidebar a:hover {
-        background: #134070;
-    }
-    
-    .container {
-        order: 1;
-    }
-}
-
-.ad-demo {
-    background: #f0f0f0;
-    border: 2px dashed #999;
-    color: #555;
-    font-size: 14px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* Dark mode version */
-body.dark-mode .ad-demo,
-body.dark .ad-demo {
-    background: #1e1e1e;
-    border-color: #666;
-    color: #ddd;
-}
-
-.top-ad-demo {
-    width: 100%;
-    max-width: 970px;
-    height: 120px;
-    margin: 15px auto;
-    box-sizing: border-box;
-}
-
-/* ==================== Table Responsive ==================== */
-@media (max-width: 768px) {
-    /* Maximize table space on mobile */
-    table {
-        margin: 10px 0 !important;
-        width: 100% !important;
-        max-width: none !important;
-    }
-    
-    .wiki-content {
-        padding: 0 !important;
-        margin: 0 !important;
-        max-width: none !important;
-    }
-    
-    .container {
-        padding: 10px 5px !important;
-        margin: 10px 5px !important;
-    }
-    
-    .content-box {
-        padding: 10px !important;
-        margin-bottom: 15px !important;
-    }
-}
-
-@media (max-width: 480px) {
-    table {
-        font-size: 12px;
-        margin: 5px 0 !important;
-    }
-    
-    table img {
-        width: 35px !important;
-        height: 35px !important;
-    }
-    
-    table th, table td {
-        padding: 6px 2px;
-    }
-    
-    .container {
-        padding: 5px 2px !important;
-        margin: 5px 2px !important;
-    }
-    
-    .content-box {
-        padding: 8px !important;
-    }
-
-    /* Mobile wikitable adjustments */
-    .wikitable {
-        font-size: 10px;
-        display: block;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .wikitable th, .wikitable td {
-        padding: 4px 2px;
-        font-size: 10px;
-    }
-
-    .wikitable img {
-        max-height: 40px;
-        width: auto;
-    }
-
-    /* Standardized mob image sizing */
-    .wikitable td:first-child img {
-        max-width: 60px;
-        height: auto;
-    }
-
-    /* Elemental icon sizing */
-    .wikitable td img[src*="Elemental"] {
-        max-width: 35px;
-        height: auto;
-    }
-}
-/* ==================== Mob Table Styles ==================== */
 table.wikitable {
     border-collapse: collapse;
     width: 100%;
@@ -903,7 +546,8 @@ table.wikitable {
     border: 2px solid #000;
 }
 
-.wikitable th, .wikitable td {
+.wikitable th,
+.wikitable td {
     border: 1px solid #000;
     padding: 10px;
 }
@@ -929,136 +573,11 @@ table.wikitable {
     object-fit: contain;
 }
 
-/* Mobile optimization for tablets */
-@media (max-width: 768px) {
-    /* Wrap table in scrollable container */
-    table.wikitable {
-        display: block;
-        width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        font-size: 11px;
-    }
-
-    table.wikitable thead,
-    table.wikitable tbody,
-    table.wikitable tr {
-        display: table;
-        width: 100%;
-        table-layout: fixed;
-    }
-
-    .wikitable th, .wikitable td {
-        padding: 8px 4px;
-        font-size: 10px;
-        word-wrap: break-word;
-    }
-
-    .wikitable th {
-        font-size: 9px;
-        padding: 8px 4px;
-    }
-
-    .wikitable img {
-        max-width: 35px;
-        height: auto;
-    }
-}
-
-/* Mobile optimization for phones */
-@media (max-width: 480px) {
-    table.wikitable {
-        display: block;
-        width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        font-size: 9px;
-    }
-
-    table.wikitable thead,
-    table.wikitable tbody,
-    table.wikitable tr {
-        display: table;
-        width: 100%;
-        table-layout: fixed;
-    }
-
-    .wikitable th, .wikitable td {
-        padding: 6px 2px;
-        font-size: 8px;
-        word-wrap: break-word;
-    }
-
-    .wikitable th {
-        font-size: 7px;
-        padding: 6px 2px;
-    }
-
-    .wikitable img {
-        max-width: 28px;
-        height: auto;
-    }
-
-    h2 {
-        font-size: 18px;
-    }
-
-    .content-box, .wiki-content {
-        padding: 15px;
-    }
-
-    /* Drop table specific fix for subpages */
-    .subpage-container table.wikitable {
-        display: table !important;
-        width: auto !important;
-        min-width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .subpage-container table.wikitable th,
-    .subpage-container table.wikitable td {
-        display: table-cell !important;
-    }
-
-    h2 {
-        font-size: 18px;
-    }
-
-    .content-box, .wiki-content {
-        padding: 15px;
-    }
-
-    /* Items and Mobs home page table mobile optimization */
-    table.wikitable:not(.subpage-container table.wikitable) {
-        display: table !important;
-        width: auto !important;
-        min-width: 100%;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        font-size: 7px;
-    }
-
-    table.wikitable:not(.subpage-container table.wikitable) th,
-    table.wikitable:not(.subpage-container table.wikitable) td {
-        padding: 3px 1px !important;
-        font-size: 7px !important;
-        word-break: break-word !important;
-        display: table-cell !important;
-    }
-
-    table.wikitable:not(.subpage-container table.wikitable) img {
-        max-width: 20px !important;
-        height: auto;
-    }
-}
-
-/* Dark mode styles for wikitable */
 body.dark-mode table.wikitable {
     border: 2px solid #fff;
 }
 
-body.dark-mode .wikitable th, 
+body.dark-mode .wikitable th,
 body.dark-mode .wikitable td {
     border: 1px solid #fff;
 }
@@ -1083,8 +602,8 @@ body.dark-mode .wikitable tr:hover {
 body.dark-mode .wikitable td {
     color: #e0e0e0;
 }
-/* ==================== Subpage Styles ==================== */
-/* Styles for standalone subpages like Enchanting/Blacksmithing */
+
+/* ==================== SUBPAGE STYLES ==================== */
 .subpage-container {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -1158,7 +677,7 @@ body.dark-mode .wikitable td {
     margin: 30px 0;
 }
 
-.subpage-container ol, 
+.subpage-container ol,
 .subpage-container ul {
     margin: 15px 0;
     padding-left: 30px;
@@ -1180,7 +699,6 @@ body.dark-mode .wikitable td {
     margin-bottom: 20px;
 }
 
-/* Dark mode for subpages */
 body.dark-mode .subpage-container {
     background-color: #1a1a1a;
 }
@@ -1228,7 +746,7 @@ body.dark-mode .subpage-container strong {
     color: #f3f4f6;
 }
 
-/* ==================== Info Box Styles ==================== */
+/* ==================== INFO BOX STYLES ==================== */
 .subpage-info-box {
     background: #f8f9fa;
     color: #333;
@@ -1284,7 +802,7 @@ body.dark-mode .subpage-info-box table tr:nth-child(2) {
     word-break: break-word;
 }
 
-/* ==================== Flex Content Responsive ==================== */
+/* ==================== FLEX CONTENT ==================== */
 .flex-content {
     display: flex;
     gap: 30px;
@@ -1293,48 +811,7 @@ body.dark-mode .subpage-info-box table tr:nth-child(2) {
     flex-wrap: wrap;
 }
 
-@media (max-width: 768px) {
-    .flex-content {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .subpage-info-box {
-        flex: 0 0 100% !important;
-        min-width: 100% !important;
-    }
-
-    .subpage-info-box table {
-        font-size: 14px;
-    }
-
-    .subpage-info-box table th,
-    .subpage-info-box table td {
-        padding: 6px !important;
-    }
-}
-
-@media (max-width: 480px) {
-    .subpage-info-box {
-        padding: 12px !important;
-    }
-
-    .subpage-info-box img {
-        max-width: 150px !important;
-    }
-
-    .subpage-info-box table {
-        font-size: 13px;
-    }
-
-    .subpage-info-box table th,
-    .subpage-info-box table td {
-        padding: 5px !important;
-        font-size: 12px;
-    }
-}
-
-/* ==================== Subpage Button Styles ==================== */
+/* ==================== SUBPAGE BUTTON STYLES ==================== */
 .subpage-back-button {
     display: block;
     margin-bottom: 20px;
@@ -1362,61 +839,7 @@ body.dark-mode .subpage-back-button:hover {
     background-color: #4a5568;
 }
 
-@media (max-width: 768px) {
-    .subpage-back-button {
-        width: 100%;
-        padding: 15px 20px;
-        font-size: 18px;
-    }
-}
-
-@media (max-width: 480px) {
-    .subpage-back-button {
-        padding: 12px 16px;
-        font-size: 16px;
-    }
-}
-
-/* ==================== Subpage Responsive Typography ==================== */
-@media (max-width: 768px) {
-    .subpage-container h1 {
-        font-size: 28px;
-        margin: 15px 0;
-    }
-
-    .subpage-container h2 {
-        font-size: 22px;
-        margin: 15px 0 10px 0;
-    }
-
-    .subpage-container p {
-        font-size: 15px;
-        line-height: 1.5;
-    }
-}
-
-@media (max-width: 480px) {
-    .subpage-container {
-        padding: 8px;
-    }
-
-    .subpage-container h1 {
-        font-size: 24px;
-        margin: 10px 0;
-    }
-
-    .subpage-container h2 {
-        font-size: 20px;
-        margin: 12px 0 8px 0;
-    }
-
-    .subpage-container p {
-        font-size: 14px;
-        line-height: 1.4;
-    }
-}
-
-/* ==================== MapGuide Styles ==================== */
+/* ==================== MAPGUIDE STYLES ==================== */
 .mapguide-main-container {
     max-width: 900px;
     margin: 30px auto;
@@ -1615,154 +1038,7 @@ body.dark-mode .mapguide-description {
     margin-left: 20px;
 }
 
-/* ==================== MapGuide Mobile Responsive ==================== */
-@media (max-width: 1024px) {
-    .mapguide-main-container {
-        padding: 0 15px;
-    }
-}
-
-@media (max-width: 768px) {
-    .mapguide-main-container {
-        padding: 0 12px;
-        margin: 20px auto;
-    }
-
-    .mapguide-main-container h1 {
-        font-size: 1.8em;
-        margin-bottom: 8px;
-    }
-
-    .mapguide-main-container h2 {
-        font-size: 1.4em;
-        margin: 30px 0 10px 0;
-    }
-
-    .mapguide-intro {
-        font-size: 1em;
-        margin-bottom: 20px;
-    }
-
-    .hunting-section {
-        padding: 18px;
-        margin: 20px 0;
-    }
-
-    .mob-header {
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
-    }
-
-    .mob-icon {
-        width: 90px;
-        height: 90px;
-    }
-
-    .mob-info {
-        text-align: center;
-        width: 100%;
-    }
-
-    .mob-info h3 {
-        font-size: 1.1em;
-        margin-bottom: 6px;
-    }
-
-    .recommended-level {
-        font-size: 0.9em;
-        margin: 6px 0;
-    }
-
-    .mapguide-description {
-        font-size: 0.9em;
-        line-height: 1.6;
-    }
-
-    .mapguide-divider {
-        margin: 30px 0;
-    }
-
-    .video-container {
-        max-width: 100%;
-        margin: 15px 0;
-    }
-
-    .map-container {
-        padding: 15px 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .mapguide-main-container {
-        padding: 0 8px;
-        margin: 15px auto;
-    }
-
-    .mapguide-main-container h1 {
-        font-size: 1.5em;
-        margin-bottom: 8px;
-    }
-
-    .mapguide-main-container h2 {
-        font-size: 1.2em;
-        margin: 20px 0 8px 0;
-    }
-
-    .mapguide-intro {
-        font-size: 0.9em;
-        margin-bottom: 15px;
-        line-height: 1.4;
-    }
-
-    .hunting-section {
-        padding: 15px;
-        margin: 15px 0;
-        border-left-width: 3px;
-    }
-
-    .hunting-section:hover {
-        transform: none;
-    }
-
-    .mob-icon {
-        width: 70px;
-        height: 70px;
-    }
-
-    .mob-info h3 {
-        font-size: 1em;
-    }
-
-    .recommended-level {
-        font-size: 0.85em;
-    }
-
-    .mapguide-description {
-        font-size: 0.85em;
-        line-height: 1.5;
-    }
-
-    .mapguide-divider {
-        margin: 20px 0;
-    }
-
-    .video-container {
-        margin: 15px 0;
-    }
-
-    .map-image {
-        margin: 15px 0;
-    }
-
-    .mapguide-nav-container a {
-        display: inline-block;
-        padding: 8px 12px;
-        font-size: 0.9em;
-    }
-}
-
-/* Combat System Page Styles */
+/* ==================== COMBAT SYSTEM STYLES ==================== */
 .combat-overview-box {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
@@ -2087,7 +1363,6 @@ body.dark-mode .intro-text {
     color: #d1d5db;
 }
 
-/* Skull Table/Card Responsive Views */
 .skull-table-wrapper {
     display: block;
     overflow-x: auto;
@@ -2136,394 +1411,7 @@ body.dark-mode .skull-card-body strong {
     color: #9ca3af;
 }
 
-/* Mobile Responsive Styles for Combat System & FAQ Pages */
-@media (max-width: 768px) {
-    /* Hide table, show cards on mobile */
-    .skull-table-wrapper {
-        display: none;
-    }
-
-    .skull-cards-mobile {
-        display: block;
-        margin-top: 15px;
-    }
-
-    .skull-card {
-        padding: 10px;
-        margin-bottom: 8px;
-    }
-
-    .skull-card-header {
-        font-size: 1em;
-        margin-bottom: 8px;
-    }
-
-    .skull-card-body p {
-        margin: 5px 0;
-        font-size: 0.85em;
-    }
-
-    .combat-overview-box {
-        padding: 15px 12px;
-        margin-bottom: 15px;
-    }
-
-    .combat-overview-box h2 {
-        font-size: 1.2em;
-    }
-
-    .combat-overview-box p {
-        font-size: 0.95em;
-    }
-
-    .vocation-card,
-    .training-method,
-    .skull-details {
-        padding: 12px;
-    }
-
-    .vocation-card h4,
-    .training-method h4 {
-        font-size: 0.95em;
-    }
-
-    .combat-section-title {
-        font-size: 1.15em;
-    }
-
-    .training-grid {
-        gap: 10px;
-    }
-
-    .info-box {
-        padding: 12px;
-    }
-
-    .skull-details summary {
-        font-size: 1em;
-        padding: 8px 0;
-    }
-
-    .skull-details-content {
-        padding-left: 5px;
-        margin-top: 10px;
-    }
-
-    .skull-details-content p {
-        margin-top: 10px !important;
-        margin-bottom: 10px;
-    }
-
-    .skull-details-content ul {
-        margin-top: 8px;
-        margin-bottom: 8px;
-    }
-
-    .wikitable {
-        font-size: 0.85em;
-    }
-
-    .wikitable th,
-    .wikitable td {
-        padding: 6px 4px;
-    }
-
-    /* Make tables horizontally scrollable on mobile */
-    .subpage-content-box {
-        overflow-x: auto;
-        padding: 12px;
-        margin-bottom: 12px;
-    }
-
-    .wikitable {
-        min-width: 500px;
-    }
-
-    h2 {
-        font-size: 1.3em;
-        margin-top: 10px;
-        margin-bottom: 15px;
-    }
-
-    h3 {
-        font-size: 1.15em;
-        margin-top: 15px;
-        margin-bottom: 10px;
-    }
-
-    .combat-list {
-        padding-left: 20px;
-        margin-top: 8px;
-        margin-bottom: 8px;
-    }
-
-    .combat-list li {
-        margin-bottom: 5px;
-    }
-}
-
-@media (max-width: 480px) {
-    /* Ensure cards are compact on small mobile */
-    .skull-card {
-        padding: 8px;
-        margin-bottom: 6px;
-    }
-
-    .skull-card-header {
-        font-size: 0.95em;
-        margin-bottom: 6px;
-    }
-
-    .skull-card-body p {
-        margin: 4px 0;
-        font-size: 0.8em;
-    }
-
-    .combat-overview-box {
-        padding: 12px 10px;
-        margin-bottom: 12px;
-    }
-
-    .combat-overview-box h2 {
-        font-size: 1.1em;
-        margin-top: 0;
-        margin-bottom: 8px;
-    }
-
-    .combat-overview-box p {
-        font-size: 0.9em;
-        line-height: 1.4;
-    }
-
-    h1 {
-        font-size: 1.5em !important;
-        margin-top: 10px !important;
-        margin-bottom: 15px !important;
-    }
-
-    h2 {
-        font-size: 1.2em;
-        margin-top: 8px;
-        margin-bottom: 12px;
-    }
-
-    h3 {
-        font-size: 1.1em;
-        margin-top: 12px;
-        margin-bottom: 8px;
-    }
-
-    h4 {
-        font-size: 0.95em;
-        margin-top: 0;
-        margin-bottom: 8px;
-    }
-
-    .vocation-card,
-    .training-method,
-    .skull-details {
-        padding: 10px 8px;
-        border-radius: 6px;
-        margin-bottom: 8px;
-    }
-
-    .vocation-card h4,
-    .training-method h4 {
-        font-size: 0.9em;
-    }
-
-    .vocation-card p,
-    .training-method p,
-    .skull-details-content p {
-        font-size: 0.9em;
-        margin-top: 8px !important;
-        margin-bottom: 8px !important;
-    }
-
-    .training-method .efficiency,
-    .efficiency {
-        font-size: 0.8em !important;
-        display: block;
-        margin-top: 4px;
-    }
-
-    .combat-section-title {
-        font-size: 1.05em;
-        margin-top: 15px !important;
-        margin-bottom: 10px !important;
-    }
-
-    .combat-divider {
-        margin: 12px 0;
-    }
-
-    .training-grid {
-        gap: 8px;
-    }
-
-    .info-box {
-        padding: 10px 8px;
-        font-size: 0.9em;
-        margin-bottom: 10px;
-    }
-
-    .info-box.note,
-    .info-box.success {
-        padding: 10px 8px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-
-    .info-box.warning {
-        padding: 10px 8px;
-        margin-bottom: 10px;
-    }
-
-    .skull-details {
-        margin-top: 8px !important;
-        padding: 10px 8px;
-    }
-
-    .skull-details summary {
-        font-size: 0.95em;
-        padding: 6px 0;
-        line-height: 1.3;
-    }
-
-    .skull-details-content {
-        padding-left: 3px;
-        margin-top: 8px;
-    }
-
-    .skull-duration {
-        padding: 8px;
-        font-size: 0.85em;
-        margin-top: 10px;
-    }
-
-    .combat-list {
-        padding-left: 18px;
-        line-height: 1.5;
-        margin-top: 6px;
-        margin-bottom: 6px;
-    }
-
-    .combat-list li {
-        margin-bottom: 4px;
-        font-size: 0.9em;
-    }
-
-    .intro-text {
-        font-size: 0.95em;
-        margin-bottom: 12px;
-    }
-
-    .wikitable {
-        font-size: 0.8em;
-        min-width: 420px;
-    }
-
-    .wikitable th,
-    .wikitable td {
-        padding: 5px 3px;
-        font-size: 0.85em;
-    }
-
-    /* Reduce all margins between elements */
-    p {
-        margin-top: 8px;
-        margin-bottom: 8px;
-    }
-
-    ul, ol {
-        margin-top: 6px;
-        margin-bottom: 6px;
-    }
-
-    /* More aggressive spacing reduction */
-    .subpage-content-box {
-        padding: 10px 8px;
-        margin-bottom: 10px;
-    }
-
-    body > div[style*="max-width: 900px"] {
-        padding: 0 8px !important;
-        margin: 10px auto !important;
-    }
-
-    /* Make sure long words don't break layout */
-    p, li, td, th, summary {
-        word-wrap: break-word;
-        overflow-wrap: break-word;
-        hyphens: auto;
-    }
-
-    /* Reduce emoji spacing */
-    h2, h3, h4 {
-        word-spacing: -2px;
-    }
-
-    strong {
-        font-size: 1em;
-    }
-
-    /* Tighter spacing for details elements on mobile */
-    details[open] {
-        margin-bottom: 8px;
-    }
-
-    /* Compact links */
-    a {
-        word-break: break-all;
-        font-size: 0.9em;
-    }
-}
-
-/* Tablet adjustments */
-@media (min-width: 481px) and (max-width: 768px) {
-    .combat-overview-box p {
-        font-size: 0.95em;
-    }
-
-    .training-grid {
-        gap: 10px;
-    }
-
-    .wikitable {
-        font-size: 0.9em;
-    }
-
-    .subpage-content-box {
-        padding: 12px;
-    }
-}
-
-/* Ensure content containers adapt to mobile */
-@media (max-width: 768px) {
-    /* Adjust inline max-width container */
-    body > div[style*="max-width: 900px"] {
-        padding: 0 12px !important;
-        margin: 15px auto !important;
-    }
-
-    footer {
-        padding: 15px 12px;
-        font-size: 0.85em;
-    }
-}
-
-@media (max-width: 480px) {
-    footer {
-        padding: 12px 8px;
-        font-size: 0.8em;
-    }
-
-    footer p {
-        margin: 5px 0;
-    }
-}
-
-/* ==================== Outfits Page Styles ==================== */
+/* ==================== OUTFITS STYLES ==================== */
 .outfit-section {
     margin: 40px 0;
     padding: 25px;
@@ -2598,44 +1486,7 @@ body.dark-mode .notes {
     color: #ff8c00;
 }
 
-/* Mobile responsive for outfits */
-@media (max-width: 768px) {
-    .outfit-section {
-        padding: 15px;
-        margin: 25px 0;
-    }
-
-    .outfit-images {
-        gap: 20px;
-    }
-
-    .image-block {
-        min-width: 100%;
-        max-width: 100%;
-    }
-
-    .outfit-section h2 {
-        font-size: 1.3em;
-    }
-
-    .image-block p {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 480px) {
-    .outfit-section {
-        padding: 10px;
-        margin: 20px 0;
-    }
-
-    .outfit-section h2 {
-        font-size: 1.1em;
-    }
-}
-
-/* ==================== Skills Pages Styles ==================== */
-
+/* ==================== SKILLS STYLES ==================== */
 .skills-container {
     max-width: 1000px;
     margin: 0 auto;
@@ -2770,8 +1621,546 @@ body.dark-mode .skill-desc {
     color: #bbb;
 }
 
-/* Tablet Layout */
+/* ==================== AD STYLES ==================== */
+.ad-demo {
+    background: #f0f0f0;
+    border: 2px dashed #999;
+    color: #555;
+    font-size: 14px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body.dark-mode .ad-demo {
+    background: #1e1e1e;
+    border-color: #666;
+    color: #ddd;
+}
+
+.top-ad-demo {
+    width: 100%;
+    max-width: 970px;
+    height: 120px;
+    margin: 15px auto;
+    box-sizing: border-box;
+}
+
+/* ==================== ANIMATIONS ==================== */
+@keyframes hueShift {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+/* Tablet: 1024px and down */
+@media (max-width: 1024px) {
+    .box {
+        width: calc(50% - 20px);
+    }
+
+    .mapguide-main-container {
+        padding: 0 15px;
+    }
+
+    .combat-overview-box p {
+        font-size: 0.95em;
+    }
+
+    .training-grid {
+        gap: 10px;
+    }
+
+    .wikitable {
+        font-size: 0.9em;
+    }
+
+    .subpage-content-box {
+        padding: 12px;
+    }
+}
+
+/* Tablet: 768px and down */
 @media (max-width: 768px) {
+    /* Header adjustments */
+    header {
+        padding: 10px;
+    }
+
+    header nav {
+        gap: 10px;
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
+    }
+
+    header .logo {
+        font-size: 20px;
+    }
+
+    /* Search bar */
+    .wiki-search {
+        flex: 1 1 auto;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .wiki-search input {
+        min-width: 0;
+        width: 100%;
+        flex: 1;
+        font-size: 13px;
+        padding: 7px 8px;
+    }
+
+    .wiki-search button {
+        font-size: 13px;
+        padding: 7px 10px;
+        white-space: nowrap;
+    }
+
+    #dark-mode-btn {
+        font-size: 13px;
+        padding: 7px 10px;
+        white-space: nowrap;
+    }
+
+    /* Back to top link */
+    .back-to-top-link {
+        display: none !important;
+    }
+
+    /* Layout */
+    .page-wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar-column {
+        position: static;
+        flex: 1;
+        margin-bottom: 20px;
+        order: -1;
+        flex: 0 0 auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto 20px;
+    }
+
+    .sidebar-top-image {
+        display: block;
+        max-width: 150px;
+        margin: 0 auto 15px;
+    }
+
+    .video-box {
+        display: none;
+    }
+
+    .vertical-sidebar {
+        flex: 1;
+        margin-bottom: 20px;
+    }
+
+    #essentials-mobile {
+        display: block;
+        width: 100%;
+        margin: 0 auto 20px;
+        padding: 20px;
+    }
+
+    #quicklinks-desktop {
+        display: none !important;
+    }
+
+    #quicklinks-mobile {
+        display: block !important;
+        width: 100%;
+        margin: 20px auto 0 !important;
+        padding: 20px !important;
+    }
+
+    #quicklinks-mobile .vertical-sidebar h2 {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .sidecontentbox .vertical-sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .sidecontentbox .vertical-sidebar li {
+        margin: 0;
+    }
+
+    .sidecontentbox .vertical-sidebar a {
+        display: block;
+        padding: 10px 15px;
+        font-size: 13px;
+        white-space: nowrap;
+        border-radius: 5px;
+        background: #0066cc;
+        color: white !important;
+        text-decoration: none;
+        transition: background 0.3s;
+    }
+
+    .sidecontentbox .vertical-sidebar a:hover {
+        background: #0052a3;
+    }
+
+    body.dark-mode .sidecontentbox .vertical-sidebar a {
+        background: #1a5490;
+    }
+
+    body.dark-mode .sidecontentbox .vertical-sidebar a:hover {
+        background: #134070;
+    }
+
+    .container {
+        padding: 15px;
+        margin: 20px 10px;
+        order: 1;
+    }
+
+    body > div[style*="max-width: 900px"] {
+        padding: 0 12px !important;
+        margin: 15px auto !important;
+    }
+
+    /* Box container */
+    .box {
+        width: 100%;
+    }
+
+    /* Tables */
+    table {
+        margin: 10px 0 !important;
+        width: 100% !important;
+        max-width: none !important;
+    }
+
+    table.wikitable {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 11px;
+    }
+
+    table.wikitable thead,
+    table.wikitable tbody,
+    table.wikitable tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    .wikitable th,
+    .wikitable td {
+        padding: 8px 4px;
+        font-size: 10px;
+        word-wrap: break-word;
+    }
+
+    .wikitable th {
+        font-size: 9px;
+        padding: 8px 4px;
+    }
+
+    .wikitable img {
+        max-width: 35px;
+        height: auto;
+    }
+
+    .wiki-content {
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: none !important;
+    }
+
+    .content-box {
+        padding: 10px !important;
+        margin-bottom: 15px !important;
+    }
+
+    .subpage-container table {
+        display: table !important;
+        width: auto !important;
+        min-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .subpage-container table th,
+    .subpage-container table td {
+        display: table-cell !important;
+    }
+
+    .subpage-content-box {
+        overflow-x: auto;
+        padding: 12px;
+        margin-bottom: 12px;
+    }
+
+    .wikitable {
+        min-width: 500px;
+    }
+
+    /* Headings */
+    h2 {
+        font-size: 1.3em;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+
+    h3 {
+        font-size: 1.15em;
+        margin-top: 15px;
+        margin-bottom: 10px;
+    }
+
+    /* Subpage styles */
+    .subpage-container {
+        padding: 20px;
+    }
+
+    .subpage-container h1 {
+        font-size: 28px;
+        margin: 15px 0;
+    }
+
+    .subpage-container h2 {
+        font-size: 22px;
+        margin: 15px 0 10px 0;
+    }
+
+    .subpage-container p {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .subpage-info-box {
+        flex: 0 0 100% !important;
+        min-width: 100% !important;
+    }
+
+    .subpage-info-box table {
+        font-size: 14px;
+    }
+
+    .subpage-info-box table th,
+    .subpage-info-box table td {
+        padding: 6px !important;
+    }
+
+    .subpage-back-button {
+        width: 100%;
+        padding: 15px 20px;
+        font-size: 18px;
+    }
+
+    .flex-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* MapGuide */
+    .mapguide-main-container {
+        padding: 0 12px;
+        margin: 20px auto;
+    }
+
+    .mapguide-main-container h1 {
+        font-size: 1.8em;
+        margin-bottom: 8px;
+    }
+
+    .mapguide-main-container h2 {
+        font-size: 1.4em;
+        margin: 30px 0 10px 0;
+    }
+
+    .mapguide-intro {
+        font-size: 1em;
+        margin-bottom: 20px;
+    }
+
+    .hunting-section {
+        padding: 18px;
+        margin: 20px 0;
+    }
+
+    .mob-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .mob-icon {
+        width: 90px;
+        height: 90px;
+    }
+
+    .mob-info {
+        text-align: center;
+        width: 100%;
+    }
+
+    .mob-info h3 {
+        font-size: 1.1em;
+        margin-bottom: 6px;
+    }
+
+    .recommended-level {
+        font-size: 0.9em;
+        margin: 6px 0;
+    }
+
+    .mapguide-description {
+        font-size: 0.9em;
+        line-height: 1.6;
+    }
+
+    .mapguide-divider {
+        margin: 30px 0;
+    }
+
+    .video-container {
+        max-width: 100%;
+        margin: 15px 0;
+    }
+
+    .map-container {
+        padding: 15px 0;
+    }
+
+    /* Combat System */
+    .skull-table-wrapper {
+        display: none;
+    }
+
+    .skull-cards-mobile {
+        display: block;
+        margin-top: 15px;
+    }
+
+    .skull-card {
+        padding: 10px;
+        margin-bottom: 8px;
+    }
+
+    .skull-card-header {
+        font-size: 1em;
+        margin-bottom: 8px;
+    }
+
+    .skull-card-body p {
+        margin: 5px 0;
+        font-size: 0.85em;
+    }
+
+    .combat-overview-box {
+        padding: 15px 12px;
+        margin-bottom: 15px;
+    }
+
+    .combat-overview-box h2 {
+        font-size: 1.2em;
+    }
+
+    .combat-overview-box p {
+        font-size: 0.95em;
+    }
+
+    .vocation-card,
+    .training-method,
+    .skull-details {
+        padding: 12px;
+    }
+
+    .vocation-card h4,
+    .training-method h4 {
+        font-size: 0.95em;
+    }
+
+    .combat-section-title {
+        font-size: 1.15em;
+    }
+
+    .training-grid {
+        gap: 10px;
+    }
+
+    .info-box {
+        padding: 12px;
+    }
+
+    .skull-details summary {
+        font-size: 1em;
+        padding: 8px 0;
+    }
+
+    .skull-details-content {
+        padding-left: 5px;
+        margin-top: 10px;
+    }
+
+    .skull-details-content p {
+        margin-top: 10px !important;
+        margin-bottom: 10px;
+    }
+
+    .skull-details-content ul {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+
+    .combat-list {
+        padding-left: 20px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+
+    .combat-list li {
+        margin-bottom: 5px;
+    }
+
+    /* Outfits */
+    .outfit-section {
+        padding: 15px;
+        margin: 25px 0;
+    }
+
+    .outfit-images {
+        gap: 20px;
+    }
+
+    .image-block {
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .outfit-section h2 {
+        font-size: 1.3em;
+    }
+
+    .image-block p {
+        font-size: 14px;
+    }
+
+    /* Skills */
     .skills-container {
         padding: 30px 15px;
     }
@@ -2803,10 +2192,405 @@ body.dark-mode .skill-desc {
         padding: 5px 10px;
         font-size: 0.9em;
     }
+
+    /* Footer */
+    footer {
+        padding: 15px 12px;
+        font-size: 0.85em;
+    }
 }
 
-/* Mobile Layout */
+/* Mobile: 480px and down */
 @media (max-width: 480px) {
+    /* Header */
+    header .logo {
+        font-size: 18px;
+    }
+
+    header nav {
+        gap: 8px;
+        font-size: 12px;
+    }
+
+    #dark-mode-btn {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+
+    /* Search */
+    .wiki-search input {
+        font-size: 12px;
+        padding: 6px 7px;
+    }
+
+    .wiki-search button {
+        font-size: 12px;
+        padding: 6px 8px;
+    }
+
+    /* Container */
+    .container {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 1.5em !important;
+        margin-top: 10px !important;
+        margin-bottom: 15px !important;
+    }
+
+    h2 {
+        font-size: 1.2em;
+        margin-top: 8px;
+        margin-bottom: 12px;
+    }
+
+    h3 {
+        font-size: 1.1em;
+        margin-top: 12px;
+        margin-bottom: 8px;
+    }
+
+    h4 {
+        font-size: 0.95em;
+        margin-top: 0;
+        margin-bottom: 8px;
+    }
+
+    /* Boxes */
+    .box {
+        padding: 15px;
+    }
+
+    /* Tables */
+    table {
+        font-size: 9px;
+        margin: 5px 0 !important;
+    }
+
+    table img {
+        width: 35px !important;
+        height: 35px !important;
+    }
+
+    table th,
+    table td {
+        padding: 6px 2px;
+    }
+
+    table.wikitable {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 9px;
+    }
+
+    table.wikitable thead,
+    table.wikitable tbody,
+    table.wikitable tr {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    .wikitable th,
+    .wikitable td {
+        padding: 6px 2px;
+        font-size: 8px;
+        word-wrap: break-word;
+    }
+
+    .wikitable th {
+        font-size: 7px;
+        padding: 6px 2px;
+    }
+
+    .wikitable img {
+        max-width: 28px;
+        height: auto;
+    }
+
+    table.wikitable:not(.subpage-container table.wikitable) {
+        display: table !important;
+        width: auto !important;
+        min-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 7px;
+    }
+
+    table.wikitable:not(.subpage-container table.wikitable) th,
+    table.wikitable:not(.subpage-container table.wikitable) td {
+        padding: 3px 1px !important;
+        font-size: 7px !important;
+        word-break: break-word !important;
+        display: table-cell !important;
+    }
+
+    table.wikitable:not(.subpage-container table.wikitable) img {
+        max-width: 20px !important;
+        height: auto;
+    }
+
+    /* Subpage */
+    .subpage-container {
+        padding: 8px;
+    }
+
+    .subpage-container h1 {
+        font-size: 24px;
+        margin: 10px 0;
+    }
+
+    .subpage-container h2 {
+        font-size: 20px;
+        margin: 12px 0 8px 0;
+    }
+
+    .subpage-container p {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .subpage-content-box {
+        padding: 10px 8px;
+        margin-bottom: 10px;
+    }
+
+    .subpage-info-box {
+        padding: 12px !important;
+    }
+
+    .subpage-info-box img {
+        max-width: 150px !important;
+    }
+
+    .subpage-info-box table {
+        font-size: 13px;
+    }
+
+    .subpage-info-box table th,
+    .subpage-info-box table td {
+        padding: 5px !important;
+        font-size: 12px;
+    }
+
+    .subpage-back-button {
+        padding: 12px 16px;
+        font-size: 16px;
+    }
+
+    /* MapGuide */
+    .mapguide-main-container {
+        padding: 0 8px;
+        margin: 15px auto;
+    }
+
+    .mapguide-main-container h1 {
+        font-size: 1.5em;
+        margin-bottom: 8px;
+    }
+
+    .mapguide-main-container h2 {
+        font-size: 1.2em;
+        margin: 20px 0 8px 0;
+    }
+
+    .mapguide-intro {
+        font-size: 0.9em;
+        margin-bottom: 15px;
+        line-height: 1.4;
+    }
+
+    .hunting-section {
+        padding: 15px;
+        margin: 15px 0;
+        border-left-width: 3px;
+    }
+
+    .hunting-section:hover {
+        transform: none;
+    }
+
+    .mob-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .mob-info h3 {
+        font-size: 1em;
+    }
+
+    .recommended-level {
+        font-size: 0.85em;
+    }
+
+    .mapguide-description {
+        font-size: 0.85em;
+        line-height: 1.5;
+    }
+
+    .mapguide-divider {
+        margin: 20px 0;
+    }
+
+    .video-container {
+        margin: 15px 0;
+    }
+
+    .map-image {
+        margin: 15px 0;
+    }
+
+    .mapguide-nav-container a {
+        display: inline-block;
+        padding: 8px 12px;
+        font-size: 0.9em;
+    }
+
+    /* Combat */
+    .skull-card {
+        padding: 8px;
+        margin-bottom: 6px;
+    }
+
+    .skull-card-header {
+        font-size: 0.95em;
+        margin-bottom: 6px;
+    }
+
+    .skull-card-body p {
+        margin: 4px 0;
+        font-size: 0.8em;
+    }
+
+    .combat-overview-box {
+        padding: 12px 10px;
+        margin-bottom: 12px;
+    }
+
+    .combat-overview-box h2 {
+        font-size: 1.1em;
+        margin-top: 0;
+        margin-bottom: 8px;
+    }
+
+    .combat-overview-box p {
+        font-size: 0.9em;
+        line-height: 1.4;
+    }
+
+    .vocation-card,
+    .training-method,
+    .skull-details {
+        padding: 10px 8px;
+        border-radius: 6px;
+        margin-bottom: 8px;
+    }
+
+    .vocation-card h4,
+    .training-method h4 {
+        font-size: 0.9em;
+    }
+
+    .vocation-card p,
+    .training-method p,
+    .skull-details-content p {
+        font-size: 0.9em;
+        margin-top: 8px !important;
+        margin-bottom: 8px !important;
+    }
+
+    .training-method .efficiency,
+    .efficiency {
+        font-size: 0.8em !important;
+        display: block;
+        margin-top: 4px;
+    }
+
+    .combat-section-title {
+        font-size: 1.05em;
+        margin-top: 15px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .combat-divider {
+        margin: 12px 0;
+    }
+
+    .training-grid {
+        gap: 8px;
+    }
+
+    .info-box {
+        padding: 10px 8px;
+        font-size: 0.9em;
+        margin-bottom: 10px;
+    }
+
+    .info-box.note,
+    .info-box.success {
+        padding: 10px 8px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .info-box.warning {
+        padding: 10px 8px;
+        margin-bottom: 10px;
+    }
+
+    .skull-details {
+        margin-top: 8px !important;
+        padding: 10px 8px;
+    }
+
+    .skull-details summary {
+        font-size: 0.95em;
+        padding: 6px 0;
+        line-height: 1.3;
+    }
+
+    .skull-details-content {
+        padding-left: 3px;
+        margin-top: 8px;
+    }
+
+    .skull-duration {
+        padding: 8px;
+        font-size: 0.85em;
+        margin-top: 10px;
+    }
+
+    .combat-list {
+        padding-left: 18px;
+        line-height: 1.5;
+        margin-top: 6px;
+        margin-bottom: 6px;
+    }
+
+    .combat-list li {
+        margin-bottom: 4px;
+        font-size: 0.9em;
+    }
+
+    .intro-text {
+        font-size: 0.95em;
+        margin-bottom: 12px;
+    }
+
+    /* Outfits */
+    .outfit-section {
+        padding: 10px;
+        margin: 20px 0;
+    }
+
+    .outfit-section h2 {
+        font-size: 1.1em;
+    }
+
+    /* Skills */
     .skills-container {
         padding: 20px 12px;
         overflow-x: hidden;
@@ -2858,5 +2642,78 @@ body.dark-mode .skill-desc {
         font-size: 0.9em;
         margin-top: 10px;
     }
+
+    /* Utility */
+    p {
+        margin-top: 8px;
+        margin-bottom: 8px;
+    }
+
+    ul,
+    ol {
+        margin-top: 6px;
+        margin-bottom: 6px;
+    }
+
+    body > div[style*="max-width: 900px"] {
+        padding: 0 8px !important;
+        margin: 10px auto !important;
+    }
+
+    p,
+    li,
+    td,
+    th,
+    summary {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+
+    h2,
+    h3,
+    h4 {
+        word-spacing: -2px;
+    }
+
+    strong {
+        font-size: 1em;
+    }
+
+    details[open] {
+        margin-bottom: 8px;
+    }
+
+    a {
+        word-break: break-all;
+        font-size: 0.9em;
+    }
+
+    footer {
+        padding: 12px 8px;
+        font-size: 0.8em;
+    }
+
+    footer p {
+        margin: 5px 0;
+    }
 }
 
+/* Tablet Adjustments: 481px - 768px */
+@media (min-width: 481px) and (max-width: 768px) {
+    .combat-overview-box p {
+        font-size: 0.95em;
+    }
+
+    .training-grid {
+        gap: 10px;
+    }
+
+    .wikitable {
+        font-size: 0.9em;
+    }
+
+    .subpage-content-box {
+        padding: 12px;
+    }
+}
